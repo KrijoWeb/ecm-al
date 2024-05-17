@@ -11,7 +11,7 @@ interface Props {
 const { title, category, weight, height, imgSrc } = Astro.props;
 ---
 
-<div class="shadow-gray-500 shadow-sm flex">
+<div class="shadow-gray-500 shadow-sm flex cursor-pointer hover:scale-105 transition">
   <div class="bg-neutral basis-1/4">
     <img class="w-full h-full" src={imgSrc} />
   </div>
