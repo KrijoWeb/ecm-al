@@ -1,0 +1,42 @@
+---
+import BriefCaseIcon from "../svg/briefcase.svg?raw";
+import LocationIcon from "../svg/location.svg?raw";
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<div tabindex="0" class="collapse bg-base-200">
+  <div class="collapse-title text-xl font-medium">
+    <div class="flex gap-12 items-center">
+      <img src="/img/emc_logo.png" class="basis-1/6" />
+      <div class="flex flex-col gap-2 flex-1">
+        <h2 class="uppercase font-bold text-3xl">{title}</h2>
+        <div class="flex gap-4">
+          <div class="h-6 w-6"><Fragment set:html={BriefCaseIcon} /></div>
+          <p>Kohe e plote</p>
+        </div>
+        <div class="flex gap-4">
+          <div class="h-6 w-6"><Fragment set:html={LocationIcon} /></div>
+          <p>Durres, Shqiperi</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="collapse-content w-5/6 ml-auto px-12 flex flex-col py-4 items-center gap-4">
+    <p class="text-justify">
+      Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim
+      labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet.
+      Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum
+      Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident.
+      Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex
+      occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat
+      officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in
+      Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non
+      excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco
+      ut ea consectetur et est culpa et culpa duis.
+    </p>
+    <button class="btn btn-primary">Apliko Tani</button>
+  </div>
+</div>
