@@ -1,0 +1,32 @@
+---
+import Height from "../svg/height.svg?raw";
+import Kilogram from "../svg/kilogram.svg?raw";
+interface Props {
+  name: string;
+  weight: string;
+  height: string;
+  img: string;
+}
+const { name, height, weight, img } = Astro.props;
+---
+
+<div
+  class="group flex cursor-pointer flex-col items-center gap-4 rounded-3xl border-2 border-neutral-200 px-8 py-12 transition hover:border-primary"
+>
+  <img src={img} class="transition group-hover:scale-110" />
+  <p class="text-lg">{name}</p>
+  <div class="flex w-full justify-between">
+    <div class="flex gap-1">
+      <div class="h-4 w-4">
+        <Fragment set:html={Kilogram} />
+      </div>
+      <p>{weight}</p>
+    </div>
+    <div class="flex gap-1">
+      <div class="h-4 w-4">
+        <Fragment set:html={Height} />
+      </div>
+      <p>{height}</p>
+    </div>
+  </div>
+</div>

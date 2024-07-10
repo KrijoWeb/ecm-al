@@ -1,67 +1,58 @@
 ---
-import InstaLogo from "../svg/instagram.svg?raw";
-import LocationSvg from "../svg/location.svg?raw";
-import EmailSvg from "../svg/email.svg?raw";
-const logos = [InstaLogo, LocationSvg, EmailSvg];
+import MainNav from "./layout-parts/MainNav.astro";
+import NavContainer from "./layout-parts/NavContainer.astro";
+import HomeNav from "./layout-parts/HomeNav.astro";
+import Footer from "./layout-parts/Footer.astro";
+interface Props {
+  title: string;
+  header?: string;
+  img?: string;
+  compactNav?: boolean;
+}
+const path = Astro.url.pathname;
+const isHome = path === "/";
+const { title, header, img, compactNav } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="emc">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Website</title>
+    <title>{title}</title>
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <style>
+      ::-moz-selection {
+        color: white;
+        background: #aa0020;
+      }
+
+      ::selection {
+        color: white;
+        background: #aa0020;
+      }
+    </style>
   </head>
-
-  <body>
-    <div
-      class="w-screen aspect-[5/1] bg-cover bg-top"
-      style="background-image: url(../../img/karriera.jpg);"
-    >
-      <div
-        class="bg-neutral-200/65 w-full h-full flex flex-col justify-between items-center py-4 relative"
-      >
-        <div class="flex w-2/3 [&>*]:py-4 items-stretch">
-          <img
-            src="/img/emc_logo.png"
-            alt="Logo"
-            class="basis-[14%] border-b-neutral-400 border-b-2"
-          />
-
-          <!-- Navigation -->
-          <nav
-            class="flex items-center justify-around flex-1 border-b-neutral-400 border-b-2 "
-          >
-            <a href="#" class="text-gray-800 hover:text-gray-600">PRODUKTET</a>
-            <a href="#" class="text-gray-800 hover:text-gray-600">SHËRBIMET</a>
-            <a href="#" class="text-gray-800 hover:text-gray-600">SHOP</a>
-            <a href="#" class="text-gray-800 hover:text-gray-600">RRETH NESH</a>
-            <a href="#" class="text-gray-800 hover:text-gray-600">KARRIERA</a>
-            <a href="#" class="text-gray-800 hover:text-gray-600">KONTAKT</a>
-          </nav>
-        </div>
-        <div class="flex gap-2 absolute right-6 top-6">
-          {
-            logos.map((logo) => (
-              <div class="h-6 w-6 flex items-center justify-center">
-                <Fragment set:html={logo} />
-              </div>
-            ))
-          }
-        </div>
-        <h1 class="font-bold text-5xl">Karriera juaj tek ne</h1>
-        <div></div>
-      </div>
+  {
+    isHome ? (
+      <HomeNav img="/foto/design/home-bg.png">
+        <MainNav />
+      </HomeNav>
+    ) : compactNav ? (
+      <MainNav />
+    ) : (
+      <NavContainer header={header} img={img}>
+        <MainNav />
+      </NavContainer>
+    )
+  }
+  <body class="max-w-screen flex min-h-screen flex-col">
+    <div class="flex-1">
+      <slot />
     </div>
-    <slot>
-      <!-- Include Font Awesome JS for icons -->
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"
-      ></script>
-    </slot>
+    <Footer />
   </body>
 </html>

@@ -1,0 +1,81 @@
+---
+interface Props {
+  header?: string;
+  img?: string;
+  compactNav?: boolean;
+}
+const { header, img } = Astro.props;
+---
+
+<div
+  id="nav-container"
+  class="h-svh w-svw bg-cover bg-fixed bg-top"
+  style=`background-image: url(${img});`
+>
+  <div
+    id="nav-bg"
+    class="relative flex h-full w-full flex-col items-center bg-neutral-200"
+  >
+    <slot />
+    <div
+      id="header-bg"
+      class="ml-[10vw] flex w-1/3 flex-1 flex-col justify-center gap-12 self-start"
+    >
+      <p class="text-xl">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+      <h1 class="text-6xl font-bold">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+      </h1>
+      <button class="btn btn-primary text-lg font-bold uppercase"
+        >Me Shume
+      </button>
+    </div>
+    <div class="absolute bottom-12 right-12 flex w-1/3 gap-4">
+      <button class="aspect-video flex-1">
+        <img
+          class="h-full w-full"
+          src="/foto/design/hoopecke.jpeg"
+          alt="Hoppecke"
+        />
+      </button>
+      <button class="aspect-video flex-1">
+        <img
+          class="h-full w-full"
+          src="/foto/design/hansa-carousel.png"
+          alt=""
+        />
+      </button>
+      <button class="aspect-video flex-1">
+        <img class="h-full w-full" src="/foto/design/home-bg.png" alt="" />
+      </button>
+    </div>
+  </div>
+
+  <script>
+    import { scroll } from "motion";
+    const mainNav = document.getElementById("main-nav") as HTMLDivElement;
+    const navBg = document.getElementById("nav-bg") as HTMLDivElement;
+    const navContainer = document.getElementById(
+      "nav-container",
+    ) as HTMLDivElement;
+    const netContainerHeight = navContainer.clientHeight - mainNav.clientHeight;
+    const header = document.getElementById("header-bg") as HTMLDivElement;
+    scroll(({ y }) => {
+      mainNav.style.backgroundColor = `rgba(230, 231, 235,${y.current / netContainerHeight})`;
+      let mainNavWidth =
+        66 +
+        ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) *
+          33;
+      let navBgOpacity = y.current / navContainer?.clientHeight! + 0.65;
+      mainNavWidth = mainNavWidth < 100 ? mainNavWidth : 100;
+      mainNav.style.width = `${mainNavWidth}vw`;
+      if (navBg)
+        navBg.style.backgroundColor = `rgba(230, 231, 235,${navBgOpacity})`;
+      if (header)
+        header.style.opacity = `${1 - y.current / (netContainerHeight / 2.7)}`;
+      if (navContainer)
+        navContainer.style.backgroundColor = `rgba(230, 231, 235,${y.current / netContainerHeight})`;
+    });
+  </script>
+</div>

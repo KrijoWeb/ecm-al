@@ -1,0 +1,54 @@
+---
+import ArrowButton from "../ArrowButton";
+import ProductCard from "./ProductCard.astro";
+---
+
+<section
+  id="products-section"
+  class="flex h-screen w-screen flex-col items-center justify-around bg-neutral-300"
+>
+  <div class="flex flex-col gap-4 text-center">
+    <h1 class="text-6xl font-semibold text-white">Visit Our Store</h1>
+    <h2 class="text-3xl font-thin text-white">Check out our products below</h2>
+  </div>
+  <div
+    class="flex h-2/3 w-3/4 gap-12 overflow-x-auto overflow-y-clip rounded-box p-4"
+  >
+    <ProductCard
+      img="/foto/design/produkt_shop.jpeg"
+      title="Linde L10"
+      description="Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."
+    />
+    <ProductCard
+      img="/foto/design/produkt_shop.jpeg"
+      title="Linde L10"
+      description="Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."
+    />
+    <ProductCard
+      img="/foto/design/produkt_shop.jpeg"
+      title="Linde L10"
+      description="Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."
+    />
+    <ProductCard
+      img="/foto/design/produkt_shop.jpeg"
+      title="Linde L10"
+      description="Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."
+    />
+    <ProductCard
+      img="/foto/design/produkt_shop.jpeg"
+      title="Linde L10"
+      description="Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."
+    />
+  </div>
+  <div class="flex w-1/4 items-center justify-between">
+    <ArrowButton type="left" />
+    <ArrowButton type="right" text="NEXT" />
+  </div>
+</section>
+<style>
+  #products-section {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+</style>

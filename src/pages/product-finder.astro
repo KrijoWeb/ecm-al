@@ -5,28 +5,66 @@ import ProductCard from "../components/ProductCard.astro";
 import FilterCategory from "../components/FilterCategory.astro";
 import Fork from "../svg/fork.svg?raw";
 import Calendar from "../svg/calendar.svg?raw";
-import {ProductFilters} from "../constants"
+import { ProductFilters } from "../constants";
 ---
 
-<Layout title="Product finder">
-  <div class="flex flex-col items-center p-20 gap-10">
-    <div class="flex gap-10">
-      <ProductCategory title="New" count={10} icon={Fork} active />
-      <ProductCategory title="Rental" count={50} icon={Calendar} />
+<Layout
+  title="Produktet tona"
+  header="Produktet tona"
+  img="/foto/design/linde_new_2.jpeg"
+>
+  <div class="flex flex-col items-center gap-10 py-20">
+    <div role="alert" class="alert-primary alert w-3/4">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        class="h-6 w-6 shrink-0 stroke-current"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        ></path></svg
+      >
+
+      <span
+        >Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit
+        enim labore culpa sint ad nisi Lorem pariatur mollit ex esse
+        exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit
+        nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor
+        minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure
+        elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor
+        Lorem duis laboris cupidatat officia voluptate. Culpa proident
+        adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod.
+        Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim.
+        Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa
+        et culpa duis.</span
+      >
     </div>
-    <div class="flex w-full min-h-screen">
-      <div class="basis-1/4 flex flex-col pl-20 bg-neutral py-4">
-        <input type="text" placeholder="Model Search" class="input rounded-none border-2 border-neutral-300 hover:border-neutral-400 transition"/>
-        {ProductFilters.map((pf)=>(<FilterCategory title={pf} icon=""/>))} 
+    <!-- <div class="flex gap-10"> -->
+    <!--   <ProductCategory title="New" count={10} icon={Fork} active /> -->
+    <!--   <ProductCategory title="Rental" count={50} icon={Calendar} /> -->
+    <!--   <ProductCategory title="Used" count={50} icon={Calendar} /> -->
+    <!-- </div> -->
+    <div class="flex min-h-screen w-3/4">
+      <div class="flex basis-1/4 flex-col gap-4 bg-neutral p-4">
+        <input
+          type="text"
+          placeholder="Model Search"
+          class="input rounded-none border-2 border-neutral-300 transition hover:border-neutral-400"
+        />
+        {ProductFilters.map((pf) => <FilterCategory title={pf} icon="" />)}
       </div>
-      <div class="basis-3/4 p-10 bg-neutral-100 py-4">
-        <div class="grid grid-cols-2 gap-8 h-full">
+      <div class="basis-3/4 bg-neutral-100 p-10 py-4">
+        <div class="grid h-full grid-cols-2 gap-8">
           {
             () => {
               const prods = [];
               for (let i = 0; i < 19; i++) {
                 prods.push(
                   <ProductCard
+                    id="a"
                     title="M10 X/XE"
                     imgSrc="/product-placeholder.avif"
                     category="Pallet Trucks"

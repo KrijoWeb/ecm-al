@@ -1,0 +1,37 @@
+---
+import InstaLogo from "../../svg/instagram.svg?raw";
+import LocationSvg from "../../svg/location.svg?raw";
+import EmailSvg from "../../svg/email.svg?raw";
+
+const logos = [InstaLogo, LocationSvg, EmailSvg];
+---
+
+<div id="main-nav" class="fixed z-[100] flex w-full bg-neutral px-12">
+  <a href="/" class="flex items-center">
+    <img src="/img/emc_logo.png" alt="Logo" class="basis-[14%]" />
+  </a>
+
+  <div
+    class="mx-auto flex w-[66vw] items-stretch border-b-2 border-b-neutral-400 [&>*]:py-4"
+  >
+    <nav class="flex flex-1 items-center justify-around">
+      <a href="#" class="text-gray-800 hover:text-gray-600">PRODUKTET</a>
+      <a href="#" class="text-gray-800 hover:text-gray-600">SHËRBIMET</a>
+      <a href="/product-finder" class="text-gray-800 hover:text-gray-600"
+        >SHOP</a
+      >
+      <a href="#" class="text-gray-800 hover:text-gray-600">RRETH NESH</a>
+      <a href="/karriera" class="text-gray-800 hover:text-gray-600">KARRIERA</a>
+      <a href="#" class="text-gray-800 hover:text-gray-600">KONTAKT</a>
+    </nav>
+  </div>
+  <div class="flex items-center gap-2">
+    {
+      logos.map((logo) => (
+        <div class="flex h-6 w-6 items-center justify-center">
+          <Fragment set:html={logo} />
+        </div>
+      ))
+    }
+  </div>
+</div>

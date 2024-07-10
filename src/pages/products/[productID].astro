@@ -1,0 +1,117 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Engine from "../../svg/engine.svg?raw";
+import Height from "../../svg/height.svg?raw";
+import Kilogram from "../../svg/kilogram.svg?raw";
+import Download from "../../svg/download.svg?raw";
+import SimilarProductCard from "../../components/SimilarProductCard.astro";
+export function getStaticPaths() {
+  return [
+    { params: { productID: "a" } },
+    { params: { productID: "b" } },
+    { params: { productID: "c" } },
+  ];
+}
+
+const { productID } = Astro.params;
+---
+
+<Layout title="Product" compactNav>
+  <main id="content" class="mb-12 min-h-svh w-full bg-neutral">
+    <div class="mx-auto w-2/3 py-20">
+      <div class="breadcrumbs text-sm">
+        <ul>
+          <li><a>Home</a></li>
+          <li><a>Documents</a></li>
+          <li>Add Document</li>
+        </ul>
+      </div>
+      <div class="flex justify-between">
+        <img src="/foto/design/linde_produkt_pirun.png" class="basis-5/12" />
+        <div class="flex basis-1/2 flex-col justify-around">
+          <div class="flex flex-col gap-4">
+            <h1 class="text-3xl font-semibold">Wandelbarer Leistungsträger</h1>
+            <div class="flex gap-8">
+              <div class="flex flex-col">
+                <div class="h-12 w-12">
+                  <Fragment set:html={Kilogram} />
+                </div>
+                <p>8000 kg</p>
+              </div>
+              <div class="flex flex-col">
+                <div class="h-12 w-12">
+                  <Fragment set:html={Height} />
+                </div>
+                <p>8670 mm</p>
+              </div>
+              <div class="flex flex-col">
+                <div class="h-12 w-12">
+                  <Fragment set:html={Engine} />
+                </div>
+                <p>Electric</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col items-start gap-6">
+            <p>Jeni te interesuar per kete produkt?</p>
+            <button class="btn btn-primary">KONTAKTO</button>
+          </div>
+        </div>
+      </div>
+      <button class="btn text-lg font-thin text-primary">
+        <div class="h-6 w-6 fill-primary">
+          <Fragment set:html={Download} />
+        </div>
+        <p class="m-0 p-0 align-bottom">Shkarko dokumentin</p>
+      </button>
+    </div>
+  </main>
+  <div class="mx-auto my-12 flex w-2/3 flex-col gap-6">
+    <h1 class="text-center text-3xl">Pershkrimi</h1>
+    <p class="text-justify">
+      Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim
+      labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet.
+      Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum
+      Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident.
+      Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex
+      occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat
+      officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in
+      Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non
+      excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco
+      ut ea consectetur et est culpa et culpa duis.
+    </p>
+
+    <h1 class="text-center text-3xl">Produkte te ngjashme</h1>
+    <div class="flex gap-10">
+      <SimilarProductCard
+        img="/foto/design/produkt_shop.jpeg"
+        name="Pirun elektrik P14- P16"
+        weight="18000kg"
+        height="7000mm"
+      />
+      <SimilarProductCard
+        img="/foto/design/produkt_shop.jpeg"
+        name="Pirun elektrik P14- P16"
+        weight="18000kg"
+        height="7000mm"
+      />
+      <SimilarProductCard
+        img="/foto/design/produkt_shop.jpeg"
+        name="Pirun elektrik P14- P16"
+        weight="18000kg"
+        height="7000mm"
+      />
+      <SimilarProductCard
+        img="/foto/design/produkt_shop.jpeg"
+        name="Pirun elektrik P14- P16"
+        weight="18000kg"
+        height="7000mm"
+      />
+    </div>
+  </div>
+  <script>
+    const nav = document.getElementById("main-nav") as HTMLDivElement;
+    const main = document.getElementById("content") as HTMLDivElement;
+    main.style.marginTop = `${nav?.clientHeight}px`;
+  </script>
+</Layout>

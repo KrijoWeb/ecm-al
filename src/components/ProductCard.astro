@@ -2,21 +2,25 @@
 import Weight from "../svg/weight.svg?raw";
 import Height from "../svg/height.svg?raw";
 interface Props {
+  id: string;
   title: string;
   category: string;
   weight: string;
   height: string;
   imgSrc: string;
 }
-const { title, category, weight, height, imgSrc } = Astro.props;
+const { id, title, category, weight, height, imgSrc } = Astro.props;
 ---
 
-<div class="shadow-gray-500 shadow-sm flex cursor-pointer hover:scale-105 transition">
-  <div class="bg-neutral basis-1/4">
-    <img class="w-full h-full" src={imgSrc} />
+<a
+  href={`/products/${id}`}
+  class="flex cursor-pointer shadow-sm shadow-gray-500 transition hover:scale-105"
+>
+  <div class="basis-1/4 bg-neutral">
+    <img class="h-full w-full" src={imgSrc} />
   </div>
-  <div class="basis-3/4 bg-white p-2 flex flex-col gap-2">
-    <h3 class="font-bold font-xl text-primary">{title}</h3>
+  <div class="flex basis-3/4 flex-col gap-2 bg-white p-2">
+    <h3 class="font-xl font-bold text-primary">{title}</h3>
     <div class="badge badge-neutral">{category}</div>
     <div class="flex gap-2">
       <div class="h-6 w-6">
@@ -31,4 +35,4 @@ const { title, category, weight, height, imgSrc } = Astro.props;
       <p>{height}</p>
     </div>
   </div>
-</div>
+</a>

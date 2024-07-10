@@ -10,24 +10,26 @@ const { icon, title } = Astro.props;
   <div
     tabindex="0"
     role="button"
-    class="border-b-white border-b-2 flex gap-2 items-center p-2 cursor-pointer"
+    class="flex cursor-pointer items-center gap-2 border-b-2 border-b-white p-2"
   >
     <div>
       <Fragment set:html={icon} />
     </div>
     <h2 class="text-lg font-bold">{title}</h2>
-    <p class="text-xl text-primary ml-auto font-bold">+</p>
+    <p class="ml-auto text-xl font-bold text-primary">+</p>
   </div>
   <div
     tabindex="0"
-    class="dropdown-content z-[1] p-2 shadow bg-neutral-100 rounded-none w-80"
+    class="dropdown-content z-[1] w-80 rounded-none bg-neutral-100 p-2 shadow"
   >
     <h3>For which tasks do you need a truck?</h3>
     <div class="flex flex-col gap-2 p-4">
       <div class="flex flex-row items-center gap-4">
-        <input type="checkbox" class="checkbox checkbox-primary rounded-none" /><a>Item 1</a>
+        <input
+          type="checkbox"
+          class="checkbox-primary checkbox rounded-none"
+        /><a>Item 1</a>
       </div>
-      
     </div>
   </div>
 </div>

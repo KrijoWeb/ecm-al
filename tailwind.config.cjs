@@ -2,17 +2,21 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        logoBg: "#ED1C24",
+        neutralLighter: "#eeeff3",
+        neutralDarker: "#565656",
+      },
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {
     themes: [
       {
-        ecm: {
+        emc: {
           primary: "#aa0020",
-          "base-100": "#ffffff",
           neutral: "#e6e7eb",
-          "neutral-lighter": "#eeeff3"
         },
       },
     ],

@@ -1,0 +1,61 @@
+---
+interface Props {
+  header?: string;
+  img?: string;
+  compactNav?: boolean;
+}
+const { header, img } = Astro.props;
+---
+
+<div
+  id="nav-container"
+  class="max-w-screen aspect-[4/1] bg-cover bg-fixed bg-top"
+  style=`background-image: url(${img});`
+>
+  <div
+    id="nav-bg"
+    class="relative flex h-full w-full flex-col items-center justify-between bg-neutral-200"
+  >
+    <slot />
+    <div id="header-bg" class="my-auto bg-logoBg">
+      <h1 class="px-6 py-4 text-5xl font-bold uppercase text-white" id="header">
+        {header}
+      </h1>
+    </div>
+    <div></div>
+  </div>
+</div>
+
+<style>
+  #header-bg {
+    transform: skew(-20deg);
+  }
+  #header {
+    transform: skew(20deg);
+  }
+</style>
+<script>
+  import { scroll } from "motion";
+  const mainNav = document.getElementById("main-nav") as HTMLDivElement;
+  const navBg = document.getElementById("nav-bg") as HTMLDivElement;
+  const navContainer = document.getElementById(
+    "nav-container",
+  ) as HTMLDivElement;
+  const netContainerHeight = navContainer.clientHeight - mainNav.clientHeight;
+  const header = document.getElementById("header-bg") as HTMLDivElement;
+  scroll(({ y }) => {
+    mainNav.style.backgroundColor = `rgba(230, 231, 235,${y.current / netContainerHeight})`;
+    let mainNavWidth =
+      66 +
+      ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) * 33;
+    let navBgOpacity = y.current / navContainer?.clientHeight! + 0.65;
+    mainNavWidth = mainNavWidth < 100 ? mainNavWidth : 100;
+    mainNav.style.width = `${mainNavWidth}vw`;
+    if (navBg)
+      navBg.style.backgroundColor = `rgba(230, 231, 235,${navBgOpacity})`;
+    if (header)
+      header.style.opacity = `${1 - y.current / (netContainerHeight / 2.7)}`;
+    if (navContainer)
+      navContainer.style.backgroundColor = `rgba(230, 231, 235,${y.current / netContainerHeight})`;
+  });
+</script>

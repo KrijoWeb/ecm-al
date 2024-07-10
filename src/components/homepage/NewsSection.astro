@@ -1,0 +1,22 @@
+---
+import MainArticle from "./MainArticle.astro";
+import Article from "./Article.astro";
+import ArrowButton from "../ArrowButton";
+---
+
+<section class="flex h-screen w-2/3 flex-col gap-8">
+  <h2 class="text-center text-6xl">Lajmet e fundit</h2>
+  <div class="flex flex-1 gap-4">
+    <div class="h-full basis-1/2">
+      <MainArticle />
+    </div>
+    <div class="flex h-full basis-1/2 flex-col justify-between [&>*]:basis-1/4">
+      <Article />
+      <Article />
+      <Article />
+    </div>
+  </div>
+  <div class="mx-auto">
+    <ArrowButton type="right" text="Shiko te gjitha" />
+  </div>
+</section>
