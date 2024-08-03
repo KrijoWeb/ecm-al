@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactCard from "../components/ContactCard.astro";
+---
+
+<Layout title="Kontakte" header="Kontakte" img="/img/karriera.jpg">
+  <div class="grid flex-1 grid-cols-4 gap-6 p-12">
+    {
+      () => {
+        const parts = [];
+        for (let i = 0; i < 10; i++) {
+          parts.push(
+            <ContactCard
+              name="Ing. Eduard Ndreu"
+              title="Inxhinier i pajisjeve te baterive"
+              tel="+355-52-901250"
+              fax="sadfc"
+              mobile="asdfvxc"
+              email="arsfdzvc"
+            />,
+          );
+        }
+        return parts;
+      }
+    }
+  </div>
+</Layout>

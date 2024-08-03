@@ -1,0 +1,25 @@
+---
+import SilhouetteIcon from "../svg/silhoutte.svg?raw";
+interface Props {
+  name: string;
+  title: string;
+  tel: string;
+  fax: string;
+  mobile: string;
+  email: string;
+}
+const { name, title, tel, fax, mobile, email } = Astro.props;
+---
+
+<div class="card border-2 border-neutral-200 bg-base-100 shadow-xl">
+  <figure class="px-10 pt-10"><Fragment set:html={SilhouetteIcon} /></figure>
+  <div class="card-body items-center text-center">
+    <h2 class="card-title"></h2>
+    <p class="border-b-4 border-primary px-4 text-xl font-semibold">{name}</p>
+    <p class="text-lg">{title}</p>
+    <p class="font-thin">Tel:{tel}</p>
+    <p class="font-thin">Fax:{fax}</p>
+    <p class="font-thin">Mob:{mobile}</p>
+    <p class="font-thin">Email:{email}</p>
+  </div>
+</div>
