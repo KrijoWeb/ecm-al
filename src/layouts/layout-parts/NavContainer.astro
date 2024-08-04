@@ -7,7 +7,7 @@ interface Props {
 const { header, img } = Astro.props;
 ---
 
-<div
+<header
   id="nav-container"
   class="max-w-screen aspect-[4/1] bg-cover bg-fixed bg-top"
   style=`background-image: url(${img});`
@@ -24,7 +24,7 @@ const { header, img } = Astro.props;
     </div>
     <div></div>
   </div>
-</div>
+</header>
 
 <style>
   #header-bg {

@@ -1,0 +1,81 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { HansaflexProducts } from "../../components/hansaflex/Products.tsx";
+---
+
+<Layout title="Hansaflex products" header="hansaflex" img="/img/about_bg.png">
+  <main class="mx-auto mb-12 flex w-3/4 flex-col gap-20">
+    <div class="z-10 -mt-20 mb-20 h-[25vh] bg-white py-6">
+      <div class="mx-auto flex w-2/3 flex-col items-center gap-6">
+        <h2 class="text-3xl uppercase">Lorem ipsum</h2>
+        <p class="text-justify">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Necessitatibus deleniti earum ratione non doloribus magnam sint soluta
+          veniam, suscipit assumenda consequuntur, quaerat sequi quis tenetur
+          impedit voluptatibus, libero perferendis voluptatem? Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Commodi voluptas ratione animi
+          perspiciatis nostrum quia sunt corrupti eum, nihil deleniti laudantium
+          labore repudiandae delectus vel recusandae esse quod dolorem enim.
+          Provident reprehenderit et voluptate quas. Non quae debitis ab vitae
+          recusandae fuga quia illum veniam rerum error deleniti magni, aut sint
+          deserunt tempora fugit vero dicta nobis? Eligendi vel dolorem
+          voluptate. Facilis quos debitis, consectetur quia libero quod iste
+          eveniet error minima! Nemo mollitia suscipit officiis, praesentium
+          laborum voluptas ab temporibus, dolore doloremque eos, ex debitis
+          natus esse dicta reiciendis quae sequi incidunt obcaecati optio
+          perspiciatis quam voluptates! Rem, nobis. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Ducimus rerum, perferendis veniam
+          temporibus laudantium adipisci fuga nesciunt eaque vel illo!
+        </p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-8">
+      <figure class="flex-1">
+        <img src="/img/hansaflex-1.jpeg" alt="Hansaflex image 1" />
+      </figure>
+      <div class="flex flex-1 flex-col items-center gap-8">
+        <h2 class="text-3xl font-semibold capitalize">title 1</h2>
+        <p class="text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium,
+          ea ipsam saepe adipisci magni quod dolorem explicabo ad unde enim a
+          blanditiis voluptas atque aperiam dignissimos vitae quo ex
+          consequuntur. Lorem, ipsum dolor sit amet consectetur adipisicing
+          elit. Ex ipsam nam suscipit tenetur a sed eveniet dolorum aliquam
+          tempore, eum voluptatibus ea qui eligendi commodi in ad laboriosam
+          ratione? Eveniet! Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Earum nam dolores, nisi cumque ducimus accusamus nobis minus ad
+          esse, id excepturi enim molestiae corporis. Debitis inventore sit ad
+          fuga libero? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Id assumenda laborum quis cupiditate quo, sint non odio quasi dolorum,
+          voluptate aspernatur unde error ipsam pariatur atque. Repellendus odio
+          unde doloribus?
+        </p>
+      </div>
+    </div>
+    <div class="flex items-center gap-8">
+      <div class="flex flex-1 flex-col items-center gap-8">
+        <h2 class="text-3xl font-semibold capitalize">title 2</h2>
+        <p class="text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium,
+          ea ipsam saepe adipisci magni quod dolorem explicabo ad unde enim a
+          blanditiis voluptas atque aperiam dignissimos vitae quo ex
+          consequuntur. Lorem, ipsum dolor sit amet consectetur adipisicing
+          elit. Ex ipsam nam suscipit tenetur a sed eveniet dolorum aliquam
+          tempore, eum voluptatibus ea qui eligendi commodi in ad laboriosam
+          ratione? Eveniet! Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Earum nam dolores, nisi cumque ducimus accusamus nobis minus ad
+          esse, id excepturi enim molestiae corporis. Debitis inventore sit ad
+          fuga libero? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Id assumenda laborum quis cupiditate quo, sint non odio quasi dolorum,
+          voluptate aspernatur unde error ipsam pariatur atque. Repellendus odio
+          unde doloribus?
+        </p>
+      </div>
+      <figure class="flex-1">
+        <img src="/img/hansaflex-2.jpeg" alt="Hansaflex image 2" />
+      </figure>
+    </div>
+    <HansaflexProducts client:only />
+  </main>
+</Layout>
