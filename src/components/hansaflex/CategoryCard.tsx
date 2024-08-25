@@ -7,8 +7,8 @@ interface Props {
 
 export const CategoryCard: Component<Props> = (props) => {
   return (
-    <button class="rounded-3xl bg-primary flex-1 flex items-center justify-center hover:bg-primary/75" onmouseover={props.onHover}>
-      <p class="text-center text-white">
+    <button class="group rounded-3xl flex-1 flex items-center justify-center hover:bg-primary-content" onmouseover={props.onHover}>
+      <p class="text-center text-primary-content group-hover:text-primary font-semibold text-lg">
         {props.title}
       </p>
     </button>

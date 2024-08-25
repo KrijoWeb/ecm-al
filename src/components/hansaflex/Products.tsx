@@ -17,7 +17,7 @@ export const HansaflexProducts: Component = () => {
       animate(
         ".animate-appear",
         { opacity: ["0", "1"] },
-        { duration: 0.75, delay: stagger(0.1) },
+        { duration: 1, delay: stagger(0.15) },
       );
     }
   });
@@ -27,10 +27,10 @@ export const HansaflexProducts: Component = () => {
         <figure class="animate-appear h-3/4">
           <img src={categories[selectedCategory()]?.image} class="h-full" />
         </figure>
-        <h2 class="animate-appear">{categories[selectedCategory()]?.name}</h2>
-        <p class="animate-appear">{categories[selectedCategory()]?.description}</p>
+        <h2 class="animate-appear text-2xl font-semibold">{categories[selectedCategory()]?.name}</h2>
+        <p class="animate-appear font-thin text-sm">{categories[selectedCategory()]?.description}</p>
       </div>
-      <div class="flex flex-col basis-5/12 h-full">
+      <div class="flex flex-col basis-5/12 h-full bg-primary rounded-3xl">
         {categories.map((e, i) => (
           <CategoryCard title={e.name} onHover={() => setSelectedCategory(i)} />
         ))}

@@ -1,10 +1,8 @@
 ---
 interface Props {
-  header?: string;
   img?: string;
-  compactNav?: boolean;
 }
-const { header, img } = Astro.props;
+const { img } = Astro.props;
 ---
 
 <header
@@ -35,9 +33,9 @@ const { header, img } = Astro.props;
       <button class="aspect-video flex-1">
         <img class="h-full w-full" src="/img/hoopecke.jpeg" alt="Hoppecke" />
       </button>
-      <button class="aspect-video flex-1">
+      <a class="aspect-video flex-1" href="/products/hansaflex">
         <img class="h-full w-full" src="/img/hansa-carousel.png" alt="" />
-      </button>
+      </a>
       <button class="aspect-video flex-1">
         <img class="h-full w-full" src="/img/home-bg.png" alt="" />
       </button>
