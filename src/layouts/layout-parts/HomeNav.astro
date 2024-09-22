@@ -52,7 +52,9 @@ const { img } = Astro.props;
     const netContainerHeight = navContainer.clientHeight - mainNav.clientHeight;
     const header = document.getElementById("header-bg") as HTMLDivElement;
     scroll(({ y }) => {
-      mainNav.style.backgroundColor = `rgba(230, 231, 235,${y.current / netContainerHeight})`;
+      mainNav.style.backgroundColor = `rgba(230, 231, 235,${
+        y.current / netContainerHeight
+      })`;
       let mainNavWidth =
         66 +
         ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) *
@@ -65,7 +67,9 @@ const { img } = Astro.props;
       if (header)
         header.style.opacity = `${1 - y.current / (netContainerHeight / 2.7)}`;
       if (navContainer)
-        navContainer.style.backgroundColor = `rgba(230, 231, 235,${y.current / netContainerHeight})`;
+        navContainer.style.backgroundColor = `rgba(230, 231, 235,${
+          y.current / netContainerHeight
+        })`;
     });
   </script>
 </header>
