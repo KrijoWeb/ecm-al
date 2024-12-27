@@ -15,7 +15,23 @@ const logos = [InstaLogo, LocationSvg, EmailSvg];
     class="mx-auto flex w-[66vw] items-stretch border-b-2 border-b-neutral-400 [&>*]:py-4"
   >
     <nav class="flex flex-1 items-center justify-around">
-      <a href="#" class="text-gray-800 hover:text-gray-600">PRODUKTET</a>
+      <div class="dropdown dropdown-hover">
+        <div
+          tabindex="0"
+          role="button"
+          class="text-gray-800 hover:text-gray-600"
+        >
+          PRODUKTET
+        </div>
+        <ul
+          tabindex="0"
+          class="menu dropdown-content z-[100] w-52 rounded-box bg-base-100 p-2 shadow"
+        >
+          <li><a>Linde</a></li>
+          <li><a>HansaFlex</a></li>
+          <li><a>Hoopecke</a></li>
+        </ul>
+      </div>
       <a href="/services" class="text-gray-800 hover:text-gray-600">SHËRBIMET</a
       >
       <a href="/product-finder" class="text-gray-800 hover:text-gray-600"

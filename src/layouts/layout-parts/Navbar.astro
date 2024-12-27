@@ -21,9 +21,17 @@ const { header, img, compactNav } = Astro.props;
           <img src="/img/emc_logo.png" alt="Logo" class="basis-[14%]" />
         </a>
         <nav class="flex flex-1 items-center justify-around">
-          <a href="#" class="text-gray-800 hover:text-gray-600">
-            PRODUKTET
-          </a>
+          <details class="dropdown text-gray-800 hover:text-gray-600">
+            <summary>PRODUKTET</summary>
+            <ul class="menu dropdown-content z-[100] w-52 rounded-box bg-base-100 p-2 shadow">
+              <li>
+                <a>Item 1</a>
+              </li>
+              <li>
+                <a>Item 2</a>
+              </li>
+            </ul>
+          </details>
           <a href="#" class="text-gray-800 hover:text-gray-600">
             SHËRBIMET
           </a>

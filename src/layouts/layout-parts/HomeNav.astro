@@ -7,12 +7,12 @@ const { img } = Astro.props;
 
 <header
   id="nav-container"
-  class="h-svh w-svw bg-cover bg-fixed bg-top"
+  class="h-lvh w-full bg-cover bg-fixed bg-top bg-blend-lighten"
   style=`background-image: url(${img});`
 >
   <div
     id="nav-bg"
-    class="relative flex h-full w-full flex-col items-center bg-neutral-200"
+    class="relative flex h-full flex-col items-center bg-neutral-200"
   >
     <slot />
     <div
@@ -25,51 +25,121 @@ const { img } = Astro.props;
       <h1 class="text-6xl font-bold">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
       </h1>
-      <button class="btn btn-primary text-lg font-bold uppercase"
-        >Me Shume
-      </button>
+      <a class="btn btn-primary text-lg font-bold uppercase">Me Shume </a>
     </div>
     <div class="absolute bottom-12 right-12 flex w-1/3 gap-4">
-      <button class="aspect-video flex-1">
+      <button id="hp" class="aspect-video flex-1">
         <img class="h-full w-full" src="/img/hoopecke.jpeg" alt="Hoppecke" />
       </button>
-      <a class="aspect-video flex-1" href="/products/hansaflex">
+      <button id="ha" class="aspect-video flex-1">
         <img class="h-full w-full" src="/img/hansa-carousel.png" alt="" />
-      </a>
-      <button class="aspect-video flex-1">
+      </button>
+      <button id="li" class="aspect-video flex-1">
         <img class="h-full w-full" src="/img/home-bg.png" alt="" />
       </button>
     </div>
   </div>
+</header>
+<script>
+  import { scroll, animate } from "motion";
+  const mainNav = document.getElementById("main-nav") as HTMLDivElement;
+  const navBg = document.getElementById("nav-bg") as HTMLDivElement;
+  const hpBtn = document.getElementById("hp") as HTMLDivElement;
+  const haBtn = document.getElementById("ha") as HTMLDivElement;
+  const liBtn = document.getElementById("li") as HTMLDivElement;
+  const navContainer = document.getElementById(
+    "nav-container",
+  ) as HTMLDivElement;
 
-  <script>
-    import { scroll } from "motion";
-    const mainNav = document.getElementById("main-nav") as HTMLDivElement;
-    const navBg = document.getElementById("nav-bg") as HTMLDivElement;
-    const navContainer = document.getElementById(
-      "nav-container",
-    ) as HTMLDivElement;
-    const netContainerHeight = navContainer.clientHeight - mainNav.clientHeight;
-    const header = document.getElementById("header-bg") as HTMLDivElement;
-    scroll(({ y }) => {
-      mainNav.style.backgroundColor = `rgba(230, 231, 235,${
+  const changeCarousel = (
+    title: string,
+    text: string,
+    href: string,
+    imgUrl: string,
+  ) => {
+    navContainer.getElementsByTagName("a")[0].href = href;
+    const titleEl = navContainer.getElementsByTagName("p")[0];
+    const textEl = navContainer.getElementsByTagName("h1")[0];
+    animate(
+      (progress) => {
+        navContainer.style.backgroundColor = `rgba(255,255,255,${progress})`;
+      },
+      { duration: 0.25 },
+    );
+    animate("#header-bg", { opacity: 0 }, { duration: 0.25 }).finished.then(
+      () => {
+        titleEl.innerText = title;
+        textEl.innerText = text;
+        navContainer.style.backgroundImage = `url(${imgUrl})`;
+        animate("#header-bg", { opacity: 1 }, { duration: 0.25 });
+        animate(
+          (progress) => {
+            navContainer.style.backgroundColor = `rgba(255,255,255,${1 - progress})`;
+          },
+          { duration: 0.25 },
+        );
+      },
+    );
+  };
+
+  hpBtn.onclick = () => {
+    changeCarousel(
+      "Hoppecke",
+      "Velit cursus nibh sed fermentum tempus enim et elit ut.",
+      "#",
+      "/img/hoopecke.jpeg",
+    );
+  };
+
+  haBtn.onclick = () => {
+    changeCarousel(
+      "HansaFlex",
+      "Velit cursus nibh sed fermentum tempus enim et elit ut.",
+      "#",
+      "/img/hansa-carousel.png",
+    );
+  };
+
+  liBtn.onclick = () => {
+    changeCarousel(
+      "Linde",
+      "Velit cursus nibh sed fermentum tempus enim et elit ut.",
+      "#",
+      "/img/home-bg.png",
+    );
+  };
+  let i = 1;
+
+  window.setInterval(() => {
+    if (i % 3 === 0) {
+      liBtn.click();
+    } else if (i % 2 === 0) {
+      haBtn.click();
+    } else {
+      hpBtn.click();
+    }
+    i++;
+  }, 5000);
+
+  const netContainerHeight = navContainer.clientHeight - mainNav.clientHeight;
+  const header = document.getElementById("header-bg") as HTMLDivElement;
+  scroll(({ y }) => {
+    mainNav.style.backgroundColor = `rgba(230, 231, 235,${
+      y.current / netContainerHeight
+    })`;
+    let mainNavWidth =
+      66 +
+      ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) * 33;
+    let navBgOpacity = y.current / navContainer?.clientHeight! + 0.65;
+    mainNavWidth = mainNavWidth < 100 ? mainNavWidth : 100;
+    mainNav.style.width = `${mainNavWidth}vw`;
+    if (navBg)
+      navBg.style.backgroundColor = `rgba(230, 231, 235,${navBgOpacity})`;
+    if (header)
+      header.style.opacity = `${1 - y.current / (netContainerHeight / 2.7)}`;
+    if (navContainer)
+      navContainer.style.backgroundColor = `rgba(230, 231, 235,${
         y.current / netContainerHeight
       })`;
-      let mainNavWidth =
-        66 +
-        ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) *
-          33;
-      let navBgOpacity = y.current / navContainer?.clientHeight! + 0.65;
-      mainNavWidth = mainNavWidth < 100 ? mainNavWidth : 100;
-      mainNav.style.width = `${mainNavWidth}vw`;
-      if (navBg)
-        navBg.style.backgroundColor = `rgba(230, 231, 235,${navBgOpacity})`;
-      if (header)
-        header.style.opacity = `${1 - y.current / (netContainerHeight / 2.7)}`;
-      if (navContainer)
-        navContainer.style.backgroundColor = `rgba(230, 231, 235,${
-          y.current / netContainerHeight
-        })`;
-    });
-  </script>
-</header>
+  });
+</script>
