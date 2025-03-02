@@ -15,7 +15,7 @@ const ServiceCard: Component<Props> = (props) => {
       classList={{ "flex-[2_1_0]": props.active, "flex-1": !props.active }}
     >
       <div class="h-[35vh] w-full">
-        <img src="/img/service.jpeg" alt="" class="h-full object-cover" />
+        <img src={props.img} alt="" class="h-full object-cover" />
       </div>
       <h2
         class="text-center font-semibold"
