@@ -2,7 +2,7 @@ import { createEffect, createSignal, type Component } from "solid-js";
 import ServiceCard from "./ServiceCard";
 import ArrowButton from "../ArrowButton";
 
-const [active, setActive] = createSignal<0 | 1 | 2>(0);
+const [active, setActive] = createSignal<number>(0);
 export const ServiceCarouselControls: Component = () => {
   createEffect(() => console.log(active()));
   return (
