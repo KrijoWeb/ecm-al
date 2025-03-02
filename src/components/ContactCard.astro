@@ -24,6 +24,6 @@ const { name, title, tel, fax, mobile, email } = Astro.props;
     <a class="font-thin" href={`tel:${mobile.trim().replaceAll("-", "")}`}>
       Mob: {mobile}
     </a>
-    <a class="font-thin" href={`email:${email}`}>Email: {email}</a>
+    <a class="font-thin" href={`mailto:${email}`}>Email: {email}</a>
   </div>
 </div>
