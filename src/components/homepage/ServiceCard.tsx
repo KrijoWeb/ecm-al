@@ -10,7 +10,7 @@ interface Props {
 const ServiceCard: Component<Props> = (props) => {
   return (
     <div
-      class="center flex flex-col gap-4 transition-all duration-300 "
+      class="center flex flex-col gap-4 transition-all duration-300"
       classList={{ "flex-[2_1_0]": props.active, "flex-1": !props.active }}
     >
       <div class="h-[35vh] w-full">

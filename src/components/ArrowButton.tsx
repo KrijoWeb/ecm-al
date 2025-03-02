@@ -19,38 +19,33 @@ const ArrowButtonI: Component<Props> = (props) => {
         : ArrowEllipse;
   return (
     <>
-      {
-        props.text ? (
-          <p class="transition group-hover:-translate-x-6">{props.text}</p>
-        ) : null
-      }
-      < div
+      {props.text ? (
+        <p class="transition group-hover:-translate-x-6">{props.text}</p>
+      ) : null}
+      <div
         class="transition"
         classList={{
           "group-hover:translate-x-6":
             props.type === "right" || props.type === "ellipsis",
           "group-hover:-translate-x-6": props.type === "left",
-        }
-        }
+        }}
       >
         <div innerHTML={arrow}></div>
-      </div >
+      </div>
     </>
-  )
-}
+  );
+};
 
 const ArrowButton: Component<Props> = (props) => {
-  return (props.onclick ?
+  return props.onclick ? (
     <button
-      class="flex items-center gap-2 transition group"
+      class="group flex items-center gap-2 transition"
       onclick={props.onclick}
     >
       <ArrowButtonI type={props.type} text={props.text} />
     </button>
-    :
-    <a
-      class="flex items-center gap-2 transition group"
-      href={props.link}>
+  ) : (
+    <a class="group flex items-center gap-2 transition" href={props.link}>
       <ArrowButtonI type={props.type} text={props.text} />
     </a>
   );
