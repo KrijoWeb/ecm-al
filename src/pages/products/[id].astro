@@ -27,7 +27,7 @@ const selectedProduct = lindeProducts.find((p) => p.id == id);
       </div>
       <div class="flex justify-between">
         <div class="basis-5/12">
-          <img src={`/img/linde/${selectedProduct.photo}.avif`} />
+          <img src={`/img/linde/${selectedProduct?.photo}.avif`} />
         </div>
         <div class="flex basis-1/2 flex-col justify-around">
           <div class="flex flex-col gap-4">
@@ -39,19 +39,19 @@ const selectedProduct = lindeProducts.find((p) => p.id == id);
                 <div class="h-12 w-12">
                   <Fragment set:html={Kilogram} />
                 </div>
-                <p>{selectedProduct.lifting_capacity_kg} kg</p>
+                <p>{selectedProduct?.lifting_capacity_kg} kg</p>
               </div>
               <div class="flex flex-col">
                 <div class="h-12 w-12">
                   <Fragment set:html={Height} />
                 </div>
-                <p>{selectedProduct.lifting_height_mm} mm</p>
+                <p>{selectedProduct?.lifting_height_mm} mm</p>
               </div>
               <div class="flex flex-col">
                 <div class="h-12 w-12">
                   <Fragment set:html={Engine} />
                 </div>
-                <p>{selectedProduct.movement_system}</p>
+                <p>{selectedProduct?.movement_system}</p>
               </div>
             </div>
           </div>
