@@ -26,13 +26,13 @@ const { id, title, category, weight, height, imgSrc } = Astro.props;
       <div class="h-6 w-6">
         <Fragment set:html={Weight} />
       </div>
-      <p>{weight}</p>
+      <p>{weight} kg</p>
     </div>
     <div class="flex gap-2">
       <div class="h-6 w-6">
         <Fragment set:html={Height} />
       </div>
-      <p>{height}</p>
+      <p>{height} mm</p>
     </div>
   </div>
 </a>
