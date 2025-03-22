@@ -113,6 +113,7 @@ const { img } = Astro.props;
   let i = 1;
 
   window.setInterval(() => {
+    if (window.scrollY / window.innerHeight >= 0.2) return;
     if (i % 3 === 0) {
       liBtn.click();
     } else if (i % 2 === 0) {
@@ -132,13 +133,13 @@ const { img } = Astro.props;
     let mainNavWidth =
       66 +
       ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) * 33;
-    let navBgOpacity = y.current / navContainer?.clientHeight! + 0.65;
+    let navBgOpacity = y.current / navContainer?.clientHeight! / 2 + 0.65;
     mainNavWidth = mainNavWidth < 100 ? mainNavWidth : 100;
     mainNav.style.width = `${mainNavWidth}vw`;
     if (navBg)
       navBg.style.backgroundColor = `rgba(230, 231, 235,${navBgOpacity})`;
     if (header)
-      header.style.opacity = `${1 - y.current / (netContainerHeight / 2.7)}`;
+      header.style.opacity = `${1 - y.current / (netContainerHeight / 2.7) / 2}`;
     if (navContainer)
       navContainer.style.backgroundColor = `rgba(230, 231, 235,${
         y.current / netContainerHeight
