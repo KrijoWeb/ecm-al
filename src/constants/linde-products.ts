@@ -7,7 +7,7 @@ export const lindeProducts = [
     movement_system: "Manual",
     product_type: "Transpalete",
     ex_protection: "Jo",
-    pdf_file: "01 M10X/XE",
+    pdf_file: "01 M10X:XE",
     photo: "01_M10X_XE",
   },
   {

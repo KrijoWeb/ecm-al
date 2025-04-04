@@ -20,9 +20,9 @@ const selectedProduct = lindeProducts.find((p) => p.id == id);
     <div class="mx-auto w-2/3 py-20">
       <div class="breadcrumbs text-sm">
         <ul>
-          <li><a>Home</a></li>
-          <li><a>Documents</a></li>
-          <li>Add Document</li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/products/linde">Linde</a></li>
+          <li>{selectedProduct?.description}</li>
         </ul>
       </div>
       <div class="flex justify-between">
@@ -61,7 +61,7 @@ const selectedProduct = lindeProducts.find((p) => p.id == id);
           </div>
         </div>
       </div>
-      <a class="btn text-lg font-thin text-primary">
+      <a class="btn text-lg font-thin text-primary" href={`/docs/${selectedProduct?.pdf_file}.pdf`} download>
         <div class="h-6 w-6 fill-primary">
           <Fragment set:html={Download} />
         </div>
