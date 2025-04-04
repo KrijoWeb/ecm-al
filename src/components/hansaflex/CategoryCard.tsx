@@ -9,7 +9,7 @@ interface Props {
 export const CategoryCard: Component<Props> = (props) => {
   return (
     <button
-      class="group flex flex-1 items-center justify-center rounded-3xl hover:bg-primary-content"
+      class="group flex flex-1 items-center justify-center rounded-3xl border-b-2 border-red-100 hover:bg-primary-content"
       onmouseover={props.onHover}
       onclick={props.onClick}
     >
