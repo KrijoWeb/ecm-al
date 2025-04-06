@@ -11,11 +11,11 @@ interface Props {
 const ServiceCard: Component<Props> = (props) => {
   return (
     <div
-      class="center flex flex-col gap-4 transition-all duration-300"
+      class="center flex flex-col justify-center gap-4 transition-all duration-300"
       classList={{ "flex-[2_1_0]": props.active, "flex-1": !props.active }}
     >
       <div class="h-[35vh] w-full">
-        <img src={props.img} alt="" class="h-full object-cover" />
+        <img src={props.img} alt="" class="h-full object-cover m-auto" />
       </div>
       <h2
         class="text-center font-semibold"
@@ -24,7 +24,7 @@ const ServiceCard: Component<Props> = (props) => {
         {props.title}
       </h2>
       <p class="line-clamp-3 grow-0 text-justify">{props.text}</p>
-      <div class="self-center">
+      <div class="mt-auto self-center">
         <ArrowButton link="services" type="right" text="Lexo me shume" />
       </div>
     </div>

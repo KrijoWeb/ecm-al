@@ -27,15 +27,21 @@ const { img } = Astro.props;
         Me Shume
       </a>
     </div>
-    <div class="absolute bottom-12 right-12 flex w-1/3 gap-4">
-      <button id="hp" class="aspect-video flex-1">
-        <img class="h-full w-full" src="/img/hoopecke.webp" alt="Hoppecke" />
-      </button>
-      <button id="ha" class="aspect-video flex-1">
-        <img class="h-full w-full" src="/img/hansa-carousel.webp" alt="" />
-      </button>
+    <div
+      class="absolute bottom-12 right-12 flex w-1/3 gap-4 rounded-lg bg-neutral-200/75 p-4"
+    >
       <button id="li" class="aspect-video flex-1">
         <img class="h-full w-full" src="/img/home-bg.webp" alt="" />
+      </button>
+      <button id="ha" class="aspect-video flex-1 opacity-60">
+        <img class="h-full w-full" src="/img/hansaflex_carousel.webp" alt="" />
+      </button>
+      <button id="hp" class="aspect-video flex-1 opacity-60">
+        <img
+          class="h-full w-full"
+          src="/img/hoppecke_carousel.webp"
+          alt="Hoppecke"
+        />
       </button>
     </div>
   </div>
@@ -56,11 +62,17 @@ const { img } = Astro.props;
     text: string,
     href: string,
     imgUrl: string,
+    btnIndex: number,
   ) => {
     navContainer.getElementsByTagName("a")[0].href = href;
     const titleEl = navContainer.getElementsByTagName("p")[0];
     const textEl = navContainer.getElementsByTagName("h1")[0];
     const btnEl = navContainer.querySelector("#more-link") as HTMLAnchorElement;
+    const btnArray = [hpBtn, haBtn, liBtn];
+    btnArray.forEach((b, i) => {
+      if (i === btnIndex) btnArray[i].style.opacity = "1";
+      else btnArray[i].style.opacity = "0.6";
+    });
     animate(
       (progress) => {
         navContainer.style.backgroundColor = `rgba(255,255,255,${progress})`;
@@ -84,45 +96,50 @@ const { img } = Astro.props;
     );
   };
 
-  hpBtn.onclick = () => {
-    changeCarousel(
-      "Hoppecke",
-      "Velit cursus nibh sed fermentum tempus enim et elit ut.",
-      "#",
-      "/img/hoopecke.webp",
-    );
-  };
 
-  haBtn.onclick = () => {
-    changeCarousel(
-      "HansaFlex",
-      "Velit cursus nibh sed fermentum tempus enim et elit ut.",
-      "/products/hansaflex",
-      "/img/hansa-carousel.webp",
-    );
-  };
 
-  liBtn.onclick = () => {
+  liBtn.onclick = (e) => {
     changeCarousel(
       "Linde",
       "Velit cursus nibh sed fermentum tempus enim et elit ut.",
       "/products/linde",
       "/img/home-bg.webp",
+      0,
     );
   };
-  let i = 1;
 
+  haBtn.onclick = (e) => {
+    changeCarousel(
+      "HansaFlex",
+      "Velit cursus nibh sed fermentum tempus enim et elit ut.",
+      "/products/hansaflex",
+      "/img/hansaflex_carousel.webp",
+      1,
+    );
+  };
+
+  hpBtn.onclick = (e) => {
+    changeCarousel(
+      "Hoppecke",
+      "Velit cursus nibh sed fermentum tempus enim et elit ut.",
+      "#",
+      "/img/hoppecke_carousel.webp",
+      2,
+    );
+  };
+
+  let i = 1;
   window.setInterval(() => {
     if (window.scrollY / window.innerHeight >= 0.2) return;
     if (i % 3 === 0) {
-      liBtn.click();
+      hpBtn.click();
     } else if (i % 2 === 0) {
       haBtn.click();
     } else {
-      hpBtn.click();
+      liBtn.click();
     }
     i++;
-  }, 5000);
+  }, 10000);
 
   const netContainerHeight = navContainer.clientHeight - mainNav.clientHeight;
   const header = document.getElementById("header-bg") as HTMLDivElement;
@@ -133,7 +150,7 @@ const { img } = Astro.props;
     let mainNavWidth =
       66 +
       ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) * 33;
-    let navBgOpacity = y.current / navContainer?.clientHeight! / 2 + 0.65;
+    let navBgOpacity = y.current / navContainer?.clientHeight! / 2 + 0.45;
     mainNavWidth = mainNavWidth < 100 ? mainNavWidth : 100;
     mainNav.style.width = `${mainNavWidth}vw`;
     if (navBg)

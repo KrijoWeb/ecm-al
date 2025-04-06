@@ -54,9 +54,13 @@ import ProductCard from "../HiddenDescriptionCard.astro";
   }
 </style>
 <script>
-const backBtn = document.getElementById("sbb")
-const forwardBtn = document.getElementById("sfb")
-const carousel = document.getElementById("product-carousel")
-backBtn!.onclick = ()=>{carousel?.scrollTo(carousel.scrollLeft - carousel.scrollWidth/3,0)}
-forwardBtn!.onclick = ()=>{carousel?.scrollTo(carousel.scrollLeft + carousel.scrollWidth/3,0)}
+  const backBtn = document.getElementById("sbb");
+  const forwardBtn = document.getElementById("sfb");
+  const carousel = document.getElementById("product-carousel");
+  backBtn!.onclick = () => {
+    carousel?.scrollTo(carousel.scrollLeft - carousel.scrollWidth / 3, 0);
+  };
+  forwardBtn!.onclick = () => {
+    carousel?.scrollTo(carousel.scrollLeft + carousel.scrollWidth / 3, 0);
+  };
 </script>
