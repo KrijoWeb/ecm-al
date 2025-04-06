@@ -28,7 +28,7 @@ const { img } = Astro.props;
       </a>
     </div>
     <div
-      class="absolute bottom-12 right-12 flex w-1/3 gap-4 rounded-lg bg-neutral-200/75 p-4"
+      class="absolute bottom-12 right-12 flex w-1/3 gap-4 rounded-xl bg-neutral-200/75 p-4"
     >
       <button id="li" class="aspect-video flex-1">
         <img class="h-full w-full" src="/img/home-bg.webp" alt="" />
@@ -150,13 +150,13 @@ const { img } = Astro.props;
     let mainNavWidth =
       66 +
       ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) * 33;
-    let navBgOpacity = y.current / navContainer?.clientHeight! / 2 + 0.45;
+    let navBgOpacity = y.current / navContainer?.clientHeight! / 2 + 0.25;
     mainNavWidth = mainNavWidth < 100 ? mainNavWidth : 100;
     mainNav.style.width = `${mainNavWidth}vw`;
     if (navBg)
       navBg.style.backgroundColor = `rgba(230, 231, 235,${navBgOpacity})`;
     if (header)
-      header.style.opacity = `${1 - y.current / (netContainerHeight / 2.7) / 4}`;
+      header.style.opacity = `${1 - y.current / (netContainerHeight / 2.7) / 5}`;
     if (navContainer)
       navContainer.style.backgroundColor = `rgba(230, 231, 235,${
         y.current / netContainerHeight
