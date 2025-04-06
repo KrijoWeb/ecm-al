@@ -61,7 +61,11 @@ const selectedProduct = lindeProducts.find((p) => p.id == id);
           </div>
         </div>
       </div>
-      <a class="btn text-lg font-thin text-primary" href={`/docs/${selectedProduct?.pdf_file}.pdf`} download>
+      <a
+        class="btn text-lg font-thin text-primary"
+        href={`/docs/${selectedProduct?.pdf_file}.pdf`}
+        download
+      >
         <div class="h-6 w-6 fill-primary">
           <Fragment set:html={Download} />
         </div>
@@ -86,15 +90,18 @@ const selectedProduct = lindeProducts.find((p) => p.id == id);
 
     <h1 class="text-center text-3xl">Produkte te ngjashme</h1>
     <div class="flex gap-10">
-      {Array.from({length:4},()=>Math.floor(Math.random()*lindeProducts.length))
-      .map(i=>
-      (<SimilarProductCard
-        img={`/img/linde/${ lindeProducts.at(i)?.photo }.avif`}
-        name={lindeProducts.at(i)?.description!}
-        weight={ lindeProducts.at(i)?.lifting_capacity_kg!}
-        height={ lindeProducts.at(i)?.lifting_height_mm!}
-      />))}
-      
+      {
+        Array.from({ length: 4 }, () =>
+          Math.floor(Math.random() * lindeProducts.length),
+        ).map((i) => (
+          <SimilarProductCard
+            img={`/img/linde/${lindeProducts.at(i)?.photo}.avif`}
+            name={lindeProducts.at(i)?.description!}
+            weight={lindeProducts.at(i)?.lifting_capacity_kg!}
+            height={lindeProducts.at(i)?.lifting_height_mm!}
+          />
+        ))
+      }
     </div>
   </div>
   <script>

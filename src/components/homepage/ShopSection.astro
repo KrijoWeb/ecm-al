@@ -5,14 +5,15 @@ import ProductCard from "../HiddenDescriptionCard.astro";
 
 <section
   id="products-section"
-  class="flex h-screen w-full flex-col items-center justify-around bg-neutral-300"
+  class="flex h-screen w-full flex-col items-center justify-around bg-neutral-300 py-4"
 >
   <div class="flex flex-col gap-4 text-center">
     <h1 class="text-6xl font-semibold text-white">Visit Our Store</h1>
     <h2 class="text-3xl font-thin text-white">Check out our products below</h2>
   </div>
   <div
-    class="flex h-2/3 w-3/4 gap-12 overflow-x-auto overflow-y-clip rounded-box p-4 [&>*]:aspect-[3/4]"
+    id="product-carousel"
+    class="carousel carousel-center w-5/6 flex-1 space-x-4 rounded-box p-4 [&>*]:aspect-[3/4]"
   >
     <ProductCard
       img="/img/produkt_shop.webp"
@@ -41,14 +42,21 @@ import ProductCard from "../HiddenDescriptionCard.astro";
     />
   </div>
   <div class="flex w-1/4 items-center justify-between">
-    <ArrowButton type="left" />
-    <ArrowButton type="right" text="NEXT" />
+    <ArrowButton id="sbb" type="left" />
+    <ArrowButton id="sfb" type="right" text="NEXT" />
   </div>
 </section>
 <style>
   #products-section {
-    ::-webkit-scrollbar {
+    &::-webkit-scrollbar {
       display: none;
     }
   }
 </style>
+<script>
+const backBtn = document.getElementById("sbb")
+const forwardBtn = document.getElementById("sfb")
+const carousel = document.getElementById("product-carousel")
+backBtn.onclick = ()=>{carousel?.scrollTo(carousel.scrollLeft - carousel.scrollWidth/3,0)}
+forwardBtn.onclick = ()=>{carousel?.scrollTo(carousel.scrollLeft + carousel.scrollWidth/3,0)}
+</script>

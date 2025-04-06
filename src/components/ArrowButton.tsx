@@ -4,6 +4,7 @@ import ArrowRight from "../svg/arrow-right.svg?raw";
 import ArrowEllipse from "../svg/arrow-ellipse.svg?raw";
 
 interface Props {
+  id?: string;
   type: "left" | "right" | "ellipsis";
   text?: string;
   link?: string;
@@ -39,13 +40,18 @@ const ArrowButtonI: Component<Props> = (props) => {
 const ArrowButton: Component<Props> = (props) => {
   return props.onclick ? (
     <button
+      id={props.id}
       class="group flex items-center gap-2 transition"
       onclick={props.onclick}
     >
       <ArrowButtonI type={props.type} text={props.text} />
     </button>
   ) : (
-    <a class="group flex items-center gap-2 transition" href={props.link}>
+    <a
+      id={props.id}
+      class="group flex items-center gap-2 transition"
+      href={props.link}
+    >
       <ArrowButtonI type={props.type} text={props.text} />
     </a>
   );
