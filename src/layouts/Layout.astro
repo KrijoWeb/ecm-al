@@ -35,25 +35,6 @@ const { title, header, img, compactNav } = Astro.props;
         background: #aa0020;
       }
     </style>
-  </head>
-  {
-    isHome ? (
-      <HomeNav img="/img/home-bg.webp">
-        <MainNav />
-      </HomeNav>
-    ) : compactNav ? (
-      <MainNav />
-    ) : (
-      <NavContainer header={header} img={img}>
-        <MainNav />
-      </NavContainer>
-    )
-  }
-  <body class="max-w-screen flex min-h-screen flex-col">
-    <div class="flex-1">
-      <slot />
-    </div>
-    <Footer />
     <script is:inline>
       ((g) => {
         var h,
@@ -96,5 +77,24 @@ const { title, header, img, compactNav } = Astro.props;
         // Add other bootstrap parameters as needed, using camel case.
       });
     </script>
+  </head>
+  {
+    isHome ? (
+      <HomeNav img="/img/home-bg.webp">
+        <MainNav />
+      </HomeNav>
+    ) : compactNav ? (
+      <MainNav />
+    ) : (
+      <NavContainer header={header} img={img}>
+        <MainNav />
+      </NavContainer>
+    )
+  }
+  <body class="max-w-screen flex min-h-screen flex-col">
+    <div class="flex-1">
+      <slot />
+    </div>
+    <Footer />
   </body>
 </html>
