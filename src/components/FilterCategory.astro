@@ -2,8 +2,10 @@
 interface Props {
   icon: string;
   title: string;
+  type: "select" | "numeric" | "boolean";
+  options?: string[];
 }
-const { icon, title } = Astro.props;
+const { icon, title, type, options } = Astro.props;
 ---
 
 <div class="dropdown dropdown-right">

@@ -1,4 +1,6 @@
-<footer class="footer justify-between bg-neutral-600 px-6 py-8 text-white gap-x-2! text-lg">
+<footer
+  class="gap-x-2! footer justify-between bg-neutral-600 px-6 py-8 text-lg text-white"
+>
   <aside>
     <img src="/img/logo.webp" alt="Logo" class="h-24" />
   </aside>
@@ -27,7 +29,7 @@
       <a href="email:info@emc.com.al">Email: info@emc.com.al</a>
     </div>
   </div>
-  <div id="map" class="flex-1  h-80 w-80"></div>
+  <div id="map" class="h-80 w-80 flex-1"></div>
 </footer>
 <footer class="footer border-t-2 border-t-white bg-neutral-600 p-4">
   <p class="font mx-auto text-center text-lg font-bold text-white">
@@ -40,9 +42,9 @@
 
   async function initMap() {
     // The location of Uluru
-    //, 
-    const position = { lat: 41.339344692475734  ,lng: 19.48756249732793, };
-    const positionKosov = {lat: 42.55129373253288 ,lng: 21.128013879454244 };
+    //,
+    const position = { lat: 41.339344692475734, lng: 19.48756249732793 };
+    const positionKosov = { lat: 42.55129373253288, lng: 21.128013879454244 };
     // Request needed libraries.
     //@ts-ignore
     const { Map } = await window.google.maps.importLibrary("maps");
@@ -52,7 +54,7 @@
     // The map, centered at Uluru
     map = new Map(document.getElementById("map"), {
       zoom: 7,
-      center: {lat: 41.945319212504,lng: 20.307788188391 },
+      center: { lat: 41.945319212504, lng: 20.307788188391 },
       mapId: "DEMO_MAP_ID",
     });
 

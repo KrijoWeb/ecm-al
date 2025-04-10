@@ -31,17 +31,21 @@ import { lindeProducts } from "../../constants/linde-products.ts";
     <!--   <ProductCategory title="Rental" count={50} icon={Calendar} /> -->
     <!--   <ProductCategory title="Used" count={50} icon={Calendar} /> -->
     <!-- </div> -->
-    <div class="flex min-h-screen w-3/4">
+    <div class="flex min-h-screen w-3/4 flex-col lg:flex-row">
       <div class="flex basis-1/4 flex-col gap-4 bg-neutral p-4">
         <input
           type="text"
           placeholder="Model Search"
           class="input rounded-none border-2 border-neutral-300 transition hover:border-neutral-400"
         />
-        {ProductFilters.map((pf) => <FilterCategory title={pf} icon="" />)}
+        {
+          Object.entries(ProductFilters).map((pf) => (
+            <FilterCategory title={pf[0]} type={pf[1].type} icon="" />
+          ))
+        }
       </div>
       <div class="basis-3/4 bg-neutral-100 p-10 py-4">
-        <div class="grid h-full grid-cols-2 gap-8">
+        <div class="grid h-full grid-cols-1 gap-8 lg:grid-cols-2">
           {
             lindeProducts.map((p) => (
               <ProductCard
@@ -59,3 +63,4 @@ import { lindeProducts } from "../../constants/linde-products.ts";
     </div>
   </div>
 </Layout>
+<script define:vars={{ lindeProducts }} is:inline></script>
