@@ -1,5 +1,7 @@
-export default {
-  Applications: {
+export default [
+  {
+    label: "Applications",
+    code: "applications",
     type: "select",
     options: [
       "Double Deck",
@@ -12,11 +14,15 @@ export default {
       "Towing",
     ],
   },
-  "Drive Types": {
+  {
+    label: "Drive Types",
+    code: "driveType",
     type: "select",
     options: ["Manual", "Elektrik", "Nafte/Gaz"],
   },
-  "Product Type": {
+  {
+    label: "Product Type",
+    code: "productType",
     type: "select",
     options: [
       "Transpalete",
@@ -30,13 +36,19 @@ export default {
       "Mjete automatike",
     ],
   },
-  "Load Capacity": {
+  {
+    label: "Load Capacity",
+    code: "loadCapacity",
     type: "numeric",
   },
-  "Lift Height": {
+  {
+    label: "Lift Height",
+    code: "liftHeight",
     type: "numeric",
   },
-  "Explosion Protection": {
+  {
+    label: "Explosion Protection",
+    code: "explosionProtection",
     type: "boolean",
   },
-} as const;
+] as const;
