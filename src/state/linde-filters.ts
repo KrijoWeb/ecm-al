@@ -1,10 +1,18 @@
-import { createStore } from "solid-js/store";
+import { createStore, produce } from "solid-js/store";
 import lindeFiltersC from "../constants/linde-filters";
 
-export const lindeFilters = createStore({
+interface LFFiltersStore {
+  driveType: string[];
+  productType: string[];
+  loadCapacityMin: number;
+  liftHeightMin: number;
+  explosionProtection: boolean;
+}
+
+export const [lFState, setLFState] = createStore<LFFiltersStore>({
   driveType: [],
   productType: [],
-  loadCapacity: [NaN, NaN],
-  liftHeight: [NaN, NaN],
+  loadCapacityMin: 0,
+  liftHeightMin: 0,
   explosionProtection: false,
 });

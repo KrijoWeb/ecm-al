@@ -14,7 +14,7 @@ export const ProductCard: Component<Props> = (props) => {
   return (
     <a
       href={`/products/${props.id}`}
-      class="flex cursor-pointer shadow-sm shadow-gray-500 transition hover:scale-105"
+      class="flex cursor-pointer shadow-sm shadow-gray-500 transition hover:scale-105 "
     >
       <div class="basis-1/4 bg-neutral">
         <img class="h-full w-full" src={props.imgSrc} />
