@@ -68,8 +68,8 @@ const { img } = Astro.props;
     const titleEl = navContainer.getElementsByTagName("p")[0];
     const textEl = navContainer.getElementsByTagName("h1")[0];
     const btnEl = navContainer.querySelector("#more-link") as HTMLAnchorElement;
-    const btnArray = [hpBtn, haBtn, liBtn];
-    btnArray.forEach((b, i) => {
+    const btnArray = [liBtn, haBtn, hpBtn];
+    btnArray.forEach((_, i) => {
       if (i === btnIndex) btnArray[i].style.opacity = "1";
       else btnArray[i].style.opacity = "0.6";
     });
@@ -126,8 +126,10 @@ const { img } = Astro.props;
     );
   };
 
-  let i = 1;
+  let i = 2;
   window.setInterval(() => {
+    if(i>3) i = 1;
+    console.log("index",i)
     if (window.scrollY / window.innerHeight >= 0.2) return;
     if (i % 3 === 0) {
       hpBtn.click();
