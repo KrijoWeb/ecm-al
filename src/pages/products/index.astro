@@ -1,9 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Alert from "../../components/alert.astro";
+import { lindeProducts } from "../../constants/linde-products.ts";
 import { ProductGrid } from "../../components/ProductGrid.tsx";
-import { lindeProducts } from "../../constants/linde-products";
-console.log(lindeProducts);
+import { products } from "../../constants/products";
 ---
 
 <Layout
@@ -25,8 +25,6 @@ console.log(lindeProducts);
       Tempora fugit molestias sint quam cumque voluptates deleniti hic
       laudantium porro! Laboriosam officiis voluptatibus minima error.
     </Alert>
-    <ProductGrid products={lindeProducts} client:only="solid-js">
-      <div slot="fallback">Loading</div>
-    </ProductGrid>
+    <ProductGrid products={products} client:only="solid-js" />
   </div>
 </Layout>

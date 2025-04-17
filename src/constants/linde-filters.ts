@@ -1,6 +1,3 @@
-import { produce } from "solid-js/store";
-import { lFState, setLFState } from "../state/linde-filters";
-
 export default [
   {
     label: "Applications",

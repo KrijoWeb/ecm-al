@@ -48,13 +48,12 @@ export const FilterCategory: Component<Props> = (props) => {
                       class="checkbox-primary checkbox rounded-none"
                       checked={(props.value as string[]).includes(option)}
                       onChange={(e) => {
-                        const temp = [...props.value as string[]] as string[]
+                        const temp = [...(props.value as string[])] as string[];
                         if (!e.currentTarget.checked)
-                          temp.splice(temp.indexOf(option), 1)
-                        else
-                          temp.push(option)
-                        console.log(temp)
-                        props.setValue(temp)
+                          temp.splice(temp.indexOf(option), 1);
+                        else temp.push(option);
+                        console.log(temp);
+                        props.setValue(temp);
                       }}
                     />
                     <a>{option}</a>

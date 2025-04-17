@@ -11,12 +11,11 @@ interface Props {
 const { name, title, tel, fax, mobile, email } = Astro.props;
 ---
 
-<div class="card border-2 border-neutral-200 bg-base-100 shadow-xl">
-  <figure class="px-10 pt-10"><Fragment set:html={SilhouetteIcon} /></figure>
-  <div class="card-body items-center text-center">
-    <h2 class="card-title"></h2>
-    <p class="border-b-4 border-primary px-4 text-xl font-semibold">{name}</p>
-    <p class="text-lg">{title}</p>
+<div class="card items-start border-2 border-neutral-200 bg-base-100 shadow-xl">
+  <figure class="p-2 size-36"><Fragment set:html={SilhouetteIcon} /></figure>
+  <div class="card-body justify-normal gap-2 mt-auto">
+    <span class="border-b-4 border-primary text-xl font-semibold w-full">{name}</span>
+    <span class="text-lg">{title}</span>
     <a class="font-thin" href={`tel:${tel.trim().replaceAll("-", "")}`}
       >Tel: {tel}</a
     >

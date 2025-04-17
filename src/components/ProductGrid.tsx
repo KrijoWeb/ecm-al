@@ -1,15 +1,22 @@
-import { createMemo, For } from "solid-js";
-import { lindeProducts } from "../constants/linde-products";
+import { createMemo, For, type Component } from "solid-js";
 import productFilters from "../constants/linde-filters";
 import { FilterCategory } from "./FilterCategory";
 import { ProductCard } from "./ProductCard";
 import { lFState, setLFState } from "../state/linde-filters";
 import { produce } from "solid-js/store";
+import type { ProductT } from "../types/product";
 
-export const ProductGrid = () => {
+interface Props {
+  products: ProductT[];
+}
+
+export const ProductGrid: Component<Props> = (props) => {
+  const deProxyfiedProducts = createMemo(
+    () =>
+      structuredClone(JSON.parse(JSON.stringify(props.products))) as ProductT[],
+  );
   const productsToDisplay = createMemo(() => {
-    console.log("asdf")
-    let products = structuredClone(lindeProducts);
+    let products = deProxyfiedProducts();
 
     if (lFState.driveType.length > 0)
       products = products.filter((p) =>
@@ -122,6 +129,8 @@ export const ProductGrid = () => {
                 category={p.product_type}
                 weight={`0 - ${p.lifting_capacity_kg}`}
                 height={`0 - ${p.lifting_height_mm}`}
+                price={p.price}
+                available={p.available}
               />
             )}
           </For>
