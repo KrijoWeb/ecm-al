@@ -57,12 +57,14 @@ const selectedProduct = products.find((p) => p.id == id);
           </div>
           <div class="flex flex-col gap-4">
             {
+            //@ts-ignore
               selectedProduct?.price ? (
                 
           <div class="flex gap items-center">
             <div class="h-6 w-6">
               <Fragment set:html={Euro} />
             </div>
+              {/*@ts-ignore*/}
               <p class="text-lg ">{selectedProduct?.price}</p>
           </div>
               ) : null
@@ -90,16 +92,16 @@ const selectedProduct = products.find((p) => p.id == id);
           </div>
         </div>
       </div>
-      <a
-        class="btn text-lg font-thin text-primary mt-3"
-        href={`/docs/shop/${selectedProduct?.pdf_file}.pdf`}
-        download
-      >
-        <div class="h-6 w-6 fill-primary">
-          <Fragment set:html={Download} />
-        </div>
-        <p class="m-0 p-0 align-bottom">Shkarko dokumentin</p>
-      </a>
+      <!-- <a -->
+      <!--   class="btn text-lg font-thin text-primary mt-3" -->
+      <!--   href={`/docs/shop/${selectedProduct?.pdf_file}.pdf`} -->
+      <!--   download -->
+      <!-- > -->
+      <!--   <div class="h-6 w-6 fill-primary"> -->
+      <!--     <Fragment set:html={Download} /> -->
+      <!--   </div> -->
+      <!--   <p class="m-0 p-0 align-bottom">Shkarko dokumentin</p> -->
+      <!-- </a> -->
     </div>
   </main>
   <div class="mx-auto my-12 flex w-2/3 flex-col gap-6">

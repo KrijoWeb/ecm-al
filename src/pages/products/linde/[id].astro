@@ -57,33 +57,6 @@ const selectedProduct =  lindeProducts.find((p) => p.id == id);
             </div>
           </div>
           <div class="flex flex-col gap-4">
-            {
-              selectedProduct?.price ? (
-                
-          <div class="flex gap items-center">
-            <div class="h-6 w-6">
-              <Fragment set:html={Euro} />
-            </div>
-              <p class="text-lg ">{selectedProduct.price}</p>
-          </div>
-              ) : null
-            }
-            {
-              selectedProduct?.available !== undefined ? (
-                <div class="flex gap-2">
-                  {selectedProduct?.available ? 
-                    ( 
-                      <div class="h-6 w-6 rounded-full bg-success" />
-                      <p>Available</p>
-                    ):
-                    (
-                    <div class="h-6 w-6 rounded-full bg-error" />
-                    <p>Not Available</p>
-                    )
-                    }
-                </div>
-              ) : null
-            }
           </div>
           <div class="flex flex-col items-start gap-6">
             <p>Jeni te interesuar per kete produkt?</p>
