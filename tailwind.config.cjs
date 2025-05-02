@@ -16,6 +16,7 @@ module.exports = {
       {
         emc: {
           primary: "#aa0020",
+          secondary: "#12765C",
           neutral: "#e6e7eb",
         },
       },

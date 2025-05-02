@@ -12,9 +12,11 @@ const { name, title, tel, fax, mobile, email } = Astro.props;
 ---
 
 <div class="card items-start border-2 border-neutral-200 bg-base-100 shadow-xl">
-  <figure class="p-2 size-36"><Fragment set:html={SilhouetteIcon} /></figure>
-  <div class="card-body justify-normal gap-2 mt-auto">
-    <span class="border-b-4 border-primary text-xl font-semibold w-full">{name}</span>
+  <figure class="size-36 p-2"><Fragment set:html={SilhouetteIcon} /></figure>
+  <div class="card-body mt-auto justify-normal gap-2">
+    <span class="w-full border-b-4 border-primary text-xl font-semibold"
+      >{name}</span
+    >
     <span class="text-lg">{title}</span>
     <a class="font-thin" href={`tel:${tel.trim().replaceAll("-", "")}`}
       >Tel: {tel}</a

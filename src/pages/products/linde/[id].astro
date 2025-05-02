@@ -1,18 +1,19 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Engine from "../../svg/engine.svg?raw";
-import Height from "../../svg/height.svg?raw";
-import Kilogram from "../../svg/kilogram.svg?raw";
-import Download from "../../svg/download.svg?raw";
-import Euro from "../../svg/euro.svg?raw";
-import SimilarProductCard from "../../components/SimilarProductCard.astro";
-import { products } from "../../constants/products";
+import Layout from "../../../layouts/Layout.astro";
+import Engine from "../../../svg/engine.svg?raw";
+import Height from "../../../svg/height.svg?raw";
+import Kilogram from "../../../svg/kilogram.svg?raw";
+import Download from "../../../svg/download.svg?raw";
+import Euro from "../../../svg/euro.svg?raw";
+import SimilarProductCard from "../../../components/SimilarProductCard.astro";
+import { lindeProducts } from "../../../constants/linde-products";
 export function getStaticPaths() {
-  return products.map((p) => ({ params: { id: p.id } }));
+  return lindeProducts.map((p) => ({ params: { id: p.id } }));
 }
 
 const { id } = Astro.params;
-const selectedProduct = products.find((p) => p.id == id);
+const isLindeProduct = Astro.url.pathname.includes("linde")
+const selectedProduct =  lindeProducts.find((p) => p.id == id);
 ---
 
 <Layout title="Product" compactNav>
@@ -21,18 +22,18 @@ const selectedProduct = products.find((p) => p.id == id);
       <div class="breadcrumbs text-sm">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/products">Shop</a></li>
+          {isLindeProduct? <li><a href="/products/linde">Linde</a></li> :<li><a href="/products">Shop</a></li>}
           <li>{selectedProduct?.description}</li>
         </ul>
       </div>
       <div class="flex justify-between">
         <div class="basis-5/12">
-          <img src={`/img/shop/${selectedProduct?.photo}.webp`} />
+          <img src={`/img/linde/${selectedProduct?.photo}.avif`} />
         </div>
         <div class="flex basis-1/2 flex-col justify-around">
           <div class="flex flex-col gap-4">
             <h1 class="text-3xl font-semibold">
-              {selectedProduct?.description}
+              {selectedProduct?.product_type} {selectedProduct?.description}
             </h1>
             <div class="flex gap-8">
               <div class="flex flex-col">
@@ -63,7 +64,7 @@ const selectedProduct = products.find((p) => p.id == id);
             <div class="h-6 w-6">
               <Fragment set:html={Euro} />
             </div>
-              <p class="text-lg ">{selectedProduct?.price}</p>
+              <p class="text-lg ">{selectedProduct.price}</p>
           </div>
               ) : null
             }
@@ -91,8 +92,8 @@ const selectedProduct = products.find((p) => p.id == id);
         </div>
       </div>
       <a
-        class="btn text-lg font-thin text-primary mt-3"
-        href={`/docs/shop/${selectedProduct?.pdf_file}.pdf`}
+        class="btn text-lg font-thin text-primary"
+        href={`/docs/${selectedProduct?.pdf_file}.pdf`}
         download
       >
         <div class="h-6 w-6 fill-primary">
@@ -103,31 +104,20 @@ const selectedProduct = products.find((p) => p.id == id);
     </div>
   </main>
   <div class="mx-auto my-12 flex w-2/3 flex-col gap-6">
-    <h1 class="text-center text-3xl">Pershkrimi</h1>
-    <p class="text-justify">
-      Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim
-      labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet.
-      Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum
-      Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident.
-      Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex
-      occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat
-      officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in
-      Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non
-      excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco
-      ut ea consectetur et est culpa et culpa duis.
-    </p>
+    {selectedProduct?.long_description ?<div class="flex flex-col gap-4 my-12"> <h1 class="text-center text-3xl">Pershkrimi</h1>
+    <p class="text-justify ">{selectedProduct.long_description}</p></div> :null}
 
-    <h1 class="text-center text-3xl">Produkte te ngjashme</h1>
+    <h1 class="text-center text-3xl ">Produkte te ngjashme</h1>
     <div class="flex gap-10">
       {
         Array.from({ length: 4 }, () =>
-          Math.floor(Math.random() * products.length),
+          Math.floor(Math.random() * lindeProducts.length),
         ).map((i) => (
           <SimilarProductCard
-            img={`/img/shop/${products.at(i)?.photo}.webp`}
-            name={products.at(i)?.description!}
-            weight={products.at(i)?.lifting_capacity_kg!}
-            height={products.at(i)?.lifting_height_mm!}
+            img={`/img/linde/${lindeProducts.at(i)?.photo}.avif`}
+            name={lindeProducts.at(i)?.description!}
+            weight={lindeProducts.at(i)?.lifting_capacity_kg!}
+            height={lindeProducts.at(i)?.lifting_height_mm!}
           />
         ))
       }

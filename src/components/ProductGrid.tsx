@@ -8,6 +8,7 @@ import type { ProductT } from "../types/product";
 
 interface Props {
   products: ProductT[];
+  productsCategory: "linde" | "own";
 }
 
 export const ProductGrid: Component<Props> = (props) => {
@@ -44,7 +45,7 @@ export const ProductGrid: Component<Props> = (props) => {
     return products;
   });
   return (
-    <div class="flex min-h-screen w-3/4 flex-col lg:flex-row">
+    <div class="flex min-h-screen w-full flex-col lg:flex-row">
       <div class="flex basis-1/4 flex-col gap-4 bg-neutral p-4">
         <input
           type="text"
@@ -125,7 +126,12 @@ export const ProductGrid: Component<Props> = (props) => {
               <ProductCard
                 id={`${p.id}`}
                 title={p.description}
-                imgSrc={`/img/linde/${p.photo}.avif`}
+                cat={props.productsCategory}
+                imgSrc={
+                  props.productsCategory === "linde"
+                    ? `/img/linde/${p.photo}.avif`
+                    : `/img/shop/${p.photo}.webp`
+                }
                 category={p.product_type}
                 weight={`0 - ${p.lifting_capacity_kg}`}
                 height={`0 - ${p.lifting_height_mm}`}

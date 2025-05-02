@@ -1,0 +1,175 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import TextWithPhoto from "../../../components/TextWithPhoto.astro";
+import Shop from "../../../svg/shop.svg?raw";
+---
+
+<Layout title="Linde" header="linde" img="/img/linde/prods_cover.avif">
+  <main class="mx-auto mb-12 flex w-3/4 flex-col gap-20 relative">
+    <a class="btn btn-primary fixed top-1/2 right-10 z-20 group" href="/products/linde/browse">
+      <div class="h-6 w-6">
+      <Fragment set:html={Shop} />
+    </div>
+      <span class="hidden group-hover:inline">Shfleto produktet</span>
+</a>
+    <div class="z-10 -mt-20 mb-20 h-[25vh] bg-white py-6">
+      <div class="mx-auto flex w-2/3 flex-col items-center gap-6">
+        <h2 class="text-3xl uppercase">
+          EMC - Engineering, Maintenance Center Shpk
+        </h2>
+        <p class="text-justify">
+          EMC është emëruar si partner zyrtar i Kompanise Gjermane Linde
+          Material Handling GmbH për Shqipërinë që nga viti 2014. Gjatë këtyre
+          viteve, ne kemi ndërtuar një strukturë të fortë dhe efikase për
+          ofrimin e mjeteve dhe shërbimeve të mirëmbajtjes dhe riparimit, duke
+          siguruar një mbështetje të vazhdueshme për klientët tanë. Produktet që
+          ofrojmë:
+          <ol>
+            <li>
+              Mjete të reja : Ne ofrojmë një gamë të gjerë mjetesh të reja nga
+              Linde, të cilat përmbushin standardet më të larta të industrisë
+              dhe ofrojnë efikasitet të shkëlqyer operativ.
+            </li>
+            <li>Mjete të përdorura me garanci:</li>
+            <li>Mjete me qera</li>
+            <li>Mirëmbajtja dhe Shërbimet</li>
+            <li>Aksesorë</li>
+          </ol>
+        </p>
+      </div>
+    </div>
+    <TextWithPhoto
+      title="Mjetet e Reja & Aksesoret"
+      imgSrc="/img/linde/dets1.avif"
+    >
+      Si distributori zyrtar i Linde Material Handling për Shqipërinë, EMC ofron
+      gamën më të gjerë të mjeteve Linde të reja për sektorin e magazinimit,
+      logjistikes dhe transportit. Ne ofrojmë zgjidhje të personalizuara për
+      nevojat e çdo biznesi, duke siguruar që çdo makineri të jetë e
+      përshtatshme për ambientin dhe kërkesat specifike të punës. Me produkte të
+      njohura për teknologjinë e avancuar, performancën e lartë dhe
+      besueshmërinë, ne sigurojmë që klientët tanë të kenë akses në mjetet Linde
+      më të fundit, të cilët ofrojnë efikasitet maksimal dhe siguri. Ekipi ynë
+      ofron mbështetje të plotë nga procesi i porositjes deri te dorëzimi dhe
+      trajnimi, duke siguruar që çdo klient të ketë përvojën më të mirë me
+      produktet Linde.
+    </TextWithPhoto>
+    <TextWithPhoto
+      title="Personalizimi dhe Aksesorët"
+      imgSrc="/img/linde/dets2.avif"
+      imgLeft
+    >
+      Në EMC, ne ofrojmë mjete Linde të personalizuara plotësisht, të dizajnuara
+      për t'iu përshtatur nevojave specifike të klientëve tanë dhe për të
+      tejkaluar pritshmëritë e tyre. Nëpërmjet partneritetit tonë me KAUP, ne
+      mund të ofrojmë një gamë të gjerë aksesorësh dhe pjesësh shtesë që mund të
+      transformojnë mjetet Linde për t'i përshtatur çdo perpunimi te ngarkesave.
+      Këto përfshijnë, por nuk kufizohen në, Pajisje te tilla si “side-shift”
+      per levizje majtas -djathtas te thikave, “fork positioner” per hapje
+      mbyllje te thikave, rotatorë, kapëse për ngarkesa apo thika teleskopike.
+      Ne jemi te fokusuar në ofrimin e zgjidhjeve të personalizuara që
+      përmbushin kërkesat e çdo klienti, duke marrë parasysh ambientin e punës,
+      llojin e ngarkeses, parametrat e magazinës, volumet e punes dhe buxhetin e
+      disponueshëm. Ne nuk ofrojmë thjesht atë që kemi në magazinë, por punojmë
+      ngushtë me klientët për të gjetur dhe ofruar zgjidhjen më të mirë dhe më
+      efektive për nevojat e tyre të veçanta. Kjo i mundëson klientëve tanë të
+      arrijnë produktivitet maksimal duke siguruar që çdo detaj të jetë i
+      përshtatur në mënyrë optimale për punën e tyre.
+    </TextWithPhoto>
+    <TextWithPhoto
+      title="Mjetet e përdorura me garanci"
+      imgSrc="/img/linde/dets3.avif"
+    >
+      EMC ju ofron edhe mjete të përdorura Linde të cilat kontrollohen nga stafi
+      jonë perkates për të siguruar plotesimin e të gjitha kërkesat e nevojshme
+      te klienteve. Ekipi jonë i specializuar njeh shumë mirë të gjithë gamën e
+      produkteve që ofron Linde. Ndaj, në baze të informacionit të marrë nga ju
+      dhe nga analiza paraprake e perbashket, ata do të jenë në gjendje t’ju
+      orientojnë dhe tju asistojne në përzgjedhjen e mjetit më të përshtatshëm.
+      Para se t’ju dorëzohen, mjetet i nënshtrohen një kontrolli rigoroz sipas
+      standarteve te Linde Material Handling per mjetet e perdorura. Ne ju japim
+      garanci për cdo mjet të cilin ne ofrojmë.
+    </TextWithPhoto>
+    <TextWithPhoto
+      title="Mjetet me qera"
+      imgSrc="/img/linde/dets3.avif"
+      imgLeft
+    >
+      EMC ofron mjete me qera, ne formen e Leasing operativ, ku kostot e
+      mirëmbajtjes për periudhën e qirasë mbulohen plotësisht nga ne. Flota jonë
+      e mjeteve me qera është gjithmonë e përditësuar dhe e mirëmbajtur sipas
+      standardeve të larta. Kohëzgjatja e kontratës mund të variojë nga disa
+      ditë deri në disa vjet, duke ofruar mundësi fleksibile për çdo lloj
+      biznesi. Ne gjithashtu ofrojmë trajnime për stafin tuaj, duke siguruar
+      sigurinë në punë dhe efikasitetin maksimal të përdorimit të mjeteve. Si
+      një partner i besueshëm dhe me shumë eksperience në dhenjen me qera te
+      mjeteve, EMC siguron zgjidhjen më të mirë ne bazë te kerkesave të
+      klientëve tane.
+    </TextWithPhoto>
+    <div class="flex flex-col gap-2">
+      <h3 class="mb-2 text-3xl font-bold">Mirëmbajtja dhe Shërbimet</h3>
+      <p>
+        EMC është një kompani e specializuar në mirëmbajtjen dhe riparimin e
+        mjeteve Linde, duke ndjekur praktikat më të mira ndërkombëtare. Ne
+        ofrojmë shërbime të mirëmbajtjes dhe riparimit për të siguruar që mjetet
+        tuaja të jenë gjithmonë në kushte optimale për punë. Për mjetet dhe
+        pajisjet Linde që ju dispononi, EMC ju ofron:
+      </p>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <b>Shërbime të mirëmbajtjes preventive të programuar:</b>
+          Këto shërbime janë të dizenjuara për të mbajtur mjetet tuaja në gjendje
+          të mire teknike dhe optimale pune por edhe per ti paraprire dhe shmangur
+          difektet e mundshme dhe kostot e tyre. Bazuar ne Standartet e mundësuar
+          nga Linde, për çdo makineri apo pajisje të prodhuar, rekomandohet kryerja
+          e shërbimeve të mirëmbajtjes sipas një programi të caktuar. Në varësi të
+          llojit dhe tipit të mjetit që dispononi ato kanë nevojë për mirëmbajtje
+          çdo 500, 1000, 3000 orë pune. Duke përdorur vetëm pjesë këmbimi origjinale
+          Linde, cilësia e shërbimit tonë është e garantuar. Të gjitha shërbimet
+          e kryera në asetet tuaja, regjistrohen në një program kompiuterik të veçantë,
+          duke krijuar në këtë mënyrë një historik të detajuar të mirëmbajtjes.
+        </div>
+        <div>
+          <b>Shërbime të mirëmbajtjes ‘sipas kërkesës’:</b>
+          Ky shërbim ofron mundësinë e ndërhyrjes për çdo problem që mund të lindë
+          në mjetet tuaja, në çdo moment që kërkohet. Shërbimi i mirëmbajtjes ‘sipas
+          kërkesës’ është fleksibël dhe mund të realizohet kurdo që të jetë e nevojshme,
+          duke siguruar që mjetet tuaja të kthehen në funksionim sa më shpejt dhe
+          me efikasitet maksimal.
+        </div>
+        <div>
+          <b
+            >Shërbime të mirëmbajtjes dhe riparimit të tipit ‘paketë e plotë’:</b
+          >
+          Për ata që kërkojnë mbështetje të plotë, ky shërbim ofron një paketë të
+          plotë mirëmbajtjeje dhe riparimi, që përfshin të gjitha aspektet e nevojshme
+          për të mbajtur mjetet në kushte optimale. Nga kontrolli i sistemit hidraulik,
+          elektrike, deri te kontrollet e mekanizmave të ngritjes dhe të drejtimit,
+          ky shërbim i plotë siguron funksionimin e pandërprerë të mjeteve dhe parandalon
+          çdo problem të mundshëm që mund të ndodhi në të ardhmen.
+        </div>
+        <div>
+          <b>Riparime:</b>
+          Në rast se mjetet tuaja kanë nevojë për riparime, EMC ofron shërbime të
+          shpejta dhe efikase për të zgjidhur çdo problem që mund të lindë tek mjetet
+          tuaja. Inxhinierët dhe mekanikët tanë të kualifikuar janë gjithmonë të
+          gatshëm për të reaguar dhe për të ofruar zgjidhje të sakta, duke përdorur
+          vetëm pjesë këmbimi origjinale të Linde. Kjo siguron që riparimet të jenë
+          të qëndrueshme dhe të kenë një performancë të lartë afatgjatë, duke minimizuar
+          ndërprerjet e punës dhe duke garantuar funksionimin optimal të mjeteve
+          tuaja.
+        </div>
+        <div>
+          <b>Pjesët e këmbimit origjinale</b>
+          EMC siguron pjesë këmbimi origjinale për mjetet Linde. Vetëm këto pjesë
+          mund të garantojnë performancën dhe qëndrueshmërinë që Linde ofron. Mjaft
+          të na tregoni numrin serial të mjetit tuaj dhe ne do të jemi në gjendje
+          të identifikojmë pjesën që ju duhet dhe t'ju sigurojmë atë shume shpejt.
+          Mundesuar kjo nga nje Magazine gjitheperfshirese persa i perkete Pjeseve
+          te kembimit te perdorimit te shpeshte por edhe nepermjet porosive ditore
+          direkt nga Linde me nje afat levrimi prej 24 oresh.
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

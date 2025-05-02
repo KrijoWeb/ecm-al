@@ -24,6 +24,8 @@ export const lindeProducts = [
   {
     id: 3,
     description: "MT15",
+    long_description:
+      'Transpaleta elektrike LINDE e serisë MT15 që ka një strukturë kompakte. Ajo mund të merret me vete në kamionët e transportimit të ngarkesave sepse është shumë e manovrushme sidomos në hapësirat e ngushta. Operatori i transpaletës nuk duhet të shpenzojë shumë energji për përpunimin e ngarkesave pasi këto transpaleta janë të pajisura me motorë të fuqishëm elektrik. Komandimi i këtyre transpaletave është i thjeshtë dhe mund të realizohet edhe me një dorë, falë çelësave që ajo ka në dorezë. Timoni i komandimit është i gjatë, ndaj dhe ofron siguri gjatë përdorimit. Këto pajisje kanë frena elektro-magnetike të cilat zvogëlojnë shpejtësinë e lëvizjes kur çelësi "flutur" i komandimit të lëvizjes, lëshohet. Struktura e telaios së transpaletave LINDE të serisë MT15 është e ulët, ndaj dhe nuk lejon që këmbët e operatorit të hyjnë poshtë pajisjes. Motori elektrik është i mbrojtur nga një veshje metalike për të eleminuar mundësinë e dëmtimit të tij si rezultat i goditjeve. Transpaletat LINDE të serisë MT15 mund të ngrenë dhe transportojnë ngarkesa me peshë deri në 1500 kg.',
     lifting_capacity_kg: 1500,
     lifting_height_mm: 115,
     movement_system: "Elektrik",
@@ -35,6 +37,8 @@ export const lindeProducts = [
   {
     id: 4,
     description: "M25",
+    long_description:
+      "Transpaletat LINDE e tipit M25 kanë një strukturë të fortë dhe nuk përkulet nga ngarkesat e rënda. Struktura prej çeliku e saj duron rreth 25% më shumë se modelet e markave të tjera të këtyre përmasave. Hidraulika e transpaletave M25 është e mbrojtur nga pluhurat dhe i përshtatet mirë përdorimit gjatë gjithë ditës së punës. Mirëmbajtja e këtyre transpaletave është minimale. Rrotat dhe rrulat rrisin kapacitetin e lëvizjes falë koefiçientit të ulët të fërkimit. Timoni i këtyre pajisjeve mund të rrotullohet në një kënd të gjerë nga të dy anët. Për këtë arsye transpaletat M25 manovrohen lehtësisht edhe në hapësira të ngushta. Doreza e gjerë e kësaj pajisje mbron duart e operatorit nga dëmtimet e mundshme. Këto transpaleta kanë një kapacitet ngritës deri në 2500 kg.",
     lifting_capacity_kg: 2500,
     lifting_height_mm: 115,
     movement_system: "Manual",
@@ -46,6 +50,8 @@ export const lindeProducts = [
   {
     id: 5,
     description: "M25 Scale+",
+    long_description:
+      "Transpaletat LINDE të serisë M25 Scale+ kanë të integruar një peshore me gabim në matje me vetëm 500 gram. Kjo do të thotë që përdoruesve të tyre u kursehet një lëvizje për deri tek peshoret e jashtëme, pra kursehet kohë gjatë përpunimit të ngarkesave. LINDE ofron edhe printera me skedë memorie për ato përdorues që dëshirojnë të ruajnë peshat e matura. Këto transpaleta kanë një strukturë të fortë dhe garantojnë një efektivitet të lartë në punë. Ato janë shumë të manovrueshme dhe kanë një qëndrushmëri shumë të mirë. Për këtë arsye ato janë në gjendje të shërbejnë për një kohë të gjatë pa patur nevojë për mirëmbajtje. Duart e operatorit janë të mbrojtura nga një dorezë e gjerë. Transpaletat LINDE të tipit M25 Scale+ mund të ngrenë dhe të transportojnë ngarkesa me peshë deri në 2500 kg.",
     lifting_capacity_kg: 2500,
     lifting_height_mm: 115,
     movement_system: "Manual",
@@ -79,6 +85,8 @@ export const lindeProducts = [
   {
     id: 8,
     description: "T16 L",
+    long_description:
+      "Transpaletat LINDE të serisë T16 L të pajisura edhe mekanizmin për ngritjen e ngarkesës deri në 675 mm thjeshtojnë shumë punën në rastet e përzgjedhjes së rastësishme të ngarkesave të porositura. Me anë të këtyre pajisjeve operatori mund t'a ngrejë ngarkesën në lartësi komode duke e bërë më të thjeshtë sistemimin ose marrjen e mallrave nga raftet. Struktura prej çeliku e këtyre transpaletave është shumë e fortë gjë që bën që mjeti të jetë rezistent ndaj dëmtimeve dhe ndaj përdorimit të vazhdueshëm. Shasia e ulët e këtyre transpaletave garanton sigurinë e këmbëve të operatorit. Motori elektrik tre-fazor i këtyre mjeteve është i fuqishëm dhe garanton një përshpejtim të mirë të mjetit edhe kur ai është i ngarkuar me ngarkesën maksimale prej 1600 kg. Përsa i përket ngritjes së ngarkesave në lartësinë deri në 675 mm ngarkesa maksimale duhet të jetë jo më shumë se 800 kg.",
     lifting_capacity_kg: 1600,
     lifting_height_mm: 675,
     movement_system: "Elektrik",
@@ -563,6 +571,8 @@ export const lindeProducts = [
   {
     id: 52,
     description: "D12 R",
+    long_description:
+      "Trans-Stivuesit e paletave LINDE të serisë D12 R transportojnë njëkohësisht dy paleta nga 1000 kg sejcila dhe arrin një shpejtësi lëvizje deri në 12 km/orë, falë motorit elektrik tre-fazor me fuqi 3 kW. Këto cilësi e bëjnë këtë mjet veçanërisht të përshtatshëm për transportimin e mallrave në largësi mesatare dhe në largësi të mëdha, kur kërkohet produktivitet i lartë. Si rezultat i ngritjes iniciale, këto mjete janë të përshtatshme edhe për ngarkimin dhe shkarkimin e kamionëve. Kontrolli i këtyre mjeteve është preçiz ndaj dhe menaxhimi i tyre është shumë i sigurtë, komod dhe produktiv. Falë strukturës së telaios së tyre dhe manovrueshmërisë së shkëlqyer, trans-stivuesit e serisë D12 R mund përdoren në mënyrë të sigurtë dhe të shpejtë edhe në hapësirat e ngushta. Pozicioni i ngritur i sediljes së operatorit që është në kënd të drejtë me drejtimin e lëvizjes i ofron operatorit një fushëpamje më të gjerë si për lëvizjen para ashtu edhe për lëvizjen mbrapa. I ulur në sedilhen e mjetit operatori në këtë mënyrë ka edhe kontroll më të madh mbi ngarkesën.",
     lifting_capacity_kg: 1200,
     lifting_height_mm: 2344,
     movement_system: "Elektrik",
@@ -596,6 +606,7 @@ export const lindeProducts = [
   {
     id: 55,
     description: "N16 Li",
+    long_description: "Ju lutemi të Konsultohuni me EMC shpk",
     lifting_capacity_kg: 1600,
     lifting_height_mm: 675,
     movement_system: "Elektrik",
@@ -618,6 +629,8 @@ export const lindeProducts = [
   {
     id: 57,
     description: "N20 LoL",
+    long_description:
+      "Order Pickers (mjet për formimin e porosisë) LINDE të serisë N20 LoL, janë të pajisur me një strukturë që ngrihet, me anë të një mekanizmi gërshërë, në lartësinë e duhur me qëllim që vendosja e mallrave mbi paletë të bëhet pa e përkulur trupin. Tek këto mjete mund të ngarkohen dy paleta njëkohësisht. Paleta e parë vendoset mbi mekanizmin që ngrihet në lartësinë e trupit të njeriut, ndërsa paleta e dytë bosh vendoset në mjet vertikalisht në pjesën fundore të tij (afër kollonës). Në këtë mënyrë kur paleta e parë mbushet, ajo ulet, shtyhet në pjesën e parë të pirunëve, ndërsa paleta e dytë shtrihet mbi strukturën që ngrihet për t'u mbushur më tej nga operatori me mallrat që formojnë porosinë. Pra ky mjet është projektuar për të lehtësuar punën e operatorit me qëllim rritjen e efektivitetit në punë. Gjatë proçesit të punës ky mjet mund të komandohet nga të dy anët për lëvizje me shpejtësinë në këmbë me qëllim që operatori nga një raft tek tjetri të lëviz mjetin pa hypur sipër tij. Opsione të shumta, në varësi të nevojave dhe kërkesave të klientëve mund t'i shtohen këtyre mjeteve.",
     lifting_capacity_kg: 2000,
     lifting_height_mm: 1612,
     movement_system: "Elektrik",
@@ -673,6 +686,8 @@ export const lindeProducts = [
   {
     id: 62,
     description: "N20 C LoL",
+    long_description:
+      "Order Pickers (mjet për formimin e porosisë) LINDE të serisë N20 C LoL bën të mundur ngritjen dhe transportimin e dy paletave njëkohësisht në një rrugë të vetme, falë pirunëve të gjatë që ata kanë dhe strukturës shtesë që ngrihet. Fillimisht operatori fillon të mbushë një paletë, duke e ngritur atë në lartësinë e dëshiruar ndërkohë që paleta e dytë fiksohet në pirunë me një pajisje të veçantë. Pasi paleta e parë mbushet, atëherë ajo ulet dhe spostohet përpara tek majat e mirunit, për t'i bëtë vend paletës së dytë që të mbushet me mallrat që dihet të krijojnë porosinë. Pra ky mjet është projektuar për të lehtësuar punën e operatorit me qëllim rritjen e efektivitetit në punë. Gjatë proçesit të punës ky mjet mund të komandohet nga të dy anët për lëvizje me shpejtësinë në këmbë me qëllim që operatori nga një raft tek tjetri të lëviz mjetin pa hypur sipër tij. Gjithashtu është edhe opsioni i platformës ngritëse të operatorit për të bërë të mundur marrjen e mallrave që gjenden në nivelin e parë dhe të dytë të rafteve. Ngritja iniciale lejon që këto mjete të mund të lëvizin pa problem edhe në rampat e pjerrëta dhe në terrenet me sipërfaqe të parregullt.",
     lifting_capacity_kg: 2000,
     lifting_height_mm: 800,
     movement_system: "Elektrik",
@@ -684,6 +699,8 @@ export const lindeProducts = [
   {
     id: 63,
     description: "N20 C LX",
+    long_description:
+      "Order Pickers (mjet për formimin e porosisë) LINDE të serisë N20 C LX janë mjete me pirunë që ngrihen me mekanizëm në formë gërshëre. Ato janë të afta të ngrenë dhe të transportojnë materiale të vendosura mbi paleta apo mbi kontenierë të posaçëm mallra me peshë deri në 2000 kg. Gjatë punës për formimin e ngarkesave operatori i ngre pirunët në lartësin e trupit me qëllim që ta ngarkojë apo t'a shkarkojë mjetin pa patur nevojë të përkulet në mënyrë të vazhdueshme. Në këtë mënyrë operatori shkon në çdo vend të magazinës për të ngarkuar në mjet të gjitha mallrat që janë të evidentuara tek lista e porosisë pa u lodhur dhe pa patur dëmtime të shtyllës kurrizore. Në këto mjete mund të vendoset edhe opsioni i ngritjes së platformës së operatorit, me qëllim që ai të mund të arrij të marrë ato mallra që janë të stivuara në katet e larta të rafteve të magazinës. Nga ana tjetër tek këto mjete i është kushtuar vëmendje e veçantë kompartimentit të punës së operatorit, me qëllim që sforcot fizike të jenë sa me të vogla dhe rendimenti në punë të jetë sa më i madh.",
     lifting_capacity_kg: 2000,
     lifting_height_mm: 700,
     movement_system: "Elektrik",

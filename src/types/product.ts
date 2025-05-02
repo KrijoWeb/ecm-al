@@ -8,6 +8,6 @@ export type ProductT = {
   ex_protection: boolean;
   pdf_file: string;
   photo: string;
-  price: number;
-  available: boolean;
+  price?: number;
+  available?: boolean;
 };

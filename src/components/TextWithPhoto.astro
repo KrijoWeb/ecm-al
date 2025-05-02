@@ -1,0 +1,38 @@
+---
+interface Props {
+  imgSrc: string;
+  title: string;
+  imgLeft?: boolean;
+}
+const { imgSrc, title, imgLeft } = Astro.props;
+---
+
+<div class="flex items-center gap-8">
+  {
+    imgLeft ? (
+      <>
+        <figure class="flex-1">
+          <img src={imgSrc} alt={title} />
+        </figure>
+        <div class="flex flex-1 flex-col items-center gap-8">
+          <h2 class="text-3xl font-semibold capitalize">{title}</h2>
+          <p class="text-justify">
+            <slot />
+          </p>
+        </div>
+      </>
+    ) : (
+      <>
+        <div class="flex flex-1 flex-col items-center gap-8">
+          <h2 class="text-3xl font-semibold capitalize">{title}</h2>
+          <p class="text-justify">
+            <slot />
+          </p>
+        </div>
+        <figure class="flex-1">
+          <img src={imgSrc} alt={title} />
+        </figure>
+      </>
+    )
+  }
+</div>

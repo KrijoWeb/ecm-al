@@ -6,6 +6,7 @@ interface Props {
   id: string;
   title: string;
   category: string;
+  cat: "linde" | "own";
   weight: string;
   height: string;
   imgSrc: string;
@@ -16,7 +17,11 @@ interface Props {
 export const ProductCard: Component<Props> = (props) => {
   return (
     <a
-      href={`/products/${props.id}`}
+      href={
+        props.cat === "linde"
+          ? `/products/linde/${props.id}`
+          : `/products/${props.id}`
+      }
       class="flex cursor-pointer shadow-sm shadow-gray-500 transition hover:scale-105"
     >
       <div class="basis-1/4 bg-neutral">

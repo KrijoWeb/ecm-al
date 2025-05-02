@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { HansaflexProducts } from "../../components/hansaflex/Products.tsx";
+import { ProductCategories } from "../../components/hansaflex/Products.tsx";
 ---
 
 <Layout
@@ -87,6 +87,6 @@ import { HansaflexProducts } from "../../components/hansaflex/Products.tsx";
         </p>
       </div>
     </div>
-    <HansaflexProducts client:only />
+    <ProductCategories company="hansaflex" client:only />
   </main>
 </Layout>
