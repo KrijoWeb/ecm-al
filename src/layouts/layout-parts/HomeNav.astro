@@ -97,9 +97,7 @@ const { img } = Astro.props;
         animate("#header-bg", { opacity: 1 }, { duration: 0.25 });
         animate(
           (progress) => {
-            navContainer.style.backgroundColor = `rgba(255,255,255,${
-              1 - progress
-            })`;
+            navContainer.style.backgroundColor = `rgba(255,255,255,${1 - progress})`;
           },
           { duration: 0.25 },
         );
@@ -167,9 +165,7 @@ const { img } = Astro.props;
     if (navBg)
       navBg.style.backgroundColor = `rgba(230, 231, 235,${navBgOpacity})`;
     if (header)
-      header.style.opacity = `${
-        1 - y.current / (netContainerHeight / 2.7) / 5
-      }`;
+      header.style.opacity = `${1 - y.current / (netContainerHeight / 2.7) / 5}`;
     if (navContainer)
       navContainer.style.backgroundColor = `rgba(230, 231, 235,${
         y.current / netContainerHeight

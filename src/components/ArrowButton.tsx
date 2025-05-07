@@ -11,7 +11,7 @@ interface Props {
   onclick?: () => void;
 }
 
-const ArrowButtonI: Component = (props) => {
+const ArrowButtonI: Component<Props> = (props) => {
   const arrow =
     props.type === "left"
       ? ArrowLeft
@@ -37,7 +37,7 @@ const ArrowButtonI: Component = (props) => {
   );
 };
 
-const ArrowButton: Component = (props) => {
+const ArrowButton: Component<Props> = (props) => {
   return props.onclick ? (
     <button
       id={props.id}

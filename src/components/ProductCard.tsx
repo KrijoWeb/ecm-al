@@ -14,7 +14,7 @@ interface Props {
   available?: boolean;
 }
 
-export const ProductCard: Component = (props) => {
+export const ProductCard: Component<Props> = (props) => {
   return (
     <a
       href={

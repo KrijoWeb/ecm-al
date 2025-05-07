@@ -11,7 +11,7 @@ interface Props {
   productsCategory: "linde" | "own";
 }
 
-export const ProductGrid: Component = (props) => {
+export const ProductGrid: Component<Props> = (props) => {
   const deProxyfiedProducts = createMemo(
     () =>
       structuredClone(JSON.parse(JSON.stringify(props.products))) as ProductT[],
