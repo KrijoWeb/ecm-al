@@ -7,7 +7,7 @@ interface Props {
   onClick: () => void;
 }
 
-export const CategoryCard: Component<Props> = (props) => {
+export const CategoryCard: Component = (props) => {
   return (
     <button
       class="group flex flex-1 items-center justify-center rounded-3xl border-b-2"
