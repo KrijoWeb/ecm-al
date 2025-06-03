@@ -3,40 +3,45 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout img="/img/about-bg.webp" title="Rreth Nesh" header="Rreth Nesh">
-  <div class="my-20 flex flex-col items-center gap-12">
-    <h1 class="text-4xl">Kush jemi ne?</h1>
-    <p class="w-3/4 text-justify">
-      EMC (Engineering Maintenance Center) është një kompani e organizuar për
-      siguraur produkte cilësore, shërbimeve të mirëmbajtjes dhe riparimit të
-      impianteve, makinerive dhe pajisjeve të sektorëve të ndryshëm të
-      industrisë. EMC ka perfaqësinë zyrtare të markave prestigjioze gjermane
-      Linde Material Handling, Hansa-Flex dhe Hoppecke Batterien. Objektivi i
-      aktivitetit te EMC është të ofrojë praktikat më të mira në fushat e
-      mëposhtme: • Shitjen e Mjeteve dhe pajisjeve të përpunimit të ngarkesave
-      të markes LINDE si dhe pjesëve të këmbimit përkatëse, perfshirë këtu
-      sherbimet e mirëmbajtjes dhe riparimit. • Si përfaqësues zyrtar i
-      HANSA-FLEX, EMC ofron zgjidhje të avancuara për sistemet hidraulike,
-      përmes tubave hidraulikë, aksesorëve dhe shërbimeve të tjera të
-      specializuara. • Shitjen e Baterive industriale të markës HOPPECKE duke
-      garantuar gjithashtu shërbimet përkatëse. • Shërbime të mirëmbajtjes dhe
-      riparimit të pajisjeve, makinerive dhe impianteve të sektorëve të ndryshëm
-      të industrisë. në të gjithë Shqipërinë dhe në vendet fqinje. Ndërveprimi i
-      vazhdueshëm me partnerët tanë të përmendur më lartë, bën të mundur
-      garantimin e produkteve cilësore dhe asistences teknike të niveleve të
-      larta. Sëbashku me ekipin tonë të punës i cili përbëhet nga inxhinjer të
-      kualifikuar, teknik të lartë dhe të mesëm, të cilët kryejnë me kompetencë
-      shërbimet teknike dhe bashkëpunojnë me klientët tanë për të gjetur
-      zgjidhje inovative. Suksesi ynë bazohet në studimin e vazhdueshëm të
-      tregut dhe në trajnimin e pandërprerë të punonjësve të kompanisë. Siguria
-      në punë dhe respektimi i ambientit janë shoqëruese të pandara në
-      trajektoren tonë të zhvillimit.
-    </p>
-    <img src="/img/emc_location.webp" alt="About Map" class="w-screen" />
-    <div class="flex w-2/3 items-stretch gap-6">
+  <main class="mx-auto mb-12 flex w-3/4 flex-col gap-20">
+    <div class="z-10 mx-auto -mt-20 bg-white py-6 pb-10 shadow-lg">
+      <div class="mx-auto flex w-2/3 flex-col items-center gap-6">
+        <h1 class="text-4xl">Kush jemi ne?</h1>
+        <p class="text-justify">
+          EMC (Engineering Maintenance Center) është një kompani e organizuar
+          për siguraur produkte cilësore, shërbimeve të mirëmbajtjes dhe
+          riparimit të impianteve, makinerive dhe pajisjeve të sektorëve të
+          ndryshëm të industrisë. EMC ka perfaqësinë zyrtare të markave
+          prestigjioze gjermane Linde Material Handling, Hansa-Flex dhe Hoppecke
+          Batterien. Objektivi i aktivitetit te EMC është të ofrojë praktikat më
+          të mira në fushat e mëposhtme: • Shitjen e Mjeteve dhe pajisjeve të
+          përpunimit të ngarkesave të markes LINDE si dhe pjesëve të këmbimit
+          përkatëse, perfshirë këtu sherbimet e mirëmbajtjes dhe riparimit. • Si
+          përfaqësues zyrtar i HANSA-FLEX, EMC ofron zgjidhje të avancuara për
+          sistemet hidraulike, përmes tubave hidraulikë, aksesorëve dhe
+          shërbimeve të tjera të specializuara. • Shitjen e Baterive industriale
+          të markës HOPPECKE duke garantuar gjithashtu shërbimet përkatëse. •
+          Shërbime të mirëmbajtjes dhe riparimit të pajisjeve, makinerive dhe
+          impianteve të sektorëve të ndryshëm të industrisë. në të gjithë
+          Shqipërinë dhe në vendet fqinje. Ndërveprimi i vazhdueshëm me
+          partnerët tanë të përmendur më lartë, bën të mundur garantimin e
+          produkteve cilësore dhe asistences teknike të niveleve të larta.
+          Sëbashku me ekipin tonë të punës i cili përbëhet nga inxhinjer të
+          kualifikuar, teknik të lartë dhe të mesëm, të cilët kryejnë me
+          kompetencë shërbimet teknike dhe bashkëpunojnë me klientët tanë për të
+          gjetur zgjidhje inovative. Suksesi ynë bazohet në studimin e
+          vazhdueshëm të tregut dhe në trajnimin e pandërprerë të punonjësve të
+          kompanisë. Siguria në punë dhe respektimi i ambientit janë shoqëruese
+          të pandara në trajektoren tonë të zhvillimit.
+        </p>
+      </div>
+    </div>
+    <img src="/img/emc_location.webp" alt="About Map" />
+    <div class="flex items-stretch gap-6">
       <div class="h-full flex-1 flex-shrink object-cover">
         <img src="/img/about_1.webp" alt="About 4" class="object-contain" />
       </div>
-      <div class="basis-2/3">
+      <div class="">
         <h3 class="mb-2 text-2xl font-bold">Misioni dhe Vizioni yne</h3>
         <p>
           Ne kemi objektiv të sjellim, në Shqipëri, një mentalitet dhe një nivel
@@ -63,7 +68,7 @@ import Layout from "../layouts/Layout.astro";
         </p>
       </div>
     </div>
-    <div class="flex w-2/3 flex-col gap-2">
+    <div class="flex flex-col gap-2">
       <h3 class="mb-2 text-3xl font-bold">Parimet tona udhezuese</h3>
       <div class="grid grid-cols-2 gap-4">
         <div>
@@ -120,7 +125,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </div>
-    <div class="flex w-2/3 justify-between">
+    <div class="flex justify-between">
       <div class="basis-1/3">
         <h3 class="mb-2 text-2xl font-bold">Menaxhimi</h3> Menaxhimi i EMC mbështetet
         mbi eksperiencën dhe seriozitetin e personave drejtues. Drejtuesit dhe pronarët
@@ -135,5 +140,5 @@ import Layout from "../layouts/Layout.astro";
         <img src="/img/service.webp" alt="About 5" class="object-cover" />
       </div>
     </div>
-  </div>
+  </main>
 </Layout>

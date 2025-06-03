@@ -18,6 +18,8 @@ module.exports = {
           primary: "#aa0020",
           secondary: "#12765C",
           neutral: "#e6e7eb",
+          "--rounded-box": "0",
+          "--rounded-btn": "0",
         },
       },
     ],

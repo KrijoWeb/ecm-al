@@ -12,8 +12,8 @@ export function getStaticPaths() {
 }
 
 const { id } = Astro.params;
-const isLindeProduct = Astro.url.pathname.includes("linde")
-const selectedProduct =  lindeProducts.find((p) => p.id == id);
+const isLindeProduct = Astro.url.pathname.includes("linde");
+const selectedProduct = lindeProducts.find((p) => p.id == id);
 ---
 
 <Layout title="Product" compactNav>
@@ -22,7 +22,17 @@ const selectedProduct =  lindeProducts.find((p) => p.id == id);
       <div class="breadcrumbs text-sm">
         <ul>
           <li><a href="/">Home</a></li>
-          {isLindeProduct? <li><a href="/products/linde">Linde</a></li> :<li><a href="/products">Shop</a></li>}
+          {
+            isLindeProduct ? (
+              <li>
+                <a href="/products/linde">Linde</a>
+              </li>
+            ) : (
+              <li>
+                <a href="/products">Shop</a>
+              </li>
+            )
+          }
           <li>{selectedProduct?.description}</li>
         </ul>
       </div>
@@ -33,7 +43,8 @@ const selectedProduct =  lindeProducts.find((p) => p.id == id);
         <div class="flex basis-1/2 flex-col justify-around">
           <div class="flex flex-col gap-4">
             <h1 class="text-3xl font-semibold">
-              {selectedProduct?.product_type} {selectedProduct?.description}
+              {selectedProduct?.product_type}
+              {selectedProduct?.description}
             </h1>
             <div class="flex gap-8">
               <div class="flex flex-col">
@@ -56,8 +67,7 @@ const selectedProduct =  lindeProducts.find((p) => p.id == id);
               </div>
             </div>
           </div>
-          <div class="flex flex-col gap-4">
-          </div>
+          <div class="flex flex-col gap-4"></div>
           <div class="flex flex-col items-start gap-6">
             <p>Jeni te interesuar per kete produkt?</p>
             <button class="btn btn-primary">KONTAKTO</button>
@@ -77,10 +87,17 @@ const selectedProduct =  lindeProducts.find((p) => p.id == id);
     </div>
   </main>
   <div class="mx-auto my-12 flex w-2/3 flex-col gap-6">
-    {selectedProduct?.long_description ?<div class="flex flex-col gap-4 my-12"> <h1 class="text-center text-3xl">Pershkrimi</h1>
-    <p class="text-justify ">{selectedProduct.long_description}</p></div> :null}
+    {
+      selectedProduct?.long_description ? (
+        <div class="my-12 flex flex-col gap-4">
+          {" "}
+          <h1 class="text-center text-3xl">Pershkrimi</h1>
+          <p class="text-justify">{selectedProduct.long_description}</p>
+        </div>
+      ) : null
+    }
 
-    <h1 class="text-center text-3xl ">Produkte te ngjashme</h1>
+    <h1 class="text-center text-3xl">Produkte te ngjashme</h1>
     <div class="flex gap-10">
       {
         Array.from({ length: 4 }, () =>
