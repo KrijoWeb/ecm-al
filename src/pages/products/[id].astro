@@ -3,7 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 import Engine from "../../svg/engine.svg?raw";
 import Height from "../../svg/height.svg?raw";
 import Kilogram from "../../svg/kilogram.svg?raw";
-import Download from "../../svg/download.svg?raw";
 import Euro from "../../svg/euro.svg?raw";
 import SimilarProductCard from "../../components/SimilarProductCard.astro";
 import { products } from "../../constants/products";
@@ -57,31 +56,31 @@ const selectedProduct = products.find((p) => p.id == id);
           </div>
           <div class="flex flex-col gap-4">
             {
-            //@ts-ignore
+              //@ts-ignore
               selectedProduct?.price ? (
-                
-          <div class="flex gap items-center">
-            <div class="h-6 w-6">
-              <Fragment set:html={Euro} />
-            </div>
-              {/*@ts-ignore*/}
-              <p class="text-lg ">{selectedProduct?.price}</p>
-          </div>
+                <div class="gap flex items-center">
+                  <div class="h-6 w-6">
+                    <Fragment set:html={Euro} />
+                  </div>
+                  {/*@ts-ignore*/}
+                  <p class="text-lg">{selectedProduct?.price}</p>
+                </div>
               ) : null
             }
             {
               selectedProduct?.available !== undefined ? (
                 <div class="flex gap-2">
-                  {selectedProduct?.available ? 
-                    ( 
+                  {selectedProduct?.available ? (
+                    <>
                       <div class="h-6 w-6 rounded-full bg-success" />
                       <p>Available</p>
-                    ):
-                    (
-                    <div class="h-6 w-6 rounded-full bg-error" />
-                    <p>Not Available</p>
-                    )
-                    }
+                    </>
+                  ) : (
+                    <>
+                      <div class="h-6 w-6 rounded-full bg-error" />
+                      <p>Not Available</p>
+                    </>
+                  )}
                 </div>
               ) : null
             }

@@ -8,7 +8,7 @@ interface Props {
   setValue: (newVal: TValue) => void;
 }
 
-export const FilterCategory: Component<Props> = (props) => {
+export const FilterCategory: Component = (props) => {
   return (
     <div class="dropdown dropdown-right">
       <div
