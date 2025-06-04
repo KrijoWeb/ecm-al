@@ -5,7 +5,7 @@ import { hansaflexCategories } from "../../constants/hansaflex-categories";
 interface Props {
   company: "hansaflex" | "hoppecke";
 }
-export const ProductCategories: Component = (props) => {
+export const ProductCategories: Component<Props> = (props) => {
   const [selectedCategory, setSelectedCategory] = createSignal(0);
   createEffect(() => {
     console.log("sadf");
@@ -28,9 +28,8 @@ export const ProductCategories: Component = (props) => {
       <div class="my-auto flex h-2/3 basis-7/12 flex-col items-center justify-center gap-4">
         <figure class="animate-appear h-full">
           <img
-            src={`/img/hansaflex/${
-              hansaflexCategories[selectedCategory()]?.Foto
-            }.webp`}
+            src={`/img/hansaflex/${hansaflexCategories[selectedCategory()]?.Foto
+              }.webp`}
             class="h-full"
           />
         </figure>
