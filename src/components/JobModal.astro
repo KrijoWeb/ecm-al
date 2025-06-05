@@ -1,0 +1,27 @@
+---
+import Input from "./Input.astro";
+---
+
+<dialog id="application-modal" class="modal">
+  <div class="modal-box">
+    <h2 class="text-xl font-bold text-center">Apliko</h2>
+    <form
+      class="flex w-full flex-col items-center gap-2"
+      method="post"
+      action="/api/apply-to-job"
+      enctype="multipart/form-data"
+    >
+      <Input label="Emri" name="givenName" />
+      <Input label="Mbiemri" name="lastName"/>
+      <Input label="Email" type="email" name="email"/>
+      <Input label="Ditlindja" type="date" name="dob"/>
+      <Input label="Nr. Cel" type="tel" name="telNr"/>
+      <Input label="CV (vetem PDF)" type="file" name="CV"/>
+      <Input label="Leter Motivimi (vetem PDF)" type="file" name="motivationLetter"/>
+      <button class="btn btn-primary" type="submit">Apliko</button>
+    </form>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>

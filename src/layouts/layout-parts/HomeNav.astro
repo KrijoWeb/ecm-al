@@ -92,9 +92,7 @@ const { img } = Astro.props;
         animate("#header-bg", { opacity: 1 }, { duration: 0.25 });
         animate(
           (progress) => {
-            navContainer.style.backgroundColor = `rgba(255,255,255,${
-              1 - progress
-            })`;
+            navContainer.style.backgroundColor = `rgba(255,255,255,${1 - progress})`;
           },
           { duration: 0.25 },
         );
@@ -149,6 +147,7 @@ const { img } = Astro.props;
 
   const netContainerHeight = navContainer.clientHeight - mainNav.clientHeight;
   const header = document.getElementById("header-bg") as HTMLDivElement;
+  const mainLogo = document.getElementById("main-logo") as HTMLImageElement;
   scroll(({ y }) => {
     mainNav.style.backgroundColor = `rgba(230, 231, 235,${
       y.current / netContainerHeight
@@ -156,6 +155,8 @@ const { img } = Astro.props;
 subMenu.style.backgroundColor = `rgba(230, 231, 235,${
       y.current / netContainerHeight
     })`;
+    let mainLogoHeight = 30 - ( 22 * Math.min( y.current/ netContainerHeight,1  ) )
+    mainLogo.style.width = `${mainLogoHeight}rem`
     let mainNavWidth =
       66 +
       ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) * 33;
@@ -165,9 +166,7 @@ subMenu.style.backgroundColor = `rgba(230, 231, 235,${
     if (navBg)
       navBg.style.backgroundColor = `rgba(230, 231, 235,${navBgOpacity})`;
     if (header)
-      header.style.opacity = `${
-        1 - y.current / (netContainerHeight / 2.7) / 5
-      }`;
+      header.style.opacity = `${1 - y.current / (netContainerHeight / 2.7) / 5}`;
     if (navContainer)
       navContainer.style.backgroundColor = `rgba(230, 231, 235,${
         y.current / netContainerHeight

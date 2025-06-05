@@ -10,7 +10,7 @@ const { header, img } = Astro.props;
 <header
   id="nav-container"
   class="max-w-screen aspect-[4/1] bg-cover bg-fixed bg-top"
-  style=`background-image: url(${img});`
+  style=`background-image: url("${img}");`
 >
   <div
     id="nav-bg"
@@ -40,6 +40,7 @@ const { header, img } = Astro.props;
 <script>
   import { scroll } from "motion";
   const mainNav = document.getElementById("main-nav") as HTMLDivElement;
+  const mainLogo = document.getElementById("main-logo") as HTMLImageElement;
   const subMenu = document.getElementById("company-submenu") as HTMLDivElement;
   const navBg = document.getElementById("nav-bg") as HTMLDivElement;
   const navContainer = document.getElementById(
@@ -51,6 +52,8 @@ const { header, img } = Astro.props;
     mainNav.style.backgroundColor = `rgba(230, 231, 235,${
       y.current / netContainerHeight
     })`;
+    let mainLogoHeight = 30 - ( 22 * Math.min( y.current/ netContainerHeight,1  ) )
+    mainLogo.style.width = `${mainLogoHeight}rem`
     subMenu.style.backgroundColor = `rgba(230, 231, 235,${
       y.current / netContainerHeight
     })`;

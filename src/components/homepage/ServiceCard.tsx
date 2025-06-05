@@ -8,7 +8,7 @@ interface Props {
   text: string;
 }
 
-const ServiceCard: Component = (props) => {
+const ServiceCard: Component<Props> = (props) => {
   return (
     <div
       class="center flex flex-col justify-center gap-4 transition-all duration-300"

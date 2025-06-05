@@ -2,14 +2,25 @@
 export interface Props {
   label: string;
   type?: astroHTML.JSX.HTMLInputTypeAttribute;
+  name?: string;
 }
 
-const { label, type = "text" } = Astro.props;
+const { label, type = "text",name } = Astro.props;
 ---
 
 <label class="form-control w-full max-w-xs">
   <div class="label">
     <span class="label-text">{label}</span>
   </div>
-  <input type={type} class="input input-bordered w-full max-w-xs" required />
+  <input
+    type={type}
+    name={name}
+    accept={type === "file" ? ".pdf" : null}
+    class="w-full max-w-xs"
+    class:list={{
+      "file-input file-input-bordered": type === "file",
+      "input input-bordered": type !== "file",
+    }}
+    required
+  />
 </label>

@@ -2,6 +2,7 @@ import Weight from "../svg/weight.svg?raw";
 import Height from "../svg/height.svg?raw";
 import Euro from "../svg/euro.svg?raw";
 import { Show, type Component } from "solid-js";
+
 interface Props {
   id: string;
   title: string;
@@ -14,7 +15,7 @@ interface Props {
   available?: boolean;
 }
 
-export const ProductCard: Component = (props) => {
+export const ProductCard: Component<Props> = (props) => {
   return (
     <a
       href={

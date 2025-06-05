@@ -1,5 +1,5 @@
 ---
-import Input from "../components/Input.astro";
+import JobModal from "../components/JobModal.astro";
 import BriefCaseIcon from "../svg/briefcase.svg?raw";
 import LocationIcon from "../svg/location.svg?raw";
 interface Props {
@@ -43,20 +43,7 @@ const { title } = Astro.props;
     <button id="apply-btn" class="btn btn-primary"> Apliko Tani </button>
   </div>
 </details>
-<dialog id="application-modal" class="modal">
-  <div class="modal-box">
-    <form class="flex w-full flex-col items-center gap-2">
-      <Input label="Emri" />
-      <Input label="Mbiemri" />
-      <Input label="Email" type="email" />
-      <Input label="Nr. Cel" type="tel" />
-      <button class="btn btn-primary" type="submit">Apliko</button>
-    </form>
-  </div>
-  <form method="dialog" class="modal-backdrop">
-    <button>close</button>
-  </form>
-</dialog>
+<JobModal />
 <script>
   document.getElementById("apply-btn")!.onclick = () =>
     (document.getElementById(

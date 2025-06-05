@@ -8,29 +8,30 @@ const logos = [InstaLogo, LocationSvg, EmailSvg];
 
 <div
   id="main-nav"
-  class="fixed z-[100] flex w-full bg-neutral px-10 backdrop-blur-lg backdrop-filter mask-linear"
+  class="mask-linear fixed z-[100] flex w-full bg-neutral px-10 backdrop-blur-lg backdrop-filter"
 >
   <a href="/" class="my-2">
     <img
+      id="main-logo"
       src="/img/EMC_Logo_Black.webp"
       alt="Logo"
-      class="h-14 object-contain"
+      class="object-contain"
     />
   </a>
-  <div class="mx-16 flex w-[80vw] items-stretch *:py-4">
-    <nav class="flex flex-1 items-stretch justify-around">
-      <div class="dropdown dropdown-hover">
+  <div class="mx-16 flex w-[80vw] items-start *:py-4">
+    <nav class="flex flex-1 items-start justify-around border-b-neutral-500 border-b-2">
+      <div class="dropdown dropdown-hover group">
         <div
           tabindex="0"
           role="button"
-          class="text-gray-800 hover:text-gray-600"
+          class="text-gray-800 hover:text-gray-600 peer"
         >
           PRODUKTET
         </div>
         <ul
           id="company-submenu"
           tabindex="0"
-          class="relative menu menu-horizontal dropdown-content [100] w-96 rounded-none p-1"
+          class="[100] menu menu-vertical dropdown-content !relative w-0 h-0 peer-hover:h-fit group-hover:h-fit  hover:h-fit rounded-none p-1 block"
         >
           <li><a href="/products/linde">Linde</a></li>
           <li><a href="/products/hansaflex">HansaFlex</a></li>
@@ -45,7 +46,7 @@ const logos = [InstaLogo, LocationSvg, EmailSvg];
       <a href="/contact" class="text-gray-800 hover:text-gray-600">KONTAKT</a>
     </nav>
   </div>
-  <div class="flex items-center gap-2">
+  <div class="flex items-start gap-2 pt-4">
     {
       logos.map((logo) => (
         <div class="flex h-6 w-6 items-center justify-center">
