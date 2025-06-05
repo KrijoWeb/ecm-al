@@ -11,8 +11,8 @@ const { imgSrc, title, imgLeft } = Astro.props;
   {
     imgLeft ? (
       <>
-        <figure class="flex-1">
-          <img src={imgSrc} alt={title} />
+        <figure class="min-h-96 flex-1 object-cover">
+          <img src={imgSrc} alt={title} class="h-full w-full object-cover" />
         </figure>
         <div class="flex flex-1 flex-col items-center gap-8">
           <h2 class="text-3xl font-semibold capitalize">{title}</h2>
@@ -29,8 +29,8 @@ const { imgSrc, title, imgLeft } = Astro.props;
             <slot />
           </p>
         </div>
-        <figure class="flex-1">
-          <img src={imgSrc} alt={title} />
+        <figure class="min-h-96 flex-1 object-cover">
+          <img src={imgSrc} alt={title} class="h-full w-full object-cover" />
         </figure>
       </>
     )

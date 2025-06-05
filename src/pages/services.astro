@@ -1,104 +1,62 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HiddenDescriptionCard from "../components/HiddenDescriptionCard.astro";
+import TextWithPhoto from "../components/TextWithPhoto.astro";
 ---
 
 <Layout img="/img/about-bg.webp" title="Sherbimet" header="Sherbimet">
   <div class="mx-auto my-12 flex w-2/3 flex-col gap-12">
-    <div class="flex items-stretch gap-6">
-      <div class="h-full flex-1 flex-shrink object-cover">
-        <img
-          src="/img/service_1.webp"
-          alt="Shërbime të mirëmbajtjes preventive të programuar"
-          class="object-contain"
-        />
-      </div>
-      <div class="basis-2/3">
-        <h3 class="mb-2 text-2xl font-bold">
-          Shërbime të mirëmbajtjes preventive të programuar
-        </h3>
-        <p>
-          Këto shërbime janë të dizenjuara për të mbajtur mjetet tuaja në
-          gjendje të mire teknike dhe optimale pune por edhe per ti paraprire
-          dhe shmangur difektet e mundshme dhe kostot e tyre. Bazuar ne
-          Standartet e mundësuar nga Linde, për çdo makineri apo pajisje të
-          prodhuar, rekomandohet kryerja e shërbimeve të mirëmbajtjes sipas një
-          programi të caktuar. Në varësi të llojit dhe tipit të mjetit që
-          dispononi ato kanë nevojë për mirëmbajtje çdo 500, 1000, 3000 orë
-          pune. Duke përdorur vetëm pjesë këmbimi origjinale Linde, cilësia e
-          shërbimit tonë është e garantuar. Të gjitha shërbimet e kryera në
-          asetet tuaja, regjistrohen në një program kompiuterik të veçantë, duke
-          krijuar në këtë mënyrë një historik të detajuar të mirëmbajtjes.
-        </p>
-      </div>
-    </div>
+    <TextWithPhoto
+      title="Shërbime të mirëmbajtjes preventive të programuar"
+      imgSrc="/img/service_1.webp"
+      imgLeft
+    >
+      Këto shërbime janë të dizenjuara për të mbajtur mjetet tuaja në gjendje të
+      mire teknike dhe optimale pune por edhe per ti paraprire dhe shmangur
+      difektet e mundshme dhe kostot e tyre. Bazuar ne Standartet e mundësuar
+      nga Linde, për çdo makineri apo pajisje të prodhuar, rekomandohet kryerja
+      e shërbimeve të mirëmbajtjes sipas një programi të caktuar. Në varësi të
+      llojit dhe tipit të mjetit që dispononi ato kanë nevojë për mirëmbajtje
+      çdo 500, 1000, 3000 orë pune. Duke përdorur vetëm pjesë këmbimi origjinale
+      Linde, cilësia e shërbimit tonë është e garantuar. Të gjitha shërbimet e
+      kryera në asetet tuaja, regjistrohen në një program kompiuterik të
+      veçantë, duke krijuar në këtë mënyrë një historik të detajuar të
+      mirëmbajtjes.
+    </TextWithPhoto>
 
-    <div class="flex items-stretch gap-6">
-      <div class="basis-2/3">
-        <h3 class="mb-2 text-2xl font-bold">
-          Shërbime të mirëmbajtjes ‘sipas kërkesës’:
-        </h3>
-        <p>
-          Ky shërbim ofron mundësinë e ndërhyrjes për çdo problem që mund të
-          lindë në mjetet tuaja, në çdo moment që kërkohet. Shërbimi i
-          mirëmbajtjes ‘sipas kërkesës’ është fleksibël dhe mund të realizohet
-          kurdo që të jetë e nevojshme, duke siguruar që mjetet tuaja të kthehen
-          në funksionim sa më shpejt dhe me efikasitet maksimal.
-        </p>
-      </div>
-      <div class="h-full flex-1 flex-shrink object-cover">
-        <img
-          src="/img/about_2.webp"
-          alt="Shërbime të mirëmbajtjes ‘sipas kërkesës’"
-          class="object-contain"
-        />
-      </div>
-    </div>
-    <div class="flex items-stretch gap-6">
-      <div class="h-full flex-1 flex-shrink object-cover">
-        <img
-          src="/img/about_3.webp"
-          alt="Shërbime të mirëmbajtjes dhe riparimit të tipit ‘paketë e plotë’"
-          class="object-contain"
-        />
-      </div>
-      <div class="basis-2/3">
-        <h3 class="mb-2 text-2xl font-bold">
-          Shërbime të mirëmbajtjes dhe riparimit të tipit ‘paketë e plotë’:
-        </h3>
-        <p>
-          Për ata që kërkojnë mbështetje të plotë, ky shërbim ofron një paketë
-          të plotë mirëmbajtjeje dhe riparimi, që përfshin të gjitha aspektet e
-          nevojshme për të mbajtur mjetet në kushte optimale. Nga kontrolli i
-          sistemit hidraulik, elektrike, deri te kontrollet e mekanizmave të
-          ngritjes dhe të drejtimit, ky shërbim i plotë siguron funksionimin e
-          pandërprerë të mjeteve dhe parandalon çdo problem të mundshëm që mund
-          të ndodhi në të ardhmen.
-        </p>
-      </div>
-    </div>
+    <TextWithPhoto
+      title="Shërbime të mirëmbajtjes ‘sipas kërkesës’:"
+      imgSrc="/img/about_2.webp"
+    >
+      Ky shërbim ofron mundësinë e ndërhyrjes për çdo problem që mund të lindë
+      në mjetet tuaja, në çdo moment që kërkohet. Shërbimi i mirëmbajtjes ‘sipas
+      kërkesës’ është fleksibël dhe mund të realizohet kurdo që të jetë e
+      nevojshme, duke siguruar që mjetet tuaja të kthehen në funksionim sa më
+      shpejt dhe me efikasitet maksimal.
+    </TextWithPhoto>
 
-    <div class="flex items-stretch gap-6">
-      <div class="basis-2/3">
-        <h3 class="mb-2 text-2xl font-bold">Riparime:</h3>
-        <p>
-          Në rast se mjetet tuaja kanë nevojë për riparime, EMC ofron shërbime
-          të shpejta dhe efikase për të zgjidhur çdo problem që mund të lindë
-          tek mjetet tuaja. Inxhinierët dhe mekanikët tanë të kualifikuar janë
-          gjithmonë të gatshëm për të reaguar dhe për të ofruar zgjidhje të
-          sakta, duke përdorur vetëm pjesë këmbimi origjinale të Linde. Kjo
-          siguron që riparimet të jenë të qëndrueshme dhe të kenë një
-          performancë të lartë afatgjatë, duke minimizuar ndërprerjet e punës
-          dhe duke garantuar funksionimin optimal të mjeteve tuaja.
-        </p>
-      </div>
-      <div class="h-full flex-1 flex-shrink object-cover">
-        <img
-          src="/img/service.webp"
-          alt="Shërbime të mirëmbajtjes ‘sipas kërkesës’"
-          class="object-contain"
-        />
-      </div>
-    </div>
+    <TextWithPhoto
+      title="Shërbime të mirëmbajtjes dhe riparimit të tipit ‘paketë e plotë’:"
+      imgSrc="/img/about_3.webp"
+      imgLeft
+    >
+      Për ata që kërkojnë mbështetje të plotë, ky shërbim ofron një paketë të
+      plotë mirëmbajtjeje dhe riparimi, që përfshin të gjitha aspektet e
+      nevojshme për të mbajtur mjetet në kushte optimale. Nga kontrolli i
+      sistemit hidraulik, elektrike, deri te kontrollet e mekanizmave të
+      ngritjes dhe të drejtimit, ky shërbim i plotë siguron funksionimin e
+      pandërprerë të mjeteve dhe parandalon çdo problem të mundshëm që mund të
+      ndodhi në të ardhmen.
+    </TextWithPhoto>
+
+    <TextWithPhoto title="Riparime:" imgSrc="/img/service.webp">
+      Në rast se mjetet tuaja kanë nevojë për riparime, EMC ofron shërbime të
+      shpejta dhe efikase për të zgjidhur çdo problem që mund të lindë tek
+      mjetet tuaja. Inxhinierët dhe mekanikët tanë të kualifikuar janë gjithmonë
+      të gatshëm për të reaguar dhe për të ofruar zgjidhje të sakta, duke
+      përdorur vetëm pjesë këmbimi origjinale të Linde. Kjo siguron që riparimet
+      të jenë të qëndrueshme dhe të kenë një performancë të lartë afatgjatë,
+      duke minimizuar ndërprerjet e punës dhe duke garantuar funksionimin
+      optimal të mjeteve tuaja.
+    </TextWithPhoto>
   </div>
 </Layout>

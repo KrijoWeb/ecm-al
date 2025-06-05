@@ -15,23 +15,25 @@ const logos = [InstaLogo, LocationSvg, EmailSvg];
       id="main-logo"
       src="/img/EMC_Logo_Black.webp"
       alt="Logo"
-      class="object-contain"
+      class="w-36 object-contain"
     />
   </a>
   <div class="mx-16 flex w-[80vw] items-start *:py-4">
-    <nav class="flex flex-1 items-start justify-around border-b-neutral-500 border-b-2">
-      <div class="dropdown dropdown-hover group">
+    <nav
+      class="flex flex-1 items-start justify-around border-b-2 border-b-neutral-500"
+    >
+      <div class="group dropdown dropdown-hover">
         <div
           tabindex="0"
           role="button"
-          class="text-gray-800 hover:text-gray-600 peer"
+          class="peer text-gray-800 hover:text-gray-600"
         >
           PRODUKTET
         </div>
         <ul
           id="company-submenu"
           tabindex="0"
-          class="[100] menu menu-vertical dropdown-content !relative w-0 h-0 peer-hover:h-fit group-hover:h-fit  hover:h-fit rounded-none p-1 block"
+          class="[100] menu dropdown-content menu-vertical !relative block h-0 w-0 rounded-none p-1 hover:h-fit group-hover:h-fit peer-hover:h-fit"
         >
           <li><a href="/products/linde">Linde</a></li>
           <li><a href="/products/hansaflex">HansaFlex</a></li>

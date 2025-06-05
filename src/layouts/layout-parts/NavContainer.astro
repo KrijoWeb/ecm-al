@@ -25,7 +25,6 @@ const { header, img } = Astro.props;
         {header}
       </h1>
     </div>
-    <div></div>
   </div>
 </header>
 
@@ -52,8 +51,8 @@ const { header, img } = Astro.props;
     mainNav.style.backgroundColor = `rgba(230, 231, 235,${
       y.current / netContainerHeight
     })`;
-    let mainLogoHeight = 30 - ( 22 * Math.min( y.current/ netContainerHeight,1  ) )
-    mainLogo.style.width = `${mainLogoHeight}rem`
+    let mainLogoHeight = 30 - 22 * Math.min(y.current / netContainerHeight, 1);
+    mainLogo.style.width = `${mainLogoHeight}rem`;
     subMenu.style.backgroundColor = `rgba(230, 231, 235,${
       y.current / netContainerHeight
     })`;

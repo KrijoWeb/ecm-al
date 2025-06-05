@@ -84,7 +84,9 @@ const { title, header, img, compactNav } = Astro.props;
         <MainNav />
       </HomeNav>
     ) : compactNav ? (
-      <MainNav />
+      <div class="w-[66vw]">
+        <MainNav />
+      </div>
     ) : (
       <NavContainer header={header} img={img}>
         <MainNav />
