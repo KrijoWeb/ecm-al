@@ -2,13 +2,14 @@ import { createEffect, createSignal, type Component } from "solid-js";
 import { CategoryCard } from "./CategoryCard";
 import { animate, stagger } from "motion";
 import { hansaflexCategories } from "../../constants/hansaflex-categories";
+import { hoppeckeCategories } from "../../constants/hoppecke-categories";
 interface Props {
   company: "hansaflex" | "hoppecke";
 }
 export const ProductCategories: Component<Props> = (props) => {
+  const categories = props.company === "hoppecke" ? hoppeckeCategories : hansaflexCategories;
   const [selectedCategory, setSelectedCategory] = createSignal(0);
   createEffect(() => {
-    console.log("sadf");
     if (selectedCategory() !== null) {
       animate(
         ".animate-appear",
@@ -19,7 +20,7 @@ export const ProductCategories: Component<Props> = (props) => {
   });
   return (
     <div
-      class="flex h-[75vh] items-center rounded-3xl border-2 bg-[#ECF1F4]"
+      class="flex h-[75vh] items-center  border-2 bg-[#ECF1F4]"
       classList={{
         "border-primary": props.company === "hansaflex",
         " border-secondary": props.company === "hoppecke",
@@ -28,31 +29,37 @@ export const ProductCategories: Component<Props> = (props) => {
       <div class="my-auto flex h-2/3 basis-7/12 flex-col items-center justify-center gap-4">
         <figure class="animate-appear h-full">
           <img
-            src={`/img/hansaflex/${
-              hansaflexCategories[selectedCategory()]?.Foto
-            }.webp`}
+            src={`/img/${props.company}/${categories[selectedCategory()]?.Foto
+              }.webp`}
             class="h-full"
           />
         </figure>
         <h2 class="animate-appear text-2xl font-semibold">
-          {hansaflexCategories[selectedCategory()]?.Kategoria}
+          {categories[selectedCategory()]?.Kategoria}
         </h2>
+        <button
+          class="btn"
+          classList={{
+            "btn-primary": props.company === "hansaflex",
+            "btn-secondary": props.company === "hoppecke",
+          }}
+          onClick={() => {
+            window.open(categories[selectedCategory()]?.Link);
+          }}
+        >Me Shume</button>
       </div>
       <div
-        class="flex h-full basis-5/12 flex-col rounded-3xl"
+        class="flex h-full basis-5/12 flex-col"
         classList={{
           "bg-primary": props.company === "hansaflex",
           "bg-secondary": props.company === "hoppecke",
         }}
       >
-        {hansaflexCategories.map((e, i) => (
+        {categories.map((e, i) => (
           <CategoryCard
             title={e.Kategoria}
             company={props.company}
             onHover={() => setSelectedCategory(i)}
-            onClick={() => {
-              window.open(hansaflexCategories[selectedCategory()]?.Link);
-            }}
           />
         ))}
       </div>

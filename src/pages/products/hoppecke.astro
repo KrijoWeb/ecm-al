@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { ProductCategories } from "../../components/hansaflex/Products.tsx";
+import TextWithPhoto from "../../components/TextWithPhoto.astro";
 ---
 
 <Layout
@@ -76,103 +77,83 @@ import { ProductCategories } from "../../components/hansaflex/Products.tsx";
         </div>
       </div>
     </div>
-    <div class="flex items-center gap-8">
-      <div class="flex flex-1 flex-col items-center gap-8">
-        <h2 class="text-3xl font-semibold capitalize">
-          Trak – Sistemet e lëvizjes:
-        </h2>
-        <p class="text-justify">
-          Bateritë e Hoppecke trak | uplift me plumb të optimizuara për përdorim
-          në mjete industriale (Forklift) është e pajisur me sistemin e lëvizjes
-          së elektrolitit të cilësisë së lartë trak | air, i cili shkurtson
-          kohën e karikimit dhe njëkohësisht rrit disponueshmërinë e baterisë.
-          Gjithashtu, ky sistem ul nevojën për ujë dhe koston e energjisë.
-          Sistemi parandalon në mënyrë efektive formimin e stratifikimit të
-          acidit duke injektuar ajër selektivisht, duke rezultuar në stres
-          minimal për baterinë krahasuar me metodat e tjera të përzierjes. Kjo
-          mund të reduktojë numrin e baterive të nevojshme për zëvendësim dhe të
-          zgjasë jetëgjatësine e shërbimit të baterive. Në kombinim me
-          karikuesit HOPPECKE, bateria karikohet në mënyrë të butë dhe efikase.
-          Falë mundësive për karikim të shpejtë dhe të ndërmjetëm, operacionet
-          24/7 janë të mundshme edhe me trak | air.
-        </p>
-      </div>
-      <figure class="flex-1">
-        <img src="/img/hoppecke/2.png" alt="Hansaflex image 2" />
-      </figure>
-    </div>
-    <div class="flex items-center gap-8">
-      <figure class="flex-1">
-        <img src="/img/hoppecke/3.png" alt="Hansaflex image 1" />
-      </figure>
-      <div class="flex flex-1 flex-col items-center gap-8">
-        <h2 class="text-3xl font-semibold capitalize">
-          Grid – Sistemet me energji të pandërprerë (UPS):
-        </h2>
-        <p class="text-justify">
-          Nëpërmjet HOPPECKE Grid ne mund tju ofrojmë furnizim të sigurt me
-          energji në rast emergjence. Bateritë për sisteme energjie të
-          pandërprerë janë të dizejnuara për të siguruar energji të qëndrueshme
-          dhe të vazhdueshme në çdo moment, kjo është veçanërisht e rëndësishme
-          sektore të industrisë ku ndërprerjet e energjisë mund të kenë pasoja
-          të rënda. Sistemet tona të besueshme të furnizimit me energji janë
-          gjithmonë të gatshme për t'u operuar, duke mbrojtur njerëzit, mallrat
-          dhe të dhënat. Sistemet e ruajtjes së energjisë HOPPECKE përdoren për
-          të siguruar cilësinë dhe stabilitetin e rrjeteve të energjisë, si dhe
-          për furnizim rezervë.
-        </p>
-      </div>
-    </div>
-    <div class="flex items-center gap-8">
-      <div class="flex flex-1 flex-col items-center gap-8">
-        <h2 class="text-3xl font-semibold capitalize">
-          Sun – Sistemet e energjisë diellore:
-        </h2>
-        <p class="text-justify">
-          Hoppecke ofron bateri dhe sisteme të energjisë solare, të cilat janë
-          ideale për përdorim në magazinimin e energjisë diellore. Këto sisteme
-          ndihmojnë në optimizimin e përdorimit të burimeve të rinovueshme, duke
-          kontribuar në ruajtjen e energjisë dhe uljen e kostove operacionale.
-          Zgjidhjet e ofruara për ruajtjen e energjisë janë të përshtatshme për
-          kompani industriale, operatorë të rrjeteve të energjisë, furnizues të
-          energjisë, bujqësi, bashki dhe sektorë të tjerë publikë duke mundësuar
-          përdorimin e sigurt dhe të optimizuar të energjisë së rinovueshme, si
-          për aplikime në rrjet ashtu edhe jashtë tij. Në ndryshim nga bateritë
-          për furnizim emergjent me energji, të cilat janë plotësisht të
-          karikuara dhe presin përdorimin e tyre, bateritë sun|power duhet të
-          jenë të afta për karikim dhe shkarkim ciklik gjatë gjithë periudhës së
-          funksionimit. Për këtë lloj operimi, HOPPECKE ofron bateri plumbi të
-          dizejnuara në formatet OpzS, OpzV dhe AGM, të cilat janë testuar dhe
-          provuar gjatë shumë viteve dhe janë klasifikuar sipas standardit të
-          fotovoltaikëve IEC 61427. Secila prej këtyre dizenjove ka avantazhe të
-          veçanta dhe është e përshtatshme sipas kushteve të kërkuara.
-        </p>
-      </div>
-      <figure class="flex-1">
-        <img src="/img/hoppecke/4.png" alt="Hansaflex image 2" />
-      </figure>
-    </div>
+    <TextWithPhoto
+      title="Trak – Sistemet e lëvizjes:"
+      imgSrc="/img/hoppecke/2.png"
+      height={28}
+      contain
+    >
+      Bateritë e Hoppecke trak | uplift me plumb të optimizuara për përdorim në
+      mjete industriale (Forklift) është e pajisur me sistemin e lëvizjes së
+      elektrolitit të cilësisë së lartë trak | air, i cili shkurtson kohën e
+      karikimit dhe njëkohësisht rrit disponueshmërinë e baterisë. Gjithashtu,
+      ky sistem ul nevojën për ujë dhe koston e energjisë. Sistemi parandalon në
+      mënyrë efektive formimin e stratifikimit të acidit duke injektuar ajër
+      selektivisht, duke rezultuar në stres minimal për baterinë krahasuar me
+      metodat e tjera të përzierjes. Kjo mund të reduktojë numrin e baterive të
+      nevojshme për zëvendësim dhe të zgjasë jetëgjatësine e shërbimit të
+      baterive. Në kombinim me karikuesit HOPPECKE, bateria karikohet në mënyrë
+      të butë dhe efikase. Falë mundësive për karikim të shpejtë dhe të
+      ndërmjetëm, operacionet 24/7 janë të mundshme edhe me trak | air.
+    </TextWithPhoto>
+    <TextWithPhoto
+      title="Grid – Sistemet me energji të pandërprerë (UPS): "
+      imgSrc="/img/hoppecke/3.png"
+      imgLeft
+      height={28}
+      contain
+    >
+      Nëpërmjet HOPPECKE Grid ne mund tju ofrojmë furnizim të sigurt me energji
+      në rast emergjence. Bateritë për sisteme energjie të pandërprerë janë të
+      dizejnuara për të siguruar energji të qëndrueshme dhe të vazhdueshme në
+      çdo moment, kjo është veçanërisht e rëndësishme sektore të industrisë ku
+      ndërprerjet e energjisë mund të kenë pasoja të rënda. Sistemet tona të
+      besueshme të furnizimit me energji janë gjithmonë të gatshme për t'u
+      operuar, duke mbrojtur njerëzit, mallrat dhe të dhënat. Sistemet e
+      ruajtjes së energjisë HOPPECKE përdoren për të siguruar cilësinë dhe
+      stabilitetin e rrjeteve të energjisë, si dhe për furnizim rezervë.
+    </TextWithPhoto>
+    <TextWithPhoto
+      title="Sun – Sistemet e energjisë diellore:"
+      imgSrc="/img/hoppecke/4.png"
+      height={28}
+      contain
+    >
+      Hoppecke ofron bateri dhe sisteme të energjisë solare, të cilat janë
+      ideale për përdorim në magazinimin e energjisë diellore. Këto sisteme
+      ndihmojnë në optimizimin e përdorimit të burimeve të rinovueshme, duke
+      kontribuar në ruajtjen e energjisë dhe uljen e kostove operacionale.
+      Zgjidhjet e ofruara për ruajtjen e energjisë janë të përshtatshme për
+      kompani industriale, operatorë të rrjeteve të energjisë, furnizues të
+      energjisë, bujqësi, bashki dhe sektorë të tjerë publikë duke mundësuar
+      përdorimin e sigurt dhe të optimizuar të energjisë së rinovueshme, si për
+      aplikime në rrjet ashtu edhe jashtë tij. Në ndryshim nga bateritë për
+      furnizim emergjent me energji, të cilat janë plotësisht të karikuara dhe
+      presin përdorimin e tyre, bateritë sun|power duhet të jenë të afta për
+      karikim dhe shkarkim ciklik gjatë gjithë periudhës së funksionimit. Për
+      këtë lloj operimi, HOPPECKE ofron bateri plumbi të dizejnuara në formatet
+      OpzS, OpzV dhe AGM, të cilat janë testuar dhe provuar gjatë shumë viteve
+      dhe janë klasifikuar sipas standardit të fotovoltaikëve IEC 61427. Secila
+      prej këtyre dizenjove ka avantazhe të veçanta dhe është e përshtatshme
+      sipas kushteve të kërkuara.
+    </TextWithPhoto>
+    <TextWithPhoto
+      title="Rail – Sistemet e transportit hekurudhor:"
+      imgSrc="/img/hoppecke/5.png"
+      imgLeft
+      height={28}
+      contain
+    >
+      Bateritë për transportin hekurudhor të Hoppecke janë të dizejnuara për të
+      siguruar fuqi të qëndrueshme dhe të vazhdueshme për sistemet e trenave dhe
+      transportin hekurudhor, duke mundësuar operacione të sigurta dhe efikase
+      në këtë sektor. Bateritë e HOPPECKE, të dizejnuara për aplikime
+      hekurudhore, ofrojnë performancë të shkëlqyer dhe janë të certifikuara
+      sipas standardeve ndërkombëtare. Përveç kësaj, bateritë e plumbit ofrojnë
+      besueshmëri të provuar dhe mund të përballojnë goditje dhe vibracione
+      përtej kushteve tipike të përdorimit hekurudhor.
+    </TextWithPhoto>
 
-    <div class="flex items-center gap-8">
-      <figure class="flex-1">
-        <img src="/img/hoppecke/5.png" alt="Hansaflex image 1" />
-      </figure>
-      <div class="flex flex-1 flex-col items-center gap-8">
-        <h2 class="text-3xl font-semibold capitalize">
-          Rail – Sistemet e transportit hekurudhor:
-        </h2>
-        <p class="text-justify">
-          Bateritë për transportin hekurudhor të Hoppecke janë të dizejnuara për
-          të siguruar fuqi të qëndrueshme dhe të vazhdueshme për sistemet e
-          trenave dhe transportin hekurudhor, duke mundësuar operacione të
-          sigurta dhe efikase në këtë sektor. Bateritë e HOPPECKE, të dizejnuara
-          për aplikime hekurudhore, ofrojnë performancë të shkëlqyer dhe janë të
-          certifikuara sipas standardeve ndërkombëtare. Përveç kësaj, bateritë e
-          plumbit ofrojnë besueshmëri të provuar dhe mund të përballojnë goditje
-          dhe vibracione përtej kushteve tipike të përdorimit hekurudhor.
-        </p>
-      </div>
-    </div>
     <ProductCategories company="hoppecke" client:only />
   </main>
 </Layout>

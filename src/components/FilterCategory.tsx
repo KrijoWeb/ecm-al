@@ -52,7 +52,6 @@ export const FilterCategory: Component<Props> = (props) => {
                         if (!e.currentTarget.checked)
                           temp.splice(temp.indexOf(option), 1);
                         else temp.push(option);
-                        console.log(temp);
                         props.setValue(temp);
                       }}
                     />

@@ -135,7 +135,6 @@ const { img } = Astro.props;
   let i = 2;
   window.setInterval(() => {
     if (i > 3) i = 1;
-    console.log("index", i);
     if (window.scrollY / window.innerHeight >= 0.2) return;
     if (i % 3 === 0) {
       hpBtn.click();
@@ -157,7 +156,7 @@ const { img } = Astro.props;
     subMenu.style.backgroundColor = `rgba(230, 231, 235,${
       y.current / netContainerHeight
     })`;
-    let mainLogoWidth = 30 - 22 * Math.min(y.current / netContainerHeight, 1);
+    let mainLogoWidth = 22 - 14 * Math.min(y.current / netContainerHeight, 1);
     mainLogo.style.width = `${mainLogoWidth}rem`;
     let mainNavWidth =
       66 +
