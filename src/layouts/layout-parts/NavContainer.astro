@@ -5,6 +5,7 @@ interface Props {
   compactNav?: boolean;
 }
 const { header, img } = Astro.props;
+const {href} = Astro.url;
 ---
 
 <header
@@ -18,12 +19,20 @@ const { header, img } = Astro.props;
   >
     <slot />
     <div id="header-bg" class="my-auto">
-      <h1
+      {href.includes("linde") ? 
+      <img src="/img/linde/header.jpg" />
+      :
+      href.includes("hansaflex") ?
+      <img src="/img/hansaflex/header.svg" />
+:
+      href.includes("hoppecke") ?
+      <img src="/img/hoppecke/header.png" />
+      : <h1
         class="px-6 py-4 text-5xl font-bold capitalize text-black"
         id="header"
       >
         {header}
-      </h1>
+      </h1> }
     </div>
   </div>
 </header>
