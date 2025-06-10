@@ -1,4 +1,4 @@
-import { createEffect, createSignal, type Component } from "solid-js";
+import { type Component } from "solid-js";
 import ServiceCard from "./ServiceCard";
 
 
