@@ -20,19 +20,24 @@ const { title, header, img, compactNav } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
     <style>
-      ::-moz-selection {
-        color: white;
-        background: #aa0020;
-      }
+      html {
+        ::-moz-selection {
+          color: white;
+          background: rgba(170, 0, 32, 0.85);
+        }
 
-      ::selection {
-        color: white;
-        background: #aa0020;
+        ::selection {
+          color: white;
+          background: rgba(170, 0, 32, 0.85);
+        }
+
+        scroll-behavior: smooth;
       }
     </style>
     <script is:inline>

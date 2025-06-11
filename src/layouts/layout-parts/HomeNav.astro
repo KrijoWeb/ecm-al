@@ -23,7 +23,11 @@ const { img } = Astro.props;
         <h1 class="text-6xl font-bold">
           Mjete LINDE, për perpunimin e ngarkesave
         </h1>
-        <a id="more-link" class="btn btn-primary text-lg font-bold uppercase">
+        <a
+          id="more-link"
+          class="btn btn-primary text-lg font-bold uppercase"
+          href="/products/linde"
+        >
           Me Shume
         </a>
       </div>
@@ -48,7 +52,7 @@ const { img } = Astro.props;
   </div>
 </header>
 <script>
-  import { scroll, animate } from "motion";
+  import { scroll, animate, cubicBezier } from "motion";
   const mainNav = document.getElementById("main-nav") as HTMLDivElement;
   const subMenu = document.getElementById("company-submenu") as HTMLDivElement;
   const navBg = document.getElementById("nav-bg") as HTMLDivElement;
@@ -79,12 +83,12 @@ const { img } = Astro.props;
       if (i === btnIndex) btnArray[i].style.opacity = "1";
       else btnArray[i].style.opacity = "0.6";
     });
-    animate(
-      (progress) => {
+    animate(0, 1, {
+      onUpdate: (progress) => {
         navContainer.style.backgroundColor = `rgba(255,255,255,${progress})`;
       },
-      { duration: 0.25 },
-    );
+      duration: 0.25,
+    });
     animate("#header-bg", { opacity: 0 }, { duration: 0.25 }).finished.then(
       () => {
         // companyLogo.src = companySrc;
@@ -92,12 +96,12 @@ const { img } = Astro.props;
         navContainer.style.backgroundImage = `url(${imgUrl})`;
         btnEl.href = href;
         animate("#header-bg", { opacity: 1 }, { duration: 0.25 });
-        animate(
-          (progress) => {
+        animate(0, 1, {
+          onUpdate: (progress) => {
             navContainer.style.backgroundColor = `rgba(255,255,255,${1 - progress})`;
           },
-          { duration: 0.25 },
-        );
+          duration: 0.25,
+        });
       },
     );
   };
@@ -149,28 +153,34 @@ const { img } = Astro.props;
   const netContainerHeight = navContainer.clientHeight - mainNav.clientHeight;
   const header = document.getElementById("header-bg") as HTMLDivElement;
   const mainLogo = document.getElementById("main-logo") as HTMLImageElement;
-  scroll(({ y }) => {
-    mainNav.style.backgroundColor = `rgba(230, 231, 235,${
-      y.current / netContainerHeight
-    })`;
-    subMenu.style.backgroundColor = `rgba(230, 231, 235,${
-      y.current / netContainerHeight
-    })`;
-    let mainLogoWidth = 22 - 14 * Math.min(y.current / netContainerHeight, 1);
-    mainLogo.style.width = `${mainLogoWidth}rem`;
-    let mainNavWidth =
-      66 +
-      ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) * 33;
-    let navBgOpacity = y.current / navContainer?.clientHeight! + 0.45;
-    mainNavWidth = mainNavWidth < 100 ? mainNavWidth : 100;
-    mainNav.style.width = `${mainNavWidth}vw`;
-    if (navBg)
-      navBg.style.backgroundColor = `rgba(230, 231, 235,${navBgOpacity})`;
-    if (header)
-      header.style.opacity = `${1 - y.current / (netContainerHeight / 2.7) / 5}`;
-    if (navContainer)
-      navContainer.style.backgroundColor = `rgba(230, 231, 235,${
-        y.current / netContainerHeight
-      })`;
-  });
+  const easing = cubicBezier(0, 0.6, 1.5, -1);
+  scroll(
+    (_, { y }) => {
+      mainNav.style.backgroundColor = `rgba(230, 231, 235,${easing(
+        y.current / netContainerHeight,
+      )})`;
+      subMenu.style.backgroundColor = `rgba(230, 231, 235,${easing(
+        y.current / netContainerHeight,
+      )})`;
+      let mainLogoWidth = 22 - 14 * Math.min(y.current / netContainerHeight, 1);
+      mainLogo.style.width = `${mainLogoWidth}rem`;
+      let mainNavWidth =
+        66 +
+        ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) *
+          33;
+      let navBgOpacity = y.current / navContainer?.clientHeight! + 0.45;
+      mainNavWidth = mainNavWidth < 100 ? mainNavWidth : 100;
+      mainNav.style.width = `${mainNavWidth}vw`;
+      if (navBg)
+        navBg.style.backgroundColor = `rgba(230, 231, 235,${Math.max(0.35, easing(navBgOpacity))})`;
+      if (header)
+        header.style.opacity = `${1 - easing(y.current / netContainerHeight)}`;
+      if (navContainer)
+        navContainer.style.backgroundColor = `rgba(230, 231, 235,${Math.max(
+          0.35,
+          easing(y.current / netContainerHeight),
+        )})`;
+    },
+    { target: document.getElementById("nav-container") },
+  );
 </script>

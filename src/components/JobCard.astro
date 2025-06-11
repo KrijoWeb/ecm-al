@@ -3,9 +3,10 @@ import JobModal from "../components/JobModal.astro";
 import BriefCaseIcon from "../svg/briefcase.svg?raw";
 import LocationIcon from "../svg/location.svg?raw";
 interface Props {
+  id: string;
   title: string;
 }
-const { title } = Astro.props;
+const { id, title } = Astro.props;
 ---
 
 <details class="collapse bg-neutral">
@@ -40,13 +41,13 @@ const { title } = Astro.props;
       excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco
       ut ea consectetur et est culpa et culpa duis.
     </p>
-    <button id="apply-btn" class="btn btn-primary"> Apliko Tani </button>
+    <button id={`apply-btn-${id}`} class="btn btn-primary">
+      Apliko Tani
+    </button>
   </div>
 </details>
-<JobModal />
-<script>
-  document.getElementById("apply-btn")!.onclick = () =>
-    (document.getElementById(
-      "application-modal",
-    ) as HTMLDialogElement)!.showModal();
+<JobModal id={id} />
+<script define:vars={{ id }} is:inline>
+  document.getElementById(`apply-btn-${id}`).onclick = () =>
+    document.getElementById(`application-modal-${id}`).showModal();
 </script>

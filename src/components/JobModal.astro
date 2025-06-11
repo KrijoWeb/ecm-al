@@ -1,8 +1,12 @@
 ---
 import Input from "./Input.astro";
+export interface Props {
+  id: string;
+}
+const { id } = Astro.props;
 ---
 
-<dialog id="application-modal" class="modal">
+<dialog id={`application-modal-${id}`} class="modal">
   <div class="modal-box">
     <h2 class="text-center text-xl font-bold">Apliko</h2>
     <form
