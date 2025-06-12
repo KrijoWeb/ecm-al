@@ -70,14 +70,11 @@ const { img } = Astro.props;
     imgUrl: string,
     btnIndex: number,
   ) => {
-    navContainer.getElementsByTagName("a")[0].href = href;
-    const companyLogo = navContainer.querySelector(
-      "#company-logo",
-    ) as HTMLImageElement;
-    const textEl = navContainer.getElementsByTagName(
+        const textEl = navContainer.getElementsByTagName(
       "h1",
     )[0] as HTMLHeadElement;
     const btnEl = navContainer.querySelector("#more-link") as HTMLAnchorElement;
+    console.log(btnEl)
     const btnArray = [liBtn, haBtn, hpBtn];
     btnArray.forEach((_, i) => {
       if (i === btnIndex) btnArray[i].style.opacity = "1";
@@ -94,6 +91,7 @@ const { img } = Astro.props;
         // companyLogo.src = companySrc;
         textEl.innerText = text;
         navContainer.style.backgroundImage = `url(${imgUrl})`;
+        console.log(btnEl)
         btnEl.href = href;
         animate("#header-bg", { opacity: 1 }, { duration: 0.25 });
         animate(0, 1, {
@@ -153,7 +151,7 @@ const { img } = Astro.props;
   const netContainerHeight = navContainer.clientHeight - mainNav.clientHeight;
   const header = document.getElementById("header-bg") as HTMLDivElement;
   const mainLogo = document.getElementById("main-logo") as HTMLImageElement;
-  const easing = cubicBezier(0, 0.6, 1.5, -1);
+  const easing = cubicBezier(1, 0, 0.5, 1);
   scroll(
     (_, { y }) => {
       mainNav.style.backgroundColor = `rgba(230, 231, 235,${easing(
@@ -168,7 +166,7 @@ const { img } = Astro.props;
         66 +
         ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) *
           33;
-      let navBgOpacity = y.current / navContainer?.clientHeight! + 0.45;
+      let navBgOpacity = y.current / navContainer?.clientHeight!;
       mainNavWidth = mainNavWidth < 100 ? mainNavWidth : 100;
       mainNav.style.width = `${mainNavWidth}vw`;
       if (navBg)
