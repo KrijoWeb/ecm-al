@@ -151,7 +151,7 @@ const { img } = Astro.props;
   const netContainerHeight = navContainer.clientHeight - mainNav.clientHeight;
   const header = document.getElementById("header-bg") as HTMLDivElement;
   const mainLogo = document.getElementById("main-logo") as HTMLImageElement;
-  const easing = cubicBezier(1, 0, 0.5, 1);
+  const easing = cubicBezier(0, 0, 1, 0.8);
   scroll(
     (_, { y }) => {
       mainNav.style.backgroundColor = `rgba(230, 231, 235,${easing(
