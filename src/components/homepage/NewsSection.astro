@@ -1,22 +1,29 @@
 ---
 import MainArticle from "./MainArticle.astro";
 import Article from "./Article.astro";
-import ArrowButton from "../ArrowButton";
+// import ArrowButton from "../ArrowButton";
 ---
 
 <div class="flex h-screen w-2/3 flex-col gap-8 overflow-clip">
   <h2 class="text-center text-6xl">Lajmet e fundit</h2>
   <div class="flex flex-1 items-stretch gap-4">
     <div class="basis-1/2">
-      <MainArticle />
+      <MainArticle
+        img="/img/blog_1.avif"
+        title="50 years of electric forklift trucks from Linde Material Handling"
+        description={`Që nga viti 1971, kur Linde prezantoi pirunin e parë elektrik në Panairin e Hanoverit, kompania ka udhëhequr me risi në fushën e logjistikës së brendshme. Ajo që filloi si një alternativë pa emetime për përdorim të brendshëm, sot është shndërruar në një standard industrial me performancë të krahasueshme me pirunët me motorë me djegie të brendshme.
+Me vite, Linde solli teknologji si drejtimi me dy motorë, bosht drejtues të kombinuar për manovrim në vend, kontrolle me joystick, motorë asinkronë, karikues të integruar dhe bateri litium-jon. Këto risi kanë sjellë komoditet, efikasitet energjetik dhe siguri të nivelit të lartë.
+Në vitin 2015, Linde lansoi modelin E60–E80 me kapacitet deri në 8 tonë, duke provuar se fuqia elektrike mund të zëvendësojë plotësisht zgjidhjet tradicionale me djegie. Sot, me modelet e fundit dhe një histori të pasur inovacioni, Linde vazhdon të udhëheqë drejt një të ardhmeje të qëndrueshme dhe inteligjente në logjistikë.`}
+        link="https://www.linde-mh.com/en/About-us/Magazine/50-Years-Linde-E-Trucks/"
+      />
     </div>
     <div class="flex basis-1/2 flex-col justify-between [&>*]:basis-1/4">
-      <Article />
-      <Article />
-      <Article />
+      <Article title="The New Generation of Linde Forklift Trucks under Testing" img="/img/blog_2.avif" link="https://www.linde-mh.com/en/About-us/Magazine/Theo-Egberts/"/>
+      <Article  title="One-millionth counterbalance truck produced in Aschaffenburg" img="/img/blog_3.avif" link="https://www.linde-mh.com/en/technical/News-Detail_4580928.html"/>
+      <Article title="Linde MH recognized as one of the Top 1% in sustainability" img="/img/blog_4.avif" link="https://www.linde-mh.com/en/technical/News-Detail_5304896.html"/>
     </div>
   </div>
   <div class="mx-auto">
-    <ArrowButton type="right" text="Shiko te gjitha" client:load />
+    <!-- <ArrowButton type="right" text="Shiko te gjitha" client:load /> -->
   </div>
 </div>

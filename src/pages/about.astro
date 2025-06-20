@@ -3,7 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import TextWithPhoto from "../components/TextWithPhoto.astro";
 ---
 
-<Layout img="/img/about-bg.webp" title="Rreth Nesh" header="Rreth Nesh">
+<Layout
+  img="/img/about_cover.webp"
+  title="Rreth Nesh"
+  header="Rreth Nesh"
+  bgPosition="center"
+>
   <main class="mx-auto mb-12 flex w-3/4 flex-col gap-20">
     <div class="z-10 mx-auto -mt-20 bg-white py-6 pb-10 shadow-lg">
       <div class="mx-auto flex w-11/12 flex-col items-center gap-6">
@@ -35,23 +40,17 @@ import TextWithPhoto from "../components/TextWithPhoto.astro";
               Shërbime të mirëmbajtjes dhe riparimit të pajisjeve, makinerive
               dhe impianteve të sektorëve të ndryshëm të industrisë. në të
               gjithë Shqipërinë dhe në vendet fqinje.
-              <!-- Ndërveprimi i vazhdueshëm -->
-              <!-- me partnerët tanë të përmendur më lartë, bën të mundur garantimin -->
-              <!-- e produkteve cilësore dhe asistences teknike të niveleve të larta. -->
-              <!-- Sëbashku me ekipin tonë të punës i cili përbëhet nga inxhinjer të -->
-              <!-- kualifikuar, teknik të lartë dhe të mesëm, të cilët kryejnë me -->
-              <!-- kompetencë shërbimet teknike dhe bashkëpunojnë me klientët tanë -->
-              <!-- për të gjetur zgjidhje inovative. Suksesi ynë bazohet në studimin -->
-              <!-- e vazhdueshëm të tregut dhe në trajnimin e pandërprerë të -->
-              <!-- punonjësve të kompanisë. Siguria në punë dhe respektimi i -->
-              <!-- ambientit janë shoqëruese të pandara në trajektoren tonë të -->
-              <!-- zhvillimit. -->
             </li>
           </ul>
         </p>
       </div>
     </div>
-    <img src="/img/emc_location.webp" alt="About Map" />
+    <img
+      id="locations-img"
+      src="/img/emc_location.webp"
+      alt="About Map"
+      class="w-svw max-w-[100svw] -translate-x-[12.5vw]"
+    />
     <div class="flex items-stretch gap-6">
       <div class="h-full flex-1 flex-shrink object-cover">
         <img src="/img/about_1.webp" alt="About 4" class="object-contain" />
@@ -140,7 +139,12 @@ import TextWithPhoto from "../components/TextWithPhoto.astro";
         </div>
       </div>
     </div>
-    <TextWithPhoto title="Menaxhimi" imgSrc="/img/service.webp">
+    <TextWithPhoto
+      title="Menaxhimi"
+      imgSrc="/img/about_dets.webp"
+      height={28}
+      contain
+    >
       Menaxhimi i EMC mbështetet mbi eksperiencën dhe seriozitetin e personave
       drejtues. Drejtuesit dhe pronarët e EMC shpk janë inxhinjerë me një
       eksperiencë të gjatë në punë. Ata kanë drejtuar kompani dhe sektorë të

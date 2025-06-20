@@ -3,15 +3,16 @@ interface Props {
   header?: string;
   img?: string;
   compactNav?: boolean;
+  bgPosition?: "top" | "center" | "bottom";
 }
-const { header, img } = Astro.props;
+const { header, img, bgPosition = "top" } = Astro.props;
 const { href } = Astro.url;
 ---
 
 <header
   id="nav-container"
-  class="max-w-screen aspect-[4/1] bg-cover bg-fixed bg-top"
-  style=`background-image: url("${img}");`
+  class="max-w-screen aspect-[4/1] bg-cover"
+  style=`background-image: url("${img}"); background-position: ${bgPosition};`
 >
   <div
     id="nav-bg"

@@ -8,6 +8,7 @@ interface Props {
   type: "left" | "right" | "ellipsis";
   text?: string;
   link?: string;
+  newTab?: boolean
   onclick?: () => void;
 }
 
@@ -51,6 +52,7 @@ const ArrowButton: Component<Props> = (props) => {
       id={props.id}
       class="group flex items-center gap-2 transition"
       href={props.link}
+      target={props.newTab ? "_blank" : "_self"}
     >
       <ArrowButtonI type={props.type} text={props.text} />
     </a>

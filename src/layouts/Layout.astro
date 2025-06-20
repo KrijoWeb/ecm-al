@@ -8,10 +8,11 @@ interface Props {
   header?: string;
   img?: string;
   compactNav?: boolean;
+  bgPosition?: "top" | "center" | "bottom";
 }
 const path = Astro.url.pathname;
 const isHome = path === "/";
-const { title, header, img, compactNav } = Astro.props;
+const { title, header, img, compactNav, bgPosition } = Astro.props;
 ---
 
 <!doctype html>
@@ -93,7 +94,7 @@ const { title, header, img, compactNav } = Astro.props;
         <MainNav />
       </div>
     ) : (
-      <NavContainer header={header} img={img}>
+      <NavContainer header={header} img={img} bgPosition={bgPosition}>
         <MainNav />
       </NavContainer>
     )
