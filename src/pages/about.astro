@@ -9,8 +9,8 @@ import TextWithPhoto from "../components/TextWithPhoto.astro";
   header="Rreth Nesh"
   bgPosition="center"
 >
-  <main class="mx-auto mb-12 flex w-3/4 flex-col gap-20">
-    <div class="z-10 mx-auto -mt-20 bg-white py-6 pb-10 shadow-lg">
+  <main class="mx-auto mb-12 flex  flex-col gap-20">
+    <div class="z-10 mx-auto w-3/4 -mt-20 bg-white py-6 pb-10 shadow-lg">
       <div class="mx-auto flex w-11/12 flex-col items-center gap-6">
         <h1 class="text-4xl">Kush jemi ne?</h1>
         <p class="text-justify">
@@ -49,9 +49,9 @@ import TextWithPhoto from "../components/TextWithPhoto.astro";
       id="locations-img"
       src="/img/emc_location.webp"
       alt="About Map"
-      class="w-svw max-w-[100svw] -translate-x-[12.5vw]"
+      class="w-screen"
     />
-    <div class="flex items-stretch gap-6">
+    <div class="flex items-stretch gap-6 w-3/4 mx-auto">
       <div class="h-full flex-1 flex-shrink object-cover">
         <img src="/img/about_1.webp" alt="About 4" class="object-contain" />
       </div>
@@ -82,7 +82,7 @@ import TextWithPhoto from "../components/TextWithPhoto.astro";
         </p>
       </div>
     </div>
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2 w-3/4 mx-auto">
       <h3 class="mb-2 text-3xl font-bold">Parimet tona udhezuese</h3>
       <div class="grid grid-cols-2 gap-4">
         <div>
@@ -139,7 +139,8 @@ import TextWithPhoto from "../components/TextWithPhoto.astro";
         </div>
       </div>
     </div>
-    <TextWithPhoto
+    <div class="w-3/4 mx-auto">
+      <TextWithPhoto
       title="Menaxhimi"
       imgSrc="/img/about_dets.webp"
       height={28}
@@ -153,6 +154,6 @@ import TextWithPhoto from "../components/TextWithPhoto.astro";
       mundësinë për të prezantuar vetveten. Drejtuesit e EMC kanë integritet,
       njohuri në fushën e veprimtarisë dhe eksperiencë të madhe në veprimtaritë
       teknike, në admistrim dhe në komunikim.
-    </TextWithPhoto>
+    </TextWithPhoto></div>
   </main>
 </Layout>
