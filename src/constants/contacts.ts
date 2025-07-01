@@ -1,0 +1,107 @@
+export const alContacts = [
+  {
+    name: "Ing. Eduard Ndreu",
+    title: "CEO & Technical Manager",
+    tel: "+355-52-901250",
+    fax: "+355-52-901255",
+    mobile: "+355 692044644",
+    email: "e.ndreu@emc.com.al",
+  },
+  {
+    name: "Ing. Agron Copja",
+    title: "CEO & Sales Manager",
+    tel: "+355-52-901254",
+    mobile: "+355-692055661",
+    email: "a.copja@emc.com.al",
+  },
+  {
+    name: "Edlira Lala",
+    title: "CFO Chief Financial Officer",
+    tel: "+355-52-901252",
+    fax: "+355-52-901255",
+    mobile: "+355-686072691",
+    email: "e.lala@emc.com.al",
+  },
+  {
+    name: "Ing. Vasil Vrahoriti",
+    title: "Service Manager",
+    tel: "+355-52-901252",
+    fax: "+355-52-901255",
+    mobile: "+355-692573030",
+    email: "v.vrahoriti@emc.com.al",
+  },
+  {
+    name: "Erisa Bushati",
+    title: "Service & Parts Operator",
+    tel: "+355-52-901252",
+    mobile: "+355-677276464",
+    email: "e.bushati@emc.com.al",
+  },
+  {
+    name: "Jonida Myzyri",
+    title: "Service & Parts Operator",
+    tel: "+355-52-901252",
+    mobile: "+355-693945251",
+    email: "j.myzyri@emc.com.al",
+  },
+  {
+    name: "Ing. Ersjan Xibrraku",
+    title: "Service Engineer",
+    tel: "+355-52-901252",
+    mobile: "+355-676324050",
+    email: "e.xibrraku@emc.com.al",
+  },
+  {
+    name: "Gerti Calliku",
+    title: "Senior Service Technician",
+    tel: "+355-52-901252",
+    mobile: "+355-682046539",
+    email: "g.calliku@emc.com.al",
+  },
+  {
+    name: "Erjon Memushaj",
+    title: "Hydraulic Service Technician",
+    tel: "+355-52-901252",
+    mobile: "+355-688863007",
+    email: "e.memushaj@emc.com.al ",
+  },
+  {
+    name: "Ing. Erdit Ndreu",
+    title: "Junior Service Engineer",
+    tel: "+355-52-901252",
+    mobile: "+355-698573889",
+    email: "erdit.ndreu@emc.com.al ",
+  },
+  {
+    name: "Ing. Adolfi Doda",
+    title: "Junior Service Engineer",
+    tel: "+355-52-901252",
+    mobile: "+355-695504713",
+    email: "a.doda@emc.com.al",
+  },
+  {
+    name: "Ing. Besjan Halilaj",
+    title: "Junior Service Engineer",
+    tel: "+355-52-901252",
+    mobile: "+355-695779860",
+    email: " b.halilaj@emc.com.al",
+  },
+];
+
+export const ksContacts = [
+  {
+    name: "John Doe",
+    title: "Sth",
+    tel: "+355-52-901250",
+    fax: "+355-52-901255",
+    mobile: "+355 692044644",
+    email: "e.ndreu@emc.com.al",
+  },
+  {
+    name: "Jane Doe",
+    title: "CEO & Sales Manager",
+    tel: "+355-52-901254",
+    mobile: "+355-692055661",
+    email: "a.copja@emc.com.al",
+  }
+];

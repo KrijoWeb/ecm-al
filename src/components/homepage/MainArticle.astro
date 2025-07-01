@@ -3,23 +3,22 @@ import ArrowButton from "../ArrowButton";
 export interface Props {
   title: string;
   description: string;
-  link:string;
-  img:string;
+  link: string;
+  img: string;
 }
-const { title, description,link,img } = Astro.props;
+const { title, description, link, img } = Astro.props;
 ---
 
-<div class="flex flex-col gap-4 bg-neutral px-4 pb-12 pt-8 h-full">
+<div class="flex h-full flex-col gap-4 bg-neutral px-4 pb-12 pt-8">
   <img src={img} alt="Linde News" />
   <div class="flex flex-col gap-6 px-8">
     <!-- <p class="ml-6 font-thin">24 Mars 2024</p> -->
     <h3 class="text-center text-lg font-bold">
       {title}
     </h3>
-    <p class="text-justify line-clamp-[8]">{description}</p>
-      </div>
-<div class="ml-6 mt-auto">
+    <p class="line-clamp-[8] text-justify">{description}</p>
+  </div>
+  <div class="ml-6 mt-auto">
     <ArrowButton type="right" text="Lexo me shume" link={link} newTab />
-    </div>
-
+  </div>
 </div>

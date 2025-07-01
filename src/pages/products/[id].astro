@@ -87,7 +87,11 @@ const selectedProduct = products.find((p) => p.id == id);
           </div>
           <div class="flex flex-col items-start gap-6">
             <p>Jeni te interesuar per kete produkt?</p>
-            <button class="btn btn-primary">KONTAKTO</button>
+            <a
+              class="btn btn-primary"
+              href={`mailto:info@emc.com.al?subject= Interesohem për ${selectedProduct.description}`}
+              >KONTAKTO</a
+            >
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 export default [
   {
-    label: "Applications",
+    label: "Llojet e motorit",
     code: "applications",
     type: "select",
     options: [
@@ -15,13 +15,13 @@ export default [
     ],
   },
   {
-    label: "Drive Types",
+    label: "Llojet e motorit",
     code: "driveType",
     type: "select",
     options: ["Manual", "Elektrik", "Nafte/Gaz"],
   },
   {
-    label: "Product Type",
+    label: "Llojet e produktit",
     code: "productType",
     type: "select",
     options: [
@@ -37,17 +37,17 @@ export default [
     ],
   },
   {
-    label: "Load Capacity",
+    label: "Kapaciteti ngrites",
     code: "loadCapacity",
     type: "numeric",
   },
   {
-    label: "Lift Height",
+    label: "Lartesia ngritese",
     code: "liftHeight",
     type: "numeric",
   },
   {
-    label: "Explosion Protection",
+    label: "Mbrojtje nga shperthime",
     code: "explosionProtection",
     type: "boolean",
   },

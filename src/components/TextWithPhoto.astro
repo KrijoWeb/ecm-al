@@ -1,17 +1,51 @@
 ---
-interface Props {
-  imgSrc: string;
+export interface Props {
+  imgSrc: string | string[];
   title: string;
   imgLeft?: boolean;
   height?: number;
   contain?: boolean;
+  id?: string;
 }
-const { imgSrc, title, imgLeft, height, contain } = Astro.props;
+const { imgSrc, title, imgLeft, height, contain, id } = Astro.props;
 ---
 
-<div class="flex items-center gap-8">
+<div class="flex items-center gap-8" id={id}>
   {
-    imgLeft ? (
+    Array.isArray(imgSrc) ? (
+      <>
+        <figure
+          class="min-h-96 flex-1"
+          class:list={{ "object-cover": !contain, "object-contain": contain }}
+          style={`height:${height}rem`}
+        >
+          <img
+            src={imgSrc[0]}
+            alt={title}
+            class="h-full w-full"
+            class:list={{ "object-cover": !contain, "object-contain": contain }}
+          />
+        </figure>
+        <div class="flex flex-1 flex-col items-center gap-8">
+          <h2 class="text-3xl font-semibold capitalize">{title}</h2>
+          <p class="text-justify">
+            <slot />
+          </p>
+        </div>
+        <figure
+          class="min-h-96 flex-1"
+          class:list={{ "object-cover": !contain, "object-contain": contain }}
+          style={`height:${height}rem`}
+        >
+          <img
+            src={imgSrc[1]}
+            alt={title}
+            class="h-full w-full"
+            class:list={{ "object-cover": !contain, "object-contain": contain }}
+          />
+        </figure>
+      </>
+    ) : imgLeft ? (
       <>
         <figure
           class="min-h-96 flex-1"

@@ -27,21 +27,33 @@ import Shop from "../../../svg/shop.svg?raw";
           ofrimin e mjeteve dhe shërbimeve të mirëmbajtjes dhe riparimit, duke
           siguruar një mbështetje të vazhdueshme për klientët tanë. Produktet që
           ofrojmë:
-          <ol>
-            <li>
-              Mjete të reja : Ne ofrojmë një gamë të gjerë mjetesh të reja nga
-              Linde, të cilat përmbushin standardet më të larta të industrisë
-              dhe ofrojnë efikasitet të shkëlqyer operativ.
-            </li>
-            <li>Mjete të përdorura me garanci:</li>
-            <li>Mjete me qera</li>
-            <li>Mirëmbajtja dhe Shërbimet</li>
-            <li>Aksesorë</li>
-          </ol>
         </p>
+        <ol class="flex w-full items-center justify-between">
+          <li>
+            <a href="#new_tools" class="link link-primary">Mjete të reja</a>
+          </li>
+          <li>
+            <a href="#used_tools" class="link link-primary"
+              >Mjete të përdorura me garanci</a
+            >
+          </li>
+          <li>
+            <a href="#rental_tools" class="link link-primary">Mjete me qera</a>
+          </li>
+        </ol>
+
+        <ol class="flex w-full items-center justify-around">
+          <li>
+            <a href="#maintenance" class="link link-primary"
+              >Mirëmbajtja dhe Shërbimet</a
+            >
+          </li>
+          <li><a href="#accessories" class="link link-primary">Aksesorë</a></li>
+        </ol>
       </div>
     </div>
     <TextWithPhoto
+      id="new_tools"
       title="Mjetet e Reja & Aksesoret"
       imgSrc="/img/linde/dets1.avif"
     >
@@ -58,6 +70,7 @@ import Shop from "../../../svg/shop.svg?raw";
       produktet Linde.
     </TextWithPhoto>
     <TextWithPhoto
+      id="accessories"
       title="Personalizimi dhe Aksesorët"
       imgSrc="/img/linde/dets6.webp"
       imgLeft
@@ -80,6 +93,7 @@ import Shop from "../../../svg/shop.svg?raw";
       përshtatur në mënyrë optimale për punën e tyre.
     </TextWithPhoto>
     <TextWithPhoto
+      id="used_tools"
       title="Mjetet e përdorura me garanci"
       imgSrc="/img/linde/dets3.avif"
     >
@@ -94,6 +108,7 @@ import Shop from "../../../svg/shop.svg?raw";
       garanci për cdo mjet të cilin ne ofrojmë.
     </TextWithPhoto>
     <TextWithPhoto
+      id="rental_tools"
       title="Mjetet me qera"
       imgSrc="/img/linde/dets4.webp"
       imgLeft
@@ -109,7 +124,7 @@ import Shop from "../../../svg/shop.svg?raw";
       mjeteve, EMC siguron zgjidhjen më të mirë ne bazë te kerkesave të
       klientëve tane.
     </TextWithPhoto>
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2" id="maintenance">
       <h3 class="mb-2 text-3xl font-bold">Mirëmbajtja dhe Shërbimet</h3>
       <p>
         EMC është një kompani e specializuar në mirëmbajtjen dhe riparimin e
@@ -132,13 +147,21 @@ import Shop from "../../../svg/shop.svg?raw";
           e kryera në asetet tuaja, regjistrohen në një program kompiuterik të veçantë,
           duke krijuar në këtë mënyrë një historik të detajuar të mirëmbajtjes.
         </div>
-        <div>
-          <b>Shërbime të mirëmbajtjes ‘sipas kërkesës’:</b>
-          Ky shërbim ofron mundësinë e ndërhyrjes për çdo problem që mund të lindë
-          në mjetet tuaja, në çdo moment që kërkohet. Shërbimi i mirëmbajtjes ‘sipas
-          kërkesës’ është fleksibël dhe mund të realizohet kurdo që të jetë e nevojshme,
-          duke siguruar që mjetet tuaja të kthehen në funksionim sa më shpejt dhe
-          me efikasitet maksimal.
+        <div class="flex flex-col gap-2">
+          <div>
+            <b>Shërbime të mirëmbajtjes ‘sipas kërkesës’:</b>
+            Ky shërbim ofron mundësinë e ndërhyrjes për çdo problem që mund të lindë
+            në mjetet tuaja, në çdo moment që kërkohet. Shërbimi i mirëmbajtjes ‘sipas
+            kërkesës’ është fleksibël dhe mund të realizohet kurdo që të jetë e nevojshme,
+            duke siguruar që mjetet tuaja të kthehen në funksionim sa më shpejt dhe
+            me efikasitet maksimal.
+          </div>
+          <figure class="h-40 object-cover object-bottom">
+            <img
+              src="/img/linde/dets8.webp"
+              class="h-full w-full object-cover"
+            />
+          </figure>
         </div>
         <div>
           <b
