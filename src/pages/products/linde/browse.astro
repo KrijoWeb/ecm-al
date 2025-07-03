@@ -2,6 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import { ProductGrid } from "../../../components/ProductGrid";
 import { lindeProducts } from "../../../constants/linde-products";
+import Alert from "../../../components/alert.astro";
 ---
 
 <Layout
@@ -11,8 +12,14 @@ import { lindeProducts } from "../../../constants/linde-products";
 >
   <div class="mx-auto flex w-3/4 flex-col items-center gap-10 py-20">
     <a class="btn btn-primary self-end" href="/products/linde">
-      Kthehu tek informacionet</a
-    >
+      Kthehu tek informacionet
+    </a>
+    <Alert>
+      Zbuloni gamën e gjerë të produkteve Linde – me 77 linja produktesh, Linde
+      Material Handling ofron zgjidhjet më të mira për intralogjistikën, si dhe
+      mundësinë e konfigurimit të produkteve sipas kërkesave tuaja specifike.
+    </Alert>
+
     <ProductGrid
       products={lindeProducts}
       productsCategory="linde"

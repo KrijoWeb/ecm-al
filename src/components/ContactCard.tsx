@@ -8,9 +8,10 @@ interface Props {
   email: string;
 }
 export const ContactCard = (props: Props) => {
+  const svg = (SilhouetteIcon)
 
   return (<div class="card items-start border-2 border-neutral-200 bg-base-100 shadow-xl">
-    <figure class="size-36 p-2"><div innerHTML={SilhouetteIcon} /></figure>
+    <figure class="size-36 p-2" innerHTML={SilhouetteIcon}></figure>
     <div class="card-body mt-auto justify-normal gap-2">
       <span class="w-full border-b-4 border-primary text-xl font-semibold">
         {props.name}</span

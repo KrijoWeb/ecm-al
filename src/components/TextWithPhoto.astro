@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  imgSrc: string | string[];
+  imgSrc: string | string[2];
   title: string;
   imgLeft?: boolean;
   height?: number;
@@ -10,7 +10,7 @@ export interface Props {
 const { imgSrc, title, imgLeft, height, contain, id } = Astro.props;
 ---
 
-<div class="flex items-center gap-8" id={id}>
+<div class="flex items-stretch gap-8" id={id}>
   {
     Array.isArray(imgSrc) ? (
       <>
@@ -59,7 +59,7 @@ const { imgSrc, title, imgLeft, height, contain, id } = Astro.props;
             class:list={{ "object-cover": !contain, "object-contain": contain }}
           />
         </figure>
-        <div class="flex flex-1 flex-col items-center gap-8">
+        <div class="flex flex-1 flex-col items-center justify-center gap-8">
           <h2 class="text-3xl font-semibold capitalize">{title}</h2>
           <p class="text-justify">
             <slot />
@@ -68,7 +68,7 @@ const { imgSrc, title, imgLeft, height, contain, id } = Astro.props;
       </>
     ) : (
       <>
-        <div class="flex flex-1 flex-col items-center gap-8">
+        <div class="flex flex-1 flex-col items-center justify-center gap-8">
           <h2 class="text-3xl font-semibold capitalize">{title}</h2>
           <p class="text-justify">
             <slot />

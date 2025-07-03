@@ -7,7 +7,7 @@ const { img } = Astro.props;
 
 <header
   id="nav-container"
-  class="h-lvh w-full bg-cover bg-fixed bg-top bg-blend-lighten"
+  class="h-lvh w-full bg-cover bg-fixed bg-top"
   style=`background-image: url(${img});`
 >
   <div
@@ -74,7 +74,6 @@ const { img } = Astro.props;
       "h1",
     )[0] as HTMLHeadElement;
     const btnEl = navContainer.querySelector("#more-link") as HTMLAnchorElement;
-    console.log(btnEl);
     const btnArray = [liBtn, haBtn, hpBtn];
     btnArray.forEach((_, i) => {
       if (i === btnIndex) btnArray[i].style.opacity = "1";
@@ -166,7 +165,7 @@ const { img } = Astro.props;
         66 +
         ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) *
           33;
-      let navBgOpacity = y.current / navContainer?.clientHeight!;
+      let navBgOpacity = y.current / netContainerHeight;
       mainNavWidth = mainNavWidth < 100 ? mainNavWidth : 100;
       mainNav.style.width = `${mainNavWidth}vw`;
       if (navBg)
