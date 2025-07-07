@@ -64,7 +64,6 @@ const { img } = Astro.props;
   ) as HTMLDivElement;
 
   const changeCarousel = (
-    companySrc: string,
     text: string,
     href: string,
     imgUrl: string,
@@ -87,13 +86,12 @@ const { img } = Astro.props;
     });
     animate("#header-bg", { opacity: 0 }, { duration: 0.25 }).finished.then(
       () => {
-        // companyLogo.src = companySrc;
         textEl.innerText = text;
         navContainer.style.backgroundImage = `url(${imgUrl})`;
         console.log(btnEl);
         btnEl.href = href;
         animate("#header-bg", { opacity: 1 }, { duration: 0.25 });
-        animate(0, 1, {
+        animate(0.65, 1, {
           onUpdate: (progress) => {
             navContainer.style.backgroundColor = `rgba(255,255,255,${1 - progress})`;
           },
@@ -103,9 +101,42 @@ const { img } = Astro.props;
     );
   };
 
-  liBtn.onclick = (e) => {
+  let i = 2;
+  const intervalFn = () => {
+    if (i > 3) i = 1;
+    if (window.scrollY / window.innerHeight >= 0.2) return;
+    if (i === 3) {
+      changeCarousel(
+        "Bateri industriale HOPPECKE",
+        "/products/hoppecke",
+        "/img/hoppecke_carousel.webp",
+        2,
+      );
+    } else if (i ===  2) {
+      changeCarousel(
+        "Hidraulika HANSA FLEX",
+        "/products/hansaflex",
+        "/img/hansaflex_carousel.webp",
+        1,
+      );
+    } else {
+      changeCarousel(
+        "Mjete LINDE, për perpunimin e ngarkesave",
+        "/products/linde",
+        "/img/linde_carousel.webp",
+        0,
+      );
+    }
+    i++;
+  };
+
+  let interval = window.setInterval(intervalFn, 10000);
+
+  liBtn.onclick = () => {
+    clearInterval(interval);
+    i = 2;
+    interval = window.setInterval(intervalFn, 10000);
     changeCarousel(
-      "/img/linde-logo.svg",
       "Mjete LINDE, për perpunimin e ngarkesave",
       "/products/linde",
       "/img/linde_carousel.webp",
@@ -113,9 +144,11 @@ const { img } = Astro.props;
     );
   };
 
-  haBtn.onclick = (e) => {
+  haBtn.onclick = () => {
+    clearInterval(interval);
+    i = 3;
+    interval = window.setInterval(intervalFn, 10000);
     changeCarousel(
-      "/img/hf-logo.svg",
       "Hidraulika HANSA FLEX",
       "/products/hansaflex",
       "/img/hansaflex_carousel.webp",
@@ -123,29 +156,17 @@ const { img } = Astro.props;
     );
   };
 
-  hpBtn.onclick = (e) => {
+  hpBtn.onclick = () => {
+    clearInterval(interval);
+    i = 1;
+    interval = window.setInterval(intervalFn, 10000);
     changeCarousel(
-      "/img/hp-logo.png",
       "Bateri industriale HOPPECKE",
       "/products/hoppecke",
       "/img/hoppecke_carousel.webp",
       2,
     );
   };
-
-  let i = 2;
-  window.setInterval(() => {
-    if (i > 3) i = 1;
-    if (window.scrollY / window.innerHeight >= 0.2) return;
-    if (i % 3 === 0) {
-      hpBtn.click();
-    } else if (i % 2 === 0) {
-      haBtn.click();
-    } else {
-      liBtn.click();
-    }
-    i++;
-  }, 10000);
 
   const netContainerHeight = navContainer.clientHeight - mainNav.clientHeight;
   const header = document.getElementById("header-bg") as HTMLDivElement;
