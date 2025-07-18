@@ -5,22 +5,26 @@ import Shop from "../../../svg/shop.svg?raw";
 ---
 
 <Layout title="Linde" header="linde" img="/img/linde/prods_cover.avif">
-  <main class="relative mx-auto mb-12 flex w-3/4 flex-col gap-20">
+  <main
+    class="relative mx-auto mb-12 flex w-full flex-col gap-12 px-4 lg:w-3/4 lg:gap-20 lg:px-0"
+  >
     <a
-      class="group btn btn-primary fixed right-10 top-1/2 z-20"
+      class="group btn btn-primary btn-sm fixed right-2 top-1/2 z-20 lg:btn-md lg:right-10"
       href="/products/linde/browse"
     >
-      <div class="h-6 w-6 fill-primary-content">
+      <div class="h-4 w-4 fill-primary-content lg:h-6 lg:w-6">
         <Fragment set:html={Shop} />
       </div>
-      <span>Shfleto produktet</span>
+      <span class="hidden lg:inline">Shfleto produktet</span>
     </a>
-    <div class="z-10 -mt-20 mb-20 bg-white py-6 shadow-lg">
-      <div class="mx-auto flex w-11/12 flex-col items-center gap-6">
-        <h2 class="text-3xl uppercase">
+    <div
+      class="z-10 -mt-12 mb-12 bg-white py-4 shadow-lg lg:-mt-20 lg:mb-20 lg:py-6"
+    >
+      <div class="mx-auto flex w-11/12 flex-col items-center gap-4 lg:gap-6">
+        <h2 class="text-center text-xl uppercase lg:text-3xl">
           EMC - Engineering, Maintenance Center Shpk
         </h2>
-        <p class="text-justify">
+        <p class="text-justify text-sm lg:text-base">
           EMC është emëruar si partner zyrtar i Kompanise Gjermane Linde
           Material Handling GmbH për Shqipërinë që nga viti 2014. Gjatë këtyre
           viteve, ne kemi ndërtuar një strukturë të fortë dhe efikase për
@@ -28,7 +32,9 @@ import Shop from "../../../svg/shop.svg?raw";
           siguruar një mbështetje të vazhdueshme për klientët tanë. Produktet që
           ofrojmë:
         </p>
-        <ol class="flex w-full items-center justify-between">
+        <ol
+          class="flex w-full flex-col items-center justify-between gap-2 lg:flex-row lg:gap-0"
+        >
           <li>
             <a href="#new_tools" class="link link-primary">Mjete të reja</a>
           </li>
@@ -42,7 +48,9 @@ import Shop from "../../../svg/shop.svg?raw";
           </li>
         </ol>
 
-        <ol class="flex w-full items-center justify-around">
+        <ol
+          class="flex w-full flex-col items-center justify-around gap-2 lg:flex-row lg:gap-0"
+        >
           <li>
             <a href="#maintenance" class="link link-primary"
               >Mirëmbajtja dhe Shërbimet</a
@@ -125,16 +133,18 @@ import Shop from "../../../svg/shop.svg?raw";
       klientëve tane.
     </TextWithPhoto>
     <div class="flex flex-col gap-2" id="maintenance">
-      <h3 class="mb-2 text-3xl font-bold">Mirëmbajtja dhe Shërbimet</h3>
-      <p>
+      <h3 class="mb-2 text-2xl font-bold lg:text-3xl">
+        Mirëmbajtja dhe Shërbimet
+      </h3>
+      <p class="text-sm lg:text-base">
         EMC është një kompani e specializuar në mirëmbajtjen dhe riparimin e
         mjeteve Linde, duke ndjekur praktikat më të mira ndërkombëtare. Ne
         ofrojmë shërbime të mirëmbajtjes dhe riparimit për të siguruar që mjetet
         tuaja të jenë gjithmonë në kushte optimale për punë. Për mjetet dhe
         pajisjet Linde që ju dispononi, EMC ju ofron:
       </p>
-      <div class="grid grid-cols-2 gap-4">
-        <div>
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <div class="text-sm lg:text-base">
           <b>Shërbime të mirëmbajtjes preventive të programuar:</b>
           Këto shërbime janë të dizenjuara për të mbajtur mjetet tuaja në gjendje
           të mire teknike dhe optimale pune por edhe per ti paraprire dhe shmangur
@@ -148,7 +158,7 @@ import Shop from "../../../svg/shop.svg?raw";
           duke krijuar në këtë mënyrë një historik të detajuar të mirëmbajtjes.
         </div>
         <div class="flex flex-col gap-2">
-          <div>
+          <div class="text-sm lg:text-base">
             <b>Shërbime të mirëmbajtjes ‘sipas kërkesës’:</b>
             Ky shërbim ofron mundësinë e ndërhyrjes për çdo problem që mund të lindë
             në mjetet tuaja, në çdo moment që kërkohet. Shërbimi i mirëmbajtjes ‘sipas
@@ -156,14 +166,14 @@ import Shop from "../../../svg/shop.svg?raw";
             duke siguruar që mjetet tuaja të kthehen në funksionim sa më shpejt dhe
             me efikasitet maksimal.
           </div>
-          <figure class="h-40 object-cover object-bottom">
+          <figure class="h-32 object-cover object-bottom lg:h-40">
             <img
               src="/img/linde/dets8.webp"
               class="h-full w-full object-cover"
             />
           </figure>
         </div>
-        <div>
+        <div class="text-sm lg:text-base">
           <b
             >Shërbime të mirëmbajtjes dhe riparimit të tipit ‘paketë e plotë’:</b
           >
@@ -174,7 +184,7 @@ import Shop from "../../../svg/shop.svg?raw";
           ky shërbim i plotë siguron funksionimin e pandërprerë të mjeteve dhe parandalon
           çdo problem të mundshëm që mund të ndodhi në të ardhmen.
         </div>
-        <div>
+        <div class="text-sm lg:text-base">
           <b>Riparime:</b>
           Në rast se mjetet tuaja kanë nevojë për riparime, EMC ofron shërbime të
           shpejta dhe efikase për të zgjidhur çdo problem që mund të lindë tek mjetet
@@ -185,7 +195,7 @@ import Shop from "../../../svg/shop.svg?raw";
           ndërprerjet e punës dhe duke garantuar funksionimin optimal të mjeteve
           tuaja.
         </div>
-        <div>
+        <div class="text-sm lg:text-base">
           <b>Pjesët e këmbimit origjinale</b>
           EMC siguron pjesë këmbimi origjinale për mjetet Linde. Vetëm këto pjesë
           mund të garantojnë performancën dhe qëndrueshmërinë që Linde ofron. Mjaft

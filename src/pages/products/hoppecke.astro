@@ -9,13 +9,17 @@ import TextWithPhoto from "../../components/TextWithPhoto.astro";
   header="Hoppecke"
   img="/img/hoppecke/cover.webp"
 >
-  <main class="mx-auto mb-12 flex w-3/4 flex-col gap-20">
-    <div class="z-10 -mt-20 bg-white py-6 pb-10 shadow-lg">
-      <div class="mx-auto flex w-11/12 flex-col items-center gap-6">
-        <h2 class="text-3xl uppercase">
+  <main
+    class="mx-auto mb-12 flex w-full flex-col gap-12 px-4 lg:w-3/4 lg:gap-20 lg:px-0"
+  >
+    <div
+      class="z-10 -mt-12 bg-white py-4 pb-6 shadow-lg lg:-mt-20 lg:py-6 lg:pb-10"
+    >
+      <div class="mx-auto flex w-11/12 flex-col items-center gap-4 lg:gap-6">
+        <h2 class="text-center text-xl uppercase lg:text-3xl">
           EMC - Engineering, Maintenance Center Shpk
         </h2>
-        <p class="text-justify">
+        <p class="text-justify text-sm lg:text-base">
           si partner i Hoppecke Batterien GmbH & Co KG, një nga liderët globalë
           në prodhimin e baterive industriale dhe sistemeve të energjisë, ofron
           një gamë të gjerë zgjidhjesh që përmbushin kërkesat më të larta për
@@ -32,16 +36,18 @@ import TextWithPhoto from "../../components/TextWithPhoto.astro";
       </div>
     </div>
 
-    <div class="flex items-center gap-8">
-      <figure class="flex-1">
-        <img src="/img/hoppecke/1.png" alt="Hoppecke image 1" />
+    <div class="flex flex-col items-center gap-6 lg:flex-row lg:gap-8">
+      <figure class="order-last flex-1 lg:order-first">
+        <img src="/img/hoppecke/1.png" alt="Hoppecke image 1" class="w-full" />
       </figure>
-      <div class="flex flex-1 flex-col items-center gap-8">
+      <div class="flex flex-1 flex-col items-center gap-6 lg:gap-8">
         <div class="flex flex-col gap-4">
-          <h2 class="text-3xl font-semibold capitalize">
+          <h2
+            class="text-center text-xl font-semibold capitalize lg:text-left lg:text-3xl"
+          >
             Karikuesit e baterive:
           </h2>
-          <p class="text-justify">
+          <p class="text-justify text-sm lg:text-base">
             Përveç baterive, Hoppecke ofron një gamë të gjerë karikuesish për të
             mbështetur jetëgjatësinë e baterive tuaja. Karikuesit janë të
             projektuar për të siguruar karikim të shpejtë dhe të sigurt të çdo
@@ -50,20 +56,24 @@ import TextWithPhoto from "../../components/TextWithPhoto.astro";
           </p>
         </div>
         <div class="flex flex-col gap-4">
-          <h2 class="text-3xl font-semibold capitalize">
+          <h2
+            class="text-center text-xl font-semibold capitalize lg:text-left lg:text-3xl"
+          >
             Produkte të tjera Hoppecke:
           </h2>
-          <p class="text-justify">
+          <p class="text-justify text-sm lg:text-base">
             Hoppecke ofron gjithashtu një gamë të gjerë produktesh të tjera për
             menaxhimin dhe ruajtjen e energjisë, të cilat mund të përshtaten për
             nevojat specifike të industrise dhe aplikimeve perkatese.
           </p>
         </div>
         <div class="flex flex-col gap-4">
-          <h2 class="text-3xl font-semibold capitalize">
+          <h2
+            class="text-center text-xl font-semibold capitalize lg:text-left lg:text-3xl"
+          >
             Karikuesit e baterive:
           </h2>
-          <p class="text-justify">
+          <p class="text-justify text-sm lg:text-base">
             EMC ofron mbështetje të plotë për përdorimin, mirëmbajtjen dhe
             instalimin e Baterive Hoppecke. Shërbimet tona përfshijnë
             këshillimin për zgjedhjen e produkteve më të përshtatshme,

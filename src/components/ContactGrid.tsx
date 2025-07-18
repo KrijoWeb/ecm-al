@@ -6,13 +6,14 @@ export const ContactGrid = () => {
   const contacts = { "al": alContacts, "ks": ksContacts }
   return (
     <>
-      <div class="flex p-4 w-full justify-end">
+      <div class="flex p-2 lg:p-4 w-full justify-center lg:justify-end">
         <div class="join">
-          <button class="btn join-item hover:btn-primary" classList={{ "btn-primary": country() === "al" }} onClick={() => setCountry("al")}>Shqipëri</button>
-          <button class="btn join-item hover:btn-primary" classList={{ "btn-primary": country() === "ks" }} onClick={() => setCountry("ks")}>Kosovë</button>
-        </div></div>
+          <button class="btn btn-sm lg:btn-md join-item hover:btn-primary" classList={{ "btn-primary": country() === "al" }} onClick={() => setCountry("al")}>Shqipëri</button>
+          <button class="btn btn-sm lg:btn-md join-item hover:btn-primary" classList={{ "btn-primary": country() === "ks" }} onClick={() => setCountry("ks")}>Kosovë</button>
+        </div>
+      </div>
 
-      <div class="grid flex-1 grid-cols-5 gap-6 p-12">
+      <div class="grid flex-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:gap-6 p-4 lg:p-12">
         {
           contacts[country()].map((contact) => (
             <ContactCard

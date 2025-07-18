@@ -9,11 +9,13 @@ import TextWithPhoto from "../components/TextWithPhoto.astro";
   header="Rreth Nesh"
   bgPosition="center"
 >
-  <main class="mx-auto mb-12 flex flex-col gap-20">
-    <div class="z-10 mx-auto -mt-20 w-3/4 bg-white py-6 pb-10 shadow-lg">
-      <div class="mx-auto flex w-11/12 flex-col items-center gap-6">
-        <h1 class="text-4xl">Kush jemi ne?</h1>
-        <p class="text-justify">
+  <main class="mx-auto mb-12 flex flex-col gap-12 px-4 lg:gap-20 lg:px-0">
+    <div
+      class="z-10 mx-auto -mt-12 w-full bg-white py-4 pb-6 shadow-lg lg:-mt-20 lg:w-3/4 lg:py-6 lg:pb-10"
+    >
+      <div class="mx-auto flex w-11/12 flex-col items-center gap-4 lg:gap-6">
+        <h1 class="text-center text-2xl lg:text-4xl">Kush jemi ne?</h1>
+        <p class="text-justify text-sm lg:text-base">
           EMC (Engineering Maintenance Center) është një kompani e organizuar
           për siguraur produkte cilësore, shërbimeve të mirëmbajtjes dhe
           riparimit të impianteve, makinerive dhe pajisjeve të sektorëve të
@@ -51,13 +53,23 @@ import TextWithPhoto from "../components/TextWithPhoto.astro";
       alt="About Map"
       class="w-screen"
     />
-    <div class="mx-auto flex w-3/4 items-stretch gap-6">
-      <div class="h-full flex-1 flex-shrink object-cover">
-        <img src="/img/about_1.webp" alt="About 4" class="object-contain" />
+    <div
+      class="mx-auto flex w-full flex-col items-stretch gap-4 lg:w-3/4 lg:flex-row lg:gap-6"
+    >
+      <div
+        class="order-last h-full flex-1 flex-shrink object-cover lg:order-first"
+      >
+        <img
+          src="/img/about_1.webp"
+          alt="About 4"
+          class="w-full object-contain"
+        />
       </div>
       <div class="">
-        <h3 class="mb-2 text-2xl font-bold">Misioni dhe Vizioni yne</h3>
-        <p>
+        <h3 class="mb-2 text-xl font-bold lg:text-2xl">
+          Misioni dhe Vizioni yne
+        </h3>
+        <p class="text-sm lg:text-base">
           Ne kemi objektiv të sjellim, në Shqipëri, një mentalitet dhe një nivel
           të ri cilësie për mirëmbajtjen e aseteve industriale. Gjithashtu
           synojmë të realizojmë raportin më të mirë çmim-cilësi për produktet
@@ -82,10 +94,12 @@ import TextWithPhoto from "../components/TextWithPhoto.astro";
         </p>
       </div>
     </div>
-    <div class="mx-auto flex w-3/4 flex-col gap-2">
-      <h3 class="mb-2 text-3xl font-bold">Parimet tona udhezuese</h3>
-      <div class="grid grid-cols-3 gap-4">
-        <div class="flex flex-col gap-4">
+    <div class="mx-auto flex w-full flex-col gap-2 lg:w-3/4">
+      <h3 class="mb-2 text-center text-2xl font-bold lg:text-left lg:text-3xl">
+        Parimet tona udhezuese
+      </h3>
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-4">
+        <div class="flex flex-col gap-4 text-sm lg:text-base">
           <div>
             <b>Solidariteti</b>
             <ul>
@@ -110,14 +124,14 @@ import TextWithPhoto from "../components/TextWithPhoto.astro";
             </ul>
           </div>
         </div>
-        <figure class="h-[50svh]">
+        <figure class="order-first h-64 lg:order-none lg:h-[50svh]">
           <img
             src="/img/about_vertical.webp"
             alt="Company portrait photo"
             class="h-full w-full object-cover"
           />
         </figure>
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4 text-sm lg:text-base">
           <div>
             <b>Përgjegjshmëria</b>
             <ul>
@@ -151,7 +165,7 @@ import TextWithPhoto from "../components/TextWithPhoto.astro";
         </div>
       </div>
     </div>
-    <div class="mx-auto w-3/4">
+    <div class="mx-auto w-full lg:w-3/4">
       <TextWithPhoto
         title="Menaxhimi"
         imgSrc={["/img/about_dets.webp", "/img/about_dets2.webp"]}

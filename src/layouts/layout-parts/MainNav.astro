@@ -6,17 +6,37 @@ import EmailSvg from "../../svg/email.svg?raw";
 
 <div
   id="main-nav"
-  class="mask-linear fixed z-[100] flex w-full bg-neutral px-10 backdrop-blur-lg backdrop-filter"
+  class="mask-linear fixed z-[100] flex w-full bg-neutral px-4 backdrop-blur-lg backdrop-filter lg:px-10"
 >
   <a href="/" class="my-2">
     <img
       id="main-logo"
       src="/img/EMC_Logo_Black.webp"
       alt="Logo"
-      class="w-36 object-contain"
+      class="w-24 object-contain lg:w-36"
     />
   </a>
-  <div class="mx-16 flex w-[80vw] items-start *:py-4">
+
+  <!-- Mobile hamburger menu -->
+  <div class="ml-auto flex items-center lg:hidden">
+    <button id="mobile-menu-toggle" class="p-2">
+      <svg
+        class="h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Desktop navigation -->
+  <div class="mx-16 hidden w-[80vw] items-start *:py-4 lg:flex">
     <nav
       class="flex flex-1 items-start justify-around border-b-2 border-b-neutral-500"
     >
@@ -46,7 +66,9 @@ import EmailSvg from "../../svg/email.svg?raw";
       <a href="/contact" class="text-gray-800 hover:text-gray-600">KONTAKT</a>
     </nav>
   </div>
-  <div class="flex items-start gap-2 pt-4">
+
+  <!-- Desktop social icons -->
+  <div class="hidden items-start gap-2 pt-4 lg:flex">
     <a
       class="flex h-6 w-6 items-center justify-center"
       href="https://www.instagram.com/emc_albania/?hl=en"
@@ -66,3 +88,66 @@ import EmailSvg from "../../svg/email.svg?raw";
     </a>
   </div>
 </div>
+
+<!-- Mobile menu overlay -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-[99] translate-x-full transform bg-neutral-200 transition-transform duration-300 lg:hidden"
+>
+  <div class="flex flex-col p-6 pt-20">
+    <div class="flex flex-col space-y-6">
+      <div class="flex flex-col space-y-2">
+        <span class="font-semibold text-gray-800">PRODUKTET</span>
+        <a href="/products/linde" class="pl-4 text-gray-600">Linde</a>
+        <a href="/products/hansaflex" class="pl-4 text-gray-600">HansaFlex</a>
+        <a href="/products/hoppecke" class="pl-4 text-gray-600">Hoppecke</a>
+      </div>
+      <a href="/services" class="text-gray-800 hover:text-gray-600">SHËRBIMET</a
+      >
+      <a href="/products" class="text-gray-800 hover:text-gray-600">SHOP</a>
+      <a href="/about" class="text-gray-800 hover:text-gray-600">RRETH NESH</a>
+      <a href="/karriera" class="text-gray-800 hover:text-gray-600">KARRIERA</a>
+      <a href="/contact" class="text-gray-800 hover:text-gray-600">KONTAKT</a>
+    </div>
+
+    <div class="mt-8 flex items-center gap-4">
+      <a
+        class="flex h-6 w-6 items-center justify-center"
+        href="https://www.instagram.com/emc_albania/?hl=en"
+        target="_blank"
+      >
+        <Fragment set:html={InstaLogo} />
+      </a>
+      <a class="flex h-6 w-6 items-center justify-center" href="#location">
+        <Fragment set:html={LocationSvg} />
+      </a>
+      <a
+        class="flex h-6 w-6 items-center justify-center"
+        href="mailto:info@emc.com.al"
+        target="_blank"
+      >
+        <Fragment set:html={EmailSvg} />
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  mobileMenuToggle?.addEventListener("click", () => {
+    if (mobileMenu?.classList.contains("translate-x-full")) {
+      mobileMenu.classList.remove("translate-x-full");
+    } else {
+      mobileMenu?.classList.add("translate-x-full");
+    }
+  });
+
+  // Close menu when clicking on links
+  mobileMenu?.addEventListener("click", (e) => {
+    if ((e.target as HTMLElement).tagName === "A") {
+      mobileMenu.classList.add("translate-x-full");
+    }
+  });
+</script>

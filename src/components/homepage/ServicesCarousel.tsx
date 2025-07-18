@@ -4,7 +4,7 @@ import ServiceCard from "./ServiceCard";
 
 export const ServiceCarousel: Component = () => {
   return (
-    <div class="flex items-stretch gap-12">
+    <div class="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-12">
       <ServiceCard
         img="/img/service_2.avif"
         title="Shërbime të mirëmbajtjes preventive të programuar"

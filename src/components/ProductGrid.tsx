@@ -46,11 +46,11 @@ export const ProductGrid: Component<Props> = (props) => {
   });
   return (
     <div class="flex min-h-screen w-full flex-col lg:flex-row">
-      <div class="flex basis-1/4 flex-col gap-4 bg-neutral p-4">
+      <div class="flex basis-full lg:basis-1/4 flex-col gap-4 bg-neutral p-2 lg:p-4">
         <input
           type="text"
           placeholder="Model Search"
-          class="input rounded-none border-2 border-neutral-300 transition hover:border-neutral-400"
+          class="input input-sm lg:input-md rounded-none border-2 border-neutral-300 transition hover:border-neutral-400"
         />
         <FilterCategory
           title={productFilters[1].label}
@@ -119,8 +119,8 @@ export const ProductGrid: Component<Props> = (props) => {
           }
         />
       </div>
-      <div class="basis-3/4 bg-neutral-100 p-10 py-4">
-        <div class="grid h-fit grid-cols-1 gap-8 lg:grid-cols-2">
+      <div class="basis-full lg:basis-3/4 bg-neutral-100 p-4 lg:p-10 py-4">
+        <div class="grid h-fit grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
           <For each={productsToDisplay()}>
             {(p) => (
               <ProductCard

@@ -18,8 +18,8 @@ const selectedProduct = lindeProducts.find((p) => p.id == id);
 
 <Layout title="Product" compactNav>
   <main id="content" class="mb-12 min-h-svh w-full bg-neutral">
-    <div class="mx-auto w-2/3 py-20">
-      <div class="breadcrumbs text-sm">
+    <div class="mx-auto w-full px-4 py-12 lg:w-2/3 lg:px-0 lg:py-20">
+      <div class="breadcrumbs text-xs lg:text-sm">
         <ul>
           <li><a href="/">Home</a></li>
           {
@@ -36,69 +36,87 @@ const selectedProduct = lindeProducts.find((p) => p.id == id);
           <li>{selectedProduct?.description}</li>
         </ul>
       </div>
-      <div class="flex justify-between">
-        <div class="basis-5/12">
-          <img src={`/img/linde/${selectedProduct?.photo}.avif`} />
+      <div class="flex flex-col justify-between gap-6 lg:flex-row lg:gap-0">
+        <div class="basis-full lg:basis-5/12">
+          <img
+            src={`/img/linde/${selectedProduct?.photo}.avif`}
+            class="w-full"
+          />
         </div>
-        <div class="flex basis-1/2 flex-col justify-around">
+        <div
+          class="flex basis-full flex-col justify-around gap-6 lg:basis-1/2 lg:gap-0"
+        >
           <div class="flex flex-col gap-4">
-            <h1 class="text-3xl font-semibold">
+            <h1
+              class="text-center text-xl font-semibold lg:text-left lg:text-3xl"
+            >
               {selectedProduct?.product_type}
               {selectedProduct?.description}
             </h1>
-            <div class="flex gap-8">
-              <div class="flex flex-col">
-                <div class="h-12 w-12">
+            <div class="flex justify-center gap-4 lg:justify-start lg:gap-8">
+              <div class="flex flex-col items-center">
+                <div class="h-8 w-8 lg:h-12 lg:w-12">
                   <Fragment set:html={Kilogram} />
                 </div>
-                <p>{selectedProduct?.lifting_capacity_kg} kg</p>
+                <p class="text-sm lg:text-base">
+                  {selectedProduct?.lifting_capacity_kg} kg
+                </p>
               </div>
-              <div class="flex flex-col">
-                <div class="h-12 w-12">
+              <div class="flex flex-col items-center">
+                <div class="h-8 w-8 lg:h-12 lg:w-12">
                   <Fragment set:html={Height} />
                 </div>
-                <p>{selectedProduct?.lifting_height_mm} mm</p>
+                <p class="text-sm lg:text-base">
+                  {selectedProduct?.lifting_height_mm} mm
+                </p>
               </div>
-              <div class="flex flex-col">
-                <div class="h-12 w-12">
+              <div class="flex flex-col items-center">
+                <div class="h-8 w-8 lg:h-12 lg:w-12">
                   <Fragment set:html={Engine} />
                 </div>
-                <p>{selectedProduct?.movement_system}</p>
+                <p class="text-sm lg:text-base">
+                  {selectedProduct?.movement_system}
+                </p>
               </div>
             </div>
           </div>
           <div class="flex flex-col gap-4"></div>
-          <div class="flex flex-col items-start gap-6">
-            <p>Jeni te interesuar per kete produkt?</p>
-            <button class="btn btn-primary">KONTAKTO</button>
+          <div class="flex flex-col items-center gap-6 lg:items-start">
+            <p class="text-sm lg:text-base">
+              Jeni te interesuar per kete produkt?
+            </p>
+            <button class="btn btn-primary btn-sm lg:btn-md">KONTAKTO</button>
           </div>
         </div>
       </div>
       <a
-        class="btn text-lg font-thin text-primary"
+        class="btn btn-sm mt-6 text-sm font-thin text-primary lg:btn-md lg:text-lg"
         href={`/docs/${selectedProduct?.pdf_file}.pdf`}
         download
       >
-        <div class="h-6 w-6 fill-primary">
+        <div class="h-4 w-4 fill-primary lg:h-6 lg:w-6">
           <Fragment set:html={Download} />
         </div>
         <p class="m-0 p-0 align-bottom">Shkarko dokumentin</p>
       </a>
     </div>
   </main>
-  <div class="mx-auto my-12 flex w-2/3 flex-col gap-6">
+  <div
+    class="mx-auto my-8 flex w-full flex-col gap-4 px-4 lg:my-12 lg:w-2/3 lg:gap-6 lg:px-0"
+  >
     {
       selectedProduct?.long_description ? (
-        <div class="my-12 flex flex-col gap-4">
-          {" "}
-          <h1 class="text-center text-3xl">Pershkrimi</h1>
-          <p class="text-justify">{selectedProduct.long_description}</p>
+        <div class="my-8 flex flex-col gap-4 lg:my-12">
+          <h1 class="text-center text-2xl lg:text-3xl">Pershkrimi</h1>
+          <p class="text-justify text-sm lg:text-base">
+            {selectedProduct.long_description}
+          </p>
         </div>
       ) : null
     }
 
-    <h1 class="text-center text-3xl">Produkte te ngjashme</h1>
-    <div class="flex gap-10">
+    <h1 class="text-center text-2xl lg:text-3xl">Produkte te ngjashme</h1>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
       {
         Array.from({ length: 4 }, () =>
           Math.floor(Math.random() * lindeProducts.length),

@@ -9,7 +9,7 @@ interface Props {
 export const CategoryCard: Component<Props> = (props) => {
   return (
     <button
-      class="group flex flex-1 items-center justify-center  border-b-2"
+      class="group flex flex-1 items-center justify-center border-b-2 p-2"
       classList={{
         "hover:border-red-100 hover:bg-primary bg-primary-content":
           props.company === "hansaflex",
@@ -19,7 +19,7 @@ export const CategoryCard: Component<Props> = (props) => {
       onmouseover={props.onHover}
     >
       <p
-        class="text-center text-lg font-semibold"
+        class="text-center lg:text-sm text-md font-semibold"
         classList={{
           "group-hover:text-primary-content text-primary":
             props.company === "hansaflex",

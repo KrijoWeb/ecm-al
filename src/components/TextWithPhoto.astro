@@ -10,14 +10,17 @@ export interface Props {
 const { imgSrc, title, imgLeft, height, contain, id } = Astro.props;
 ---
 
-<div class="flex items-stretch gap-8" id={id}>
+<div
+  class="flex flex-col items-stretch gap-4 px-4 lg:flex-row lg:gap-8 lg:px-0"
+  id={id}
+>
   {
     Array.isArray(imgSrc) ? (
       <>
         <figure
-          class="min-h-96 flex-1"
+          class="min-h-48 flex-1 lg:min-h-96"
           class:list={{ "object-cover": !contain, "object-contain": contain }}
-          style={`height:${height}rem`}
+          style={`height:${height ? height / 2 : 12}rem`}
         >
           <img
             src={imgSrc[0]}
@@ -26,16 +29,18 @@ const { imgSrc, title, imgLeft, height, contain, id } = Astro.props;
             class:list={{ "object-cover": !contain, "object-contain": contain }}
           />
         </figure>
-        <div class="flex flex-1 flex-col items-center gap-8">
-          <h2 class="text-3xl font-semibold capitalize">{title}</h2>
-          <p class="text-justify">
+        <div class="flex flex-1 flex-col items-center gap-4 lg:gap-8">
+          <h2 class="text-center text-xl font-semibold capitalize lg:text-3xl">
+            {title}
+          </h2>
+          <p class="text-justify text-sm lg:text-base">
             <slot />
           </p>
         </div>
         <figure
-          class="min-h-96 flex-1"
+          class="order-last min-h-48 flex-1 lg:order-none lg:min-h-96"
           class:list={{ "object-cover": !contain, "object-contain": contain }}
-          style={`height:${height}rem`}
+          style={`height:${height ? height / 2 : 12}rem`}
         >
           <img
             src={imgSrc[1]}
@@ -48,9 +53,9 @@ const { imgSrc, title, imgLeft, height, contain, id } = Astro.props;
     ) : imgLeft ? (
       <>
         <figure
-          class="min-h-96 flex-1"
+          class="order-last min-h-48 flex-1 lg:order-first lg:min-h-96"
           class:list={{ "object-cover": !contain, "object-contain": contain }}
-          style={`height:${height}rem`}
+          style={`height:${height ? height / 1.5 : 16}rem`}
         >
           <img
             src={imgSrc}
@@ -59,22 +64,29 @@ const { imgSrc, title, imgLeft, height, contain, id } = Astro.props;
             class:list={{ "object-cover": !contain, "object-contain": contain }}
           />
         </figure>
-        <div class="flex flex-1 flex-col items-center justify-center gap-8">
-          <h2 class="text-3xl font-semibold capitalize">{title}</h2>
-          <p class="text-justify">
+        <div class="flex flex-1 flex-col items-center justify-center gap-4 lg:gap-8">
+          <h2 class="text-center text-xl font-semibold capitalize lg:text-3xl">
+            {title}
+          </h2>
+          <p class="text-justify text-sm lg:text-base">
             <slot />
           </p>
         </div>
       </>
     ) : (
       <>
-        <div class="flex flex-1 flex-col items-center justify-center gap-8">
-          <h2 class="text-3xl font-semibold capitalize">{title}</h2>
-          <p class="text-justify">
+        <div class="flex flex-1 flex-col items-center justify-center gap-4 lg:gap-8">
+          <h2 class="text-center text-xl font-semibold capitalize lg:text-3xl">
+            {title}
+          </h2>
+          <p class="text-justify text-sm lg:text-base">
             <slot />
           </p>
         </div>
-        <figure class="min-h-96 flex-1" style={`height:${height}rem`}>
+        <figure
+          class="min-h-48 flex-1 lg:min-h-96"
+          style={`height:${height ? height / 1.5 : 16}rem`}
+        >
           <img
             src={imgSrc}
             alt={title}

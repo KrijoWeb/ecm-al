@@ -3,22 +3,28 @@ import ArrowButton from "../ArrowButton";
 import { ServiceCarousel } from "./ServicesCarousel.tsx";
 ---
 
-<section class="flex w-2/3 flex-col gap-12">
-  <div class="flex items-stretch justify-between">
-    <div class="flex basis-8/12 flex-col items-center gap-8">
-      <h2 class="text-3xl">Sherbimet dhe Mirembajtja</h2>
-      <p class="text-justify">
+<section class="flex w-full flex-col gap-8 px-4 lg:w-2/3 lg:gap-12 lg:px-0">
+  <div
+    class="flex flex-col items-stretch justify-between gap-8 lg:flex-row lg:gap-0"
+  >
+    <div class="flex flex-col items-center gap-6 lg:basis-8/12 lg:gap-8">
+      <h2 class="text-center text-2xl lg:text-left lg:text-3xl">
+        Sherbimet dhe Mirembajtja
+      </h2>
+      <p class="text-justify text-sm lg:text-base">
         EMC është një kompani e specializuar në mirëmbajtjen dhe riparimin e
         mjeteve Linde, duke ndjekur praktikat më të mira ndërkombëtare. Ne
         ofrojmë shërbime të mirëmbajtjes dhe riparimit për të siguruar që mjetet
         tuaja të jenë gjithmonë në kushte optimale për punë.
       </p>
     </div>
-    <div class="flex basis-3/12 flex-col items-end justify-end gap-6">
-      <h2 class="my-auto text-center text-3xl">
+    <div
+      class="flex flex-col items-center justify-center gap-6 lg:basis-3/12 lg:items-end lg:justify-end"
+    >
+      <h2 class="text-center text-xl lg:text-3xl">
         Ofrojme cilesi dhe kualitet nga viti 2014
       </h2>
-      <div class="translate-y-1/2">
+      <div class="lg:translate-y-1/2">
         <ArrowButton
           text="Rreth Nesh"
           type="ellipsis"

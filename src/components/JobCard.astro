@@ -10,28 +10,37 @@ const { id, title } = Astro.props;
 ---
 
 <details class="collapse bg-neutral">
-  <summary class="collapse-title text-xl font-medium">
-    <div class="flex items-center gap-16">
-      <div class="basis-1/6 p-4">
-        <img src="/img/EMC_Logo_Black.webp" class="w-full" />
+  <summary class="collapse-title text-lg font-medium lg:text-xl">
+    <div
+      class="flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:gap-16"
+    >
+      <div class="basis-full p-2 lg:basis-1/6 lg:p-4">
+        <img
+          src="/img/EMC_Logo_Black.webp"
+          class="mx-auto w-24 lg:mx-0 lg:w-full"
+        />
       </div>
       <div class="flex flex-1 flex-col gap-2">
-        <h2 class="text-3xl font-bold uppercase">{title}</h2>
+        <h2 class="text-xl font-bold uppercase lg:text-3xl">{title}</h2>
         <div class="flex gap-4">
-          <div class="h-6 w-6"><Fragment set:html={BriefCaseIcon} /></div>
-          <p>Kohe e plote</p>
+          <div class="h-4 w-4 lg:h-6 lg:w-6">
+            <Fragment set:html={BriefCaseIcon} />
+          </div>
+          <p class="text-sm lg:text-base">Kohe e plote</p>
         </div>
         <div class="flex gap-4">
-          <div class="h-6 w-6"><Fragment set:html={LocationIcon} /></div>
-          <p>Durres, Shqiperi</p>
+          <div class="h-4 w-4 lg:h-6 lg:w-6">
+            <Fragment set:html={LocationIcon} />
+          </div>
+          <p class="text-sm lg:text-base">Durres, Shqiperi</p>
         </div>
       </div>
     </div>
   </summary>
   <div
-    class="collapse-content ml-auto flex w-5/6 flex-col items-center gap-4 px-12 py-4"
+    class="collapse-content ml-0 flex w-full flex-col items-center gap-4 px-4 py-4 lg:ml-auto lg:w-5/6 lg:px-12"
   >
-    <p class="text-justify">
+    <p class="text-justify text-sm lg:text-base">
       Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim
       labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet.
       Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum
@@ -43,7 +52,7 @@ const { id, title } = Astro.props;
       excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco
       ut ea consectetur et est culpa et culpa duis.
     </p>
-    <button id={`apply-btn-${id}`} class="btn btn-primary">
+    <button id={`apply-btn-${id}`} class="btn btn-primary btn-sm lg:btn-md">
       Apliko Tani
     </button>
   </div>

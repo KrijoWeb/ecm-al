@@ -20,25 +20,24 @@ export const ProductCategories: Component<Props> = (props) => {
   });
   return (
     <div
-      class="flex h-[75vh] items-center  border-2 bg-[#ECF1F4]"
+      class="flex flex-col lg:flex-row h-auto lg:h-[75vh] items-center border-2 bg-[#ECF1F4] lg:justify-between"
       classList={{
         "border-primary": props.company === "hansaflex",
         " border-secondary": props.company === "hoppecke",
       }}
     >
-      <div class="my-auto flex h-2/3 basis-7/12 flex-col items-center justify-center gap-4">
-        <figure class="animate-appear h-full">
+      <div class="my-auto flex h-64 lg:h-2/3 basis-full lg:basis-6/12 flex-col items-center justify-center gap-2 lg:gap-4 p-4 lg:p-0">
+        <figure class="animate-appear h-full mx-auto">
           <img
-            src={`/img/${props.company}/${categories[selectedCategory()]?.Foto
-              }.webp`}
-            class="h-full"
+            src={`/img/${props.company}/${categories[selectedCategory()]?.Foto}.webp`}
+            class="h-full object-contain"
           />
         </figure>
-        <h2 class="animate-appear text-2xl font-semibold">
+        <h2 class="animate-appear text-lg lg:text-2xl font-semibold text-center">
           {categories[selectedCategory()]?.Kategoria}
         </h2>
         <button
-          class="btn"
+          class="btn btn-sm lg:btn-md"
           classList={{
             "btn-primary": props.company === "hansaflex",
             "btn-secondary": props.company === "hoppecke",
@@ -49,7 +48,7 @@ export const ProductCategories: Component<Props> = (props) => {
         >Me Shume</button>
       </div>
       <div
-        class="flex h-full basis-5/12 flex-col"
+        class="flex h-full w-full basis-full lg:basis-5/12 flex-col"
         classList={{
           "bg-primary": props.company === "hansaflex",
           "bg-secondary": props.company === "hoppecke",

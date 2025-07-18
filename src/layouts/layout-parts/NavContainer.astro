@@ -11,7 +11,7 @@ const { href } = Astro.url;
 
 <header
   id="nav-container"
-  class="max-w-screen aspect-[4/1] bg-cover"
+  class="max-w-screen aspect-[2/1] bg-cover lg:aspect-[4/1]"
   style=`background-image: url("${img}"); background-position: ${bgPosition};`
 >
   <div
@@ -22,14 +22,14 @@ const { href } = Astro.url;
     <div id="header-bg" class="my-auto">
       {
         href.includes("linde") ? (
-          <img src="/img/linde/header.png" class="h-16" />
+          <img src="/img/linde/header.png" class="h-10 lg:h-16" />
         ) : href.includes("hansaflex") ? (
-          <img src="/img/hansaflex/header.svg" class="h-16" />
+          <img src="/img/hansaflex/header.svg" class="h-10 lg:h-16" />
         ) : href.includes("hoppecke") ? (
-          <img src="/img/hoppecke/header.png" class="h-16" />
+          <img src="/img/hoppecke/header.png" class="h-10 lg:h-16" />
         ) : (
           <h1
-            class="px-6 py-4 text-5xl font-bold capitalize text-black"
+            class="px-4 py-2 text-2xl font-bold capitalize text-black lg:px-6 lg:py-4 lg:text-5xl"
             id="header"
           >
             {header}
@@ -63,17 +63,22 @@ const { href } = Astro.url;
     mainNav.style.backgroundColor = `rgba(230, 231, 235,${
       y.current / netContainerHeight
     })`;
-    let mainLogoWidth = 22 - 14 * Math.min(y.current / netContainerHeight, 1);
-    mainLogo.style.width = `${mainLogoWidth}rem`;
+    if (window.innerWidth >= 1024) {
+      let mainLogoWidth = 22 - 14 * Math.min(y.current / netContainerHeight, 1);
+      mainLogo.style.width = `${mainLogoWidth}rem`;
+    }
     subMenu.style.backgroundColor = `rgba(230, 231, 235,${
       y.current / netContainerHeight
     })`;
-    let mainNavWidth =
-      66 +
-      ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) * 33;
+    if (window.innerWidth >= 1024) {
+      let mainNavWidth =
+        66 +
+        ((y.current + mainNav?.clientHeight) / navContainer?.clientHeight!) *
+          33;
+      mainNavWidth = mainNavWidth < 100 ? mainNavWidth : 100;
+      mainNav.style.width = `${mainNavWidth}vw`;
+    }
     let navBgOpacity = y.current / navContainer?.clientHeight! / 2 + 0.6;
-    mainNavWidth = mainNavWidth < 100 ? mainNavWidth : 100;
-    mainNav.style.width = `${mainNavWidth}vw`;
     if (navBg)
       navBg.style.backgroundColor = `rgba(230, 231, 235,${navBgOpacity})`;
     if (header)
