@@ -10,7 +10,7 @@ interface Props {
 
 export const FilterCategory: Component<Props> = (props) => {
   return (
-    <div class="dropdown dropdown-right">
+    <div class="dropdown dropdown-bottom lg:dropdown-right">
       <div
         tabindex="0"
         role="button"
