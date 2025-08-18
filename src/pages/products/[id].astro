@@ -146,6 +146,7 @@ const selectedProduct = products.find((p) => p.id == id);
           Math.floor(Math.random() * products.length),
         ).map((i) => (
           <SimilarProductCard
+            link={`/products/${products.at(i)?.id}`}
             img={`/img/shop/${products.at(i)?.photo}.webp`}
             name={products.at(i)?.description!}
             weight={products.at(i)?.lifting_capacity_kg!}

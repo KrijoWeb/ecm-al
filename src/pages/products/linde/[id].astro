@@ -122,6 +122,7 @@ const selectedProduct = lindeProducts.find((p) => p.id == id);
           Math.floor(Math.random() * lindeProducts.length),
         ).map((i) => (
           <SimilarProductCard
+            link={`/products/linde/${lindeProducts.at(i)?.id}`}
             img={`/img/linde/${lindeProducts.at(i)?.photo}.avif`}
             name={lindeProducts.at(i)?.description!}
             weight={lindeProducts.at(i)?.lifting_capacity_kg!}
