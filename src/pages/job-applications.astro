@@ -1,0 +1,56 @@
+---
+import { readdir } from "node:fs/promises";
+import Layout from "../layouts/Layout.astro";
+const jobApplications = await readdir("./job-applications/");
+---
+
+<Layout title="Job Applications" header="Job Applications" compactNav>
+  <div class="mx-8 mt-32 overflow-x-auto">
+    <table class="table">
+      <!-- head -->
+      <thead>
+        <tr>
+          <th>Te dhenat</th>
+          <th>CV</th>
+          <th>Leter motivimi</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          jobApplications.map((job) => (
+            <tr>
+              <td>
+                <a
+                  class="link link-primary"
+                  href={`/job-applications/${job}/dhenat.txt`}
+                  download={`${job}-dhenat.txt`}
+                >
+                  {job.replace(/-/g, " ")}
+                </a>
+              </td>
+              <td>
+                <a
+                  class="link link-primary"
+                  href={`/job-applications/${job}/CV.pdf`}
+                  download
+                >
+                  CV
+                </a>
+              </td>
+              <td>
+                <a
+                  class="link link-primary"
+                  href={`/job-applications/${job}/motivationLetter.pdf`}
+                  download
+                >
+                  Leter motivimi
+                </a>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</Layout>

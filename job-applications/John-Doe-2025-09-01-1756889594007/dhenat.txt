@@ -1,0 +1,7 @@
+
+Emri : John
+Mbiemri : Doe 
+Ditlindja : 2025-09-01 
+Email : johndoe@example.com 
+Nr. Tel : 34rwefdsc 
+Pozicioni : null

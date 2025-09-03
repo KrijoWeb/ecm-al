@@ -7,14 +7,15 @@ import { writeFile, mkdir } from "node:fs/promises"
 
 export const POST: APIRoute = async ({ request }) => {
   const formData = await request.formData();
-  const dirName = `./${formData.get("givenName")}-${formData.get("lastName")}-${formData.get("dob")}`
+  const dirName = `./job-applications/${formData.get("givenName")}-${formData.get("lastName")}-${formData.get("dob")}-${new Date().toISOString()}`;
   await mkdir(dirName);
   const content = `
 Emri : ${formData.get("givenName")}
 Mbiemri : ${formData.get("lastName")} 
-Ditlindja : ${formData.get("dob")} 
+Ditelindja : ${formData.get("dob")} 
 Email : ${formData.get("email")} 
 Nr. Tel : ${formData.get("telNr")} 
+Pozicioni : ${formData.get("jobId")}
 `
   const cv = Buffer.from(await (formData.get("CV") as File).arrayBuffer())
   const motivationLetter = Buffer.from(await (formData.get("motivationLetter") as File).arrayBuffer())

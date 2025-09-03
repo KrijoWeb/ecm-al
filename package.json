@@ -16,7 +16,10 @@
     "@astrojs/node": "^9.2.2",
     "@astrojs/solid-js": "^5.0.8",
     "@astrojs/tailwind": "^6.0.0",
+    "@libsql/client": "^0.15.14",
     "astro": "^5.7.2",
+    "dotenv": "^17.2.2",
+    "drizzle-orm": "^0.44.5",
     "motion": "^12.16.0",
     "sequelize": "^6.37.7",
     "solid-js": "^1.9.5",
@@ -27,9 +30,11 @@
   },
   "devDependencies": {
     "daisyui": "^4.12.10",
+    "drizzle-kit": "^0.31.4",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "solid-devtools": "^0.34.0"
+    "solid-devtools": "^0.34.0",
+    "tsx": "^4.20.5"
   }
 }

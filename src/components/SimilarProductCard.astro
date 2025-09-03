@@ -8,14 +8,13 @@ interface Props {
   height: number;
   img: string;
 }
-const { link, name, height, weight,  img} = Astro.props;
+const { link, name, height, weight, img } = Astro.props;
 ---
 
-<a href={link}
-
-  class="group md:h-auto h-[50svh] flex flex-1 cursor-pointer flex-col items-center gap-4 border-2 border-neutral-200 px-8 py-4 md:py-12 transition hover:border-primary"
+<a
+  href={link}
+  class="group flex h-[50svh] flex-1 cursor-pointer flex-col items-center gap-4 border-2 border-neutral-200 px-8 py-4 transition hover:border-primary md:h-auto md:py-12"
 >
-
   <img src={img} class="h-2/3 transition md:group-hover:scale-110" />
   <p class="text-lg">{name}</p>
   <div class="flex w-full justify-between">

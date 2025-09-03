@@ -1,8 +1,7 @@
-import { Sequelize } from 'sequelize';
+import {defineConfig} from 'drizzle-kit';
 
-const sequelize = new Sequelize({
-  dialect: 'sqlite',
-  storage: './test.db'
+export default defineConfig({
+dialect: 'sqlite',
+schema: './src/db/schema.ts',
+out: './src/db/migrations'
 });
-
-export default sequelize;

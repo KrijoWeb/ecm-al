@@ -15,6 +15,7 @@ const { id } = Astro.props;
       action="/api/apply-to-job"
       enctype="multipart/form-data"
     >
+      <input type="hidden" name="jobId" value={id} />
       <Input label="Emri" name="givenName" />
       <Input label="Mbiemri" name="lastName" />
       <Input label="Email" type="email" name="email" />
