@@ -24,7 +24,7 @@ const jobApplications = await readdir("/app/job-applications/");
               <td>
                 <a
                   class="link link-primary"
-                  href={`/job-applications/${job}/dhenat.txt`}
+                  href={`/app/job-applications/${job}/dhenat.txt`}
                   download={`${job}-dhenat.txt`}
                 >
                   {job.replace(/-/g, " ")}
@@ -33,7 +33,7 @@ const jobApplications = await readdir("/app/job-applications/");
               <td>
                 <a
                   class="link link-primary"
-                  href={`/job-applications/${job}/CV.pdf`}
+                  href={`/app/job-applications/${job}/CV.pdf`}
                   download
                 >
                   CV
@@ -42,7 +42,7 @@ const jobApplications = await readdir("/app/job-applications/");
               <td>
                 <a
                   class="link link-primary"
-                  href={`/job-applications/${job}/motivationLetter.pdf`}
+                  href={`/app/job-applications/${job}/motivationLetter.pdf`}
                   download
                 >
                   Leter motivimi
