@@ -2,7 +2,7 @@
 export const prerender = false;
 import { readdir } from "node:fs/promises";
 import Layout from "../layouts/Layout.astro";
-const jobApplications = await readdir("./job-applications/");
+const jobApplications = await readdir("/app/job-applications/");
 ---
 
 <Layout title="Job Applications" header="Job Applications" compactNav>

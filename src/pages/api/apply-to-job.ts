@@ -7,7 +7,7 @@ import { writeFile, mkdir } from "node:fs/promises"
 
 export const POST: APIRoute = async ({ request }) => {
   const formData = await request.formData();
-  const dirName = `/job-applications/${formData.get("givenName")}-${formData.get("lastName")}-${formData.get("dob")}-${new Date().toISOString()}`;
+  const dirName = `/app/job-applications/${formData.get("givenName")}-${formData.get("lastName")}-${formData.get("dob")}-${new Date().toISOString()}`;
   await mkdir(dirName);
   const content = `
 Emri : ${formData.get("givenName")}
