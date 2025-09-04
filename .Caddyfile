@@ -1,0 +1,3 @@
+emc.com.al {
+	file_server /files/* 
+}

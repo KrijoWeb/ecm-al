@@ -17,13 +17,13 @@ export const ContactCard = (props: Props) => {
         {props.name}</span
       >
       <span class="text-lg">{props.title}</span>
-      <a class="font-thin" href={`tel:${props.tel.trim().replaceAll("-", "")}`}
+      {props.tel ? <a class="font-thin" href={`tel:${props.tel.trim().replaceAll("-", "")}`}
       >Tel: {props.tel}</a
-      >
+      > : null}
       {props.fax ? <p class="font-thin">Fax: {props.fax}</p> : null}
-      <a class="font-thin" href={`tel:${props.mobile.trim().replaceAll("-", "")}`}>
+      {props.mobile ? <a class="font-thin" href={`tel:${props.mobile.trim().replaceAll("-", "")}`}>
         Mob: {props.mobile}
-      </a>
+      </a> : null}
       <a class="font-thin" href={`mailto:${props.email}`}>Email: {props.email}</a>
     </div>
   </div>)

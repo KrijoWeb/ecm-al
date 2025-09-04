@@ -23,6 +23,13 @@ export const alContacts = [
     email: "e.lala@emc.com.al",
   },
   {
+    name: "Nina Copja",
+    title: "Business Development & Marketing",
+    tel: "+355-52-901252",
+    mobile: "+355-698702075",
+    email: "n.copja@emc.com.al"
+  },
+  {
     name: "Ing. Vasil Vrahoriti",
     title: "Service Manager",
     tel: "+355-52-901252",
@@ -30,6 +37,13 @@ export const alContacts = [
     mobile: "+355-692573030",
     email: "v.vrahoriti@emc.com.al",
   },
+
+    {
+    name: "Kevin Copja",
+    title: "Sales & Marketing",
+    mobile: "+355-4035025",
+    email: "k.copja@emc.com.al"
+    },
   {
     name: "Erisa Bushati",
     title: "Service & Parts Operator",
@@ -67,41 +81,84 @@ export const alContacts = [
   },
   {
     name: "Ing. Erdit Ndreu",
-    title: "Junior Service Engineer",
+    title: "Service Engineer",
     tel: "+355-52-901252",
     mobile: "+355-698573889",
     email: "erdit.ndreu@emc.com.al ",
   },
   {
     name: "Ing. Adolfi Doda",
-    title: "Junior Service Engineer",
+    title: "Service Engineer",
     tel: "+355-52-901252",
     mobile: "+355-695504713",
     email: "a.doda@emc.com.al",
   },
   {
     name: "Ing. Besjan Halilaj",
-    title: "Junior Service Engineer",
+    title: "Service Engineer",
     tel: "+355-52-901252",
     mobile: "+355-695779860",
     email: " b.halilaj@emc.com.al",
   },
 ];
 
+
 export const ksContacts = [
   {
-    name: "John Doe",
-    title: "Sth",
-    tel: "+355-52-901250",
-    fax: "+355-52-901255",
+    name: "Ing. Agron Copja",
+    title: "COE & Sales Manager",
+    tel: "",
+    fax: "",
+    mobile: "+383 49400717",
+    email: "a.copja@emc.com.al",
+  },
+  {
+    name: "Ing. Eduard Nderu",
+    title: "Technical Manager",
+    tel: "",
+    fax: "",
     mobile: "+355 692044644",
     email: "e.ndreu@emc.com.al",
   },
   {
-    name: "Jane Doe",
-    title: "CEO & Sales Manager",
-    tel: "+355-52-901254",
-    mobile: "+355-692055661",
-    email: "a.copja@emc.com.al",
-  }
+    name: "Nina Copja",
+    title: "Business Development & Marketing",
+    tel: "",
+    fax: "",
+    mobile: "+355 698702075",
+    email: "n.copja@emc.com.al",
+  },
+  {
+    name: "Fjolla Ramaj",
+    title: "Sales & Service Operator",
+    tel: "",
+    fax: "",
+    mobile: "+386 49713382",
+    email: "f.ramaj@emc.com.al",
+  },
+  {
+    name: "Ing. Erdit Ndreu",
+    title: "Service Engineer",
+    tel: "",
+    fax: "",
+    mobile: "+355 8573889",
+    email: "erdit.ndreu@emc.com.al",
+  },
+  {
+    name: "Ismail Mehmeti",
+    title: "Service Technician",
+    tel: "",
+    fax: "",
+    mobile: "+383 49761265",
+    email: "",
+  },
+  {
+    name: "Ing. Ermal Lushi",
+    title: "Junior Service Engineer",
+    tel: "",
+    fax: "",
+    mobile: "+383 45976848",
+    email: "e.lushi@emc.com.al",
+  },
 ];
+
