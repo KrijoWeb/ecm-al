@@ -2,14 +2,28 @@
 import JobModal from "../components/JobModal.astro";
 import BriefCaseIcon from "../svg/briefcase.svg?raw";
 import LocationIcon from "../svg/location.svg?raw";
+
 interface Props {
   id: string;
   title: string;
+  locations?: string[];
+  employmentType?: string;
+  contactEmail?: string;
+  description?: string;
 }
-const { id, title } = Astro.props;
+
+const {
+  id,
+  title,
+  locations = ["Durrës, Shqipëri (1)", "Lipjan, Kosovë (1)"],
+  employmentType = "Kohë e plotë",
+  description = "",
+} = Astro.props;
+
+const locationsText = locations.join(" · ");
 ---
 
-<details class="collapse bg-neutral">
+<details class="collapse rounded-box bg-neutral text-neutral-content">
   <summary class="collapse-title text-lg font-medium lg:text-xl">
     <div
       class="flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:gap-16"
@@ -17,48 +31,73 @@ const { id, title } = Astro.props;
       <div class="basis-full p-2 lg:basis-1/6 lg:p-4">
         <img
           src="/img/EMC_Logo_Black.webp"
+          alt="EMC Engineering Maintenance Center logo"
           class="mx-auto w-24 lg:mx-0 lg:w-full"
+          loading="lazy"
+          decoding="async"
         />
       </div>
-      <div class="flex flex-1 flex-col gap-2">
+
+      <div class="flex flex-1 flex-col gap-3">
         <h2 class="text-xl font-bold uppercase lg:text-3xl">{title}</h2>
-        <div class="flex gap-4">
-          <div class="h-4 w-4 lg:h-6 lg:w-6">
+
+        <div class="flex items-center gap-2">
+          <span class="sr-only">Lloji i punës</span>
+          <div class="h-4 w-4 lg:h-6 lg:w-6" aria-hidden="true">
             <Fragment set:html={BriefCaseIcon} />
           </div>
-          <p class="text-sm lg:text-base">Kohe e plote</p>
+          <p class="text-sm lg:text-base">{employmentType}</p>
         </div>
-        <div class="flex gap-4">
-          <div class="h-4 w-4 lg:h-6 lg:w-6">
+
+        <div class="flex items-center gap-2">
+          <span class="sr-only">Lokacionet</span>
+          <div class="h-4 w-4 lg:h-6 lg:w-6" aria-hidden="true">
             <Fragment set:html={LocationIcon} />
           </div>
-          <p class="text-sm lg:text-base">Durres, Shqiperi</p>
+          <p class="text-sm lg:text-base">{locationsText}</p>
         </div>
       </div>
     </div>
   </summary>
+
   <div
-    class="collapse-content ml-0 flex w-full flex-col items-center gap-4 px-4 py-4 lg:ml-auto lg:w-5/6 lg:px-12"
+    class="collapse-content ml-0 flex w-full flex-col items-center gap-6 rounded-b-box  px-4 py-6 text-base-content lg:ml-auto lg:w-5/6 lg:px-12"
   >
-    <p class="text-justify text-sm lg:text-base">
-      Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim
-      labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet.
-      Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum
-      Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident.
-      Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex
-      occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat
-      officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in
-      Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non
-      excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco
-      ut ea consectetur et est culpa et culpa duis.
-    </p>
+    <div 
+      class="prose max-w-none text-justify lg:prose-lg"
+      set:html={description}
+    ></div>
+
     <button id={`apply-btn-${id}`} class="btn btn-primary btn-sm lg:btn-md">
       Apliko Tani
     </button>
   </div>
 </details>
+
 <JobModal id={id} />
+
 <script define:vars={{ id }} is:inline>
   document.getElementById(`apply-btn-${id}`).onclick = () =>
     document.getElementById(`application-modal-${id}`).showModal();
 </script>
+<style is:inline>
+.prose{
+
+  h2{
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    font-size: 1.25em;
+  }
+  h3{
+    margin-top: 0.75em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    font-size: 1em;
+  }
+  a{
+    color: #aa0020;
+    text-decoration: underline;
+  }
+}
+</style>
